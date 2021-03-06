@@ -1,0 +1,131 @@
+title = "Marc Benedi"
+baseURL = "/"
+languageCode = "en-us"
+theme = "anatole"
+
+summarylength = 10
+enableEmoji = true
+enableRobotsTXT = true
+
+# Enable Disqus
+#disqusShortname = ""
+
+# Google Analytics
+#googleAnalytics = "UA-123-45"
+
+# Syntax highlighting
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+[params]
+title = "Hola! Hi! Hallo!"
+author = "Marc Benedi"
+# copyright = "2020-2021"
+description = "Hola! I'm Marc Benedi, a M.Sc. Student at TU Munich."
+profilePicture = "images/profile.jpg"
+keywords = ""
+favicon = "favicons/"
+customCss = [] # example ["css/custom.css"]
+customJs = [] # example ["js/custom.js"]
+mainSections = ["projects"]
+images = ["images/site-feature-image.png"]
+doNotLoadAnimations = false
+
+# Form Spree Contact Form
+#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+
+# Google Site Verify
+#googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+# indexDateFormat = "Mon, Jan 2, 2006"
+# listDateFormat = "Jan 2"
+# singleDateFormat = "Mon, Jan 2, 2006"
+
+[params.simpleAnalytics]
+enable = false
+# customurl = "https://analytics.example.com"
+
+## Math settings
+[params.math]
+enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "katex"  # options: "katex", "mathjax". default is "katex".
+
+## Social links
+# use 'fab' when brand icons, use 'fas' when standard solid icons.
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/marcbenedi/"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/marcbenedi/"
+
+[[params.socialIcons]]
+icon = "fab fa-twitter"
+title = "Twitter"
+url = "https://twitter.com/marcbenedi/"
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:marc.benedi@tum.de"
+
+[[params.socialIcons]]
+icon = "fab fa-blogger"
+title = "Blog"
+url = "https://blog.marcb.pro/"
+
+## Menu items
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Projects"
+  weight = 200
+  identifier = "projects"
+  url = "/projects/"
+
+  [[menu.main]]
+  name = "Curriculum Vitae"
+  weight = 300
+  identifier = "cv"
+  url = "/docs/CV_Marc.pdf"
+
+  # [[menu.main]]
+  # name = "About"
+  # weight = 400
+  # identifier = "about"
+  # url = "/about/"
+
+  # [[menu.main]]
+  # name = "Archives"
+  # weight = 500
+  # identifier = "archives"
+  # url = "/archives/"
+
+  # [[menu.main]]
+  # name = "Tags"
+  # weight = 600
+  # identifier = "tags"
+  # url = "/archives/"
+
+  # [[menu.main]]
+  # name = "Categories"
+  # weight = 700
+  # identifier = "categories"
+  # url = "/categories/"
+
+  # [[menu.main]]
+  # name = "Contact"
+  # weight = 400
+  # identifier = "contact"
+  # url = "/contact/"
