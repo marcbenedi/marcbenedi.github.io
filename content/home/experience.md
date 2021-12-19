@@ -30,10 +30,6 @@ experience:
     location: Munich, DH
     date_start: '2021-04-01'
     date_end: '2022-03-31'
-    description: |2-
-        Responsibilities include:
-        
-        * TODO
 
   - title: Working student
     company: Visual Computing & Artificial Intelligence | Technische Universität München
@@ -43,69 +39,60 @@ experience:
     date_start: '2020-04-01'
     date_end: '2022-03-31'
     description: |2-
-        Responsibilities include:
-        
-        * TODO
+        * Built a high-performance GPU cluster for the Deep Learning laboratory
+        * Built a frontend with vue.js and a backend for the cluster's users
 
   - title: Software Engineer
     company: HELM Mobile Development
     company_url: 'https://helm.cat/'
-    company_logo: niessnerlab
+    company_logo: helm
     location: Barcelona, ES
     date_start: '2018-09-01'
     date_end: '2019-09-01'
     description: |2-
-        Responsibilities include:
-        
-        * TODO
+        * Android development with Kotlin
+        * Backend development with Kotlin
+        * Frontend development with vue.js
 
   - title: Internship
     company: European Organization for Nuclear Research (CERN)
     company_url: 'https://home.cern/'
-    company_logo: niessnerlab
+    company_logo: cern
     location: Geneva, CH
     date_start: '2018-06-01'
     date_end: '2018-09-01'
     description: |2-
-        Responsibilities include:
-        
-        * TODO
+        * Designed and built a cluster for the BE-OP-LHC team at CERN using Kubernetes
 
   - title: Research assistant
     company: Polytechnical University of Catalonia, Barcelona Tech
-    company_url: 'https://home.cern/'
-    company_logo: niessnerlab
-    location: Geneva, CH
-    date_start: '2018-06-01'
-    date_end: '2018-09-01'
+    company_url: 'https://www.fib.upc.edu/en/research/departments/computer-science'
+    company_logo: upc
+    location: Barcelona, ES
+    date_start: '2017-09-01'
+    date_end: '2018-01-01'
     description: |2-
-        Responsibilities include:
-        
-        * TODO
+        * Worked on a novel conversion of Binary Decision Trees to Conjunctive Normal Forms
 
   - title: Internship
     company: Ernst & Young
-    company_url: 'https://home.cern/'
-    company_logo: niessnerlab
-    location: Geneva, CH
-    date_start: '2018-06-01'
-    date_end: '2018-09-01'
+    company_url: 'https://www.ey.com/'
+    company_logo: ey
+    location: Barcelona, ES
+    date_start: '2017-06-01'
+    date_end: '2017-09-30'
     description: |2-
-        Responsibilities include:
-        
-        * TODO
+        * Frontend and backend development
 
   - title: Android instructor
     company: JEDI UPC
-    company_url: 'https://home.cern/'
-    company_logo: niessnerlab
-    location: Geneva, CH
-    date_start: '2018-06-01'
-    date_end: '2018-09-01'
+    company_url: 'https://jediupc.com/'
+    company_logo: jedi
+    location: Barcelona, ES
+    date_start: '2017-01-01'
+    date_end: '2017-01-14'
     description: |2-
-        Responsibilities include:
-        
-        * TODO
+        * Taught a two-week course to introduction to Android development to 25+ students
 design:
   columns: '2'
 ---

@@ -14,7 +14,7 @@ organizations:
   url: https://www.tum.de/en/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include Computer Vision, Computer Graphics and Deep Learning.
 
 # Interests to show in About widget
 interests:
