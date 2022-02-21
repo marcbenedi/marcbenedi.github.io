@@ -7,6 +7,12 @@ title: Marc Benedi
 baseurl: 'https://marcb.pro/' # Website URL
 copyright: '© {year} marcb.pro' # Footer text, e.g. '© {year} Me'
 
+security:
+  funcs:
+    getenv:
+      - ^HUGO_
+      - ^WC_
+
 ############################
 ## LANGUAGE
 ############################
