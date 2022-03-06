@@ -5,20 +5,12 @@
     <link>https://marcb.pro/project/</link>
       <atom:link href="https://marcb.pro/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 marcb.pro</copyright><lastBuildDate>Sun, 06 Mar 2022 14:59:10 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 marcb.pro</copyright><lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0100</lastBuildDate>
     <image>
       <url>https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
       <link>https://marcb.pro/project/</link>
     </image>
-    
-    <item>
-      <title>Hiwi</title>
-      <link>https://marcb.pro/project/hiwi/</link>
-      <pubDate>Sun, 06 Mar 2022 14:59:10 +0100</pubDate>
-      <guid>https://marcb.pro/project/hiwi/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Learning Correspondences For Relative Pose Estimation</title>
