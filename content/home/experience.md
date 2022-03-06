@@ -37,7 +37,7 @@ experience:
     company_logo: niessnerlab
     location: Munich, DH
     date_start: '2020-04-01'
-    date_end: '2022-03-31'
+    date_end: '2022-09-30'
     description: |2-
         * Built a high-performance GPU cluster for the Deep Learning laboratory
         * Built a frontend with vue.js and a backend for the cluster's users

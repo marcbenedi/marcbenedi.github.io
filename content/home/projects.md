@@ -31,6 +31,8 @@ content:
     tag: Computer Graphics
   - name: Computer Vision
     tag: Computer Vision
+  - name: Optimization
+    tag: Optimization
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

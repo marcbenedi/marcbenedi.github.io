@@ -1,8 +1,9 @@
 ---
-title: Design of an environment for solving pseudo-boolean optimization problems
-summary: TODO
+title: Design of an environment for solving pseudo-Boolean optimization problems
+summary: Novel encoding from pseudo-Boolean formulas to CNFs for to solve pseudo-Boolean optimization problems.
 tags:
-- TODO
+- Optimization
+- SAT
 
 date: "2018-06-26T00:00:00Z"
 

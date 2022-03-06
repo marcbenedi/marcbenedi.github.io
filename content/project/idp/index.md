@@ -4,6 +4,7 @@ summary: We are extending the paper “Divergence-Free Shape Correspondence by D
 tags:
 - Shape Analysis
 - Computer Graphics
+- Optimization
 
 date: "2020-04-27T00:00:00Z"
 
