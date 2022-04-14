@@ -49,7 +49,7 @@
                height=&#34;272&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption&gt;
-      Pseudo-Boolean Optimization formulation. Figure source: MPBO A Distributed Pseudo-Boolean Optimization Solver &lt;a href=&#34;https://www.semanticscholar.org/paper/MPBO-A-Distributed-Pseudo-Boolean-Optimization-Santos-Godinho/52ee5d8996c6f6d5caa43ad35155f404ddc584e3&#34;&gt;[1]&lt;/a&gt;
+      Pseudo-Boolean Optimization formulation. Figure source: MPBO A Distributed Pseudo-Boolean Optimization Solver &lt;a href=&#34;https://www.semanticscholar.org/paper/MPBO-A-Distributed-Pseudo-Boolean-Optimization-Santos-Godinho/52ee5d8996c6f6d5caa43ad35155f404ddc584e3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[1]&lt;/a&gt;
     &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;h1 id=&#34;example-knapsack-problem&#34;&gt;Example: Knapsack problem&lt;/h1&gt;
@@ -80,7 +80,7 @@
                height=&#34;217&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption&gt;
-      Source &lt;a href=&#34;https://en.wikipedia.org/wiki/Knapsack_problem&#34;&gt;[2]&lt;/a&gt;
+      Source &lt;a href=&#34;https://en.wikipedia.org/wiki/Knapsack_problem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[2]&lt;/a&gt;
     &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Given a set of items, each one with a value and a weight, and a knapsack with a maximum capacity, the goal is to select some objects to put inside the knapsack in a way that the weight is not bigger than the knapsack’s capacity and the total value is maximised.&lt;/p&gt;
