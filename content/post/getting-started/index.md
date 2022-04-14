@@ -15,7 +15,7 @@ date: "2020-12-13T00:00:00Z"
 lastmod: "2020-12-13T00:00:00Z"
 
 # Is this an unpublished draft?
-draft: false
+draft: true
 
 # Show this page in the Featured widget?
 featured: false
@@ -30,15 +30,12 @@ image:
 
 authors:
 - admin
-- 吳恩達
 
 tags:
 - Academic
-- 开源
 
 categories:
 - Demo
-- 教程
 ---
 
 ## Overview
