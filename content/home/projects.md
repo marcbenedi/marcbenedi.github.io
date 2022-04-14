@@ -33,6 +33,8 @@ content:
     tag: Computer Vision
   - name: Optimization
     tag: Optimization
+  - name: Hackathon
+    tag: Hackathon
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
