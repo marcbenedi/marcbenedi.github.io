@@ -70,7 +70,7 @@ email: "marc.benedi (at) tum.de"
 highlight_name: true
 ---
 
-I am an M.Sc student at the Technical University of Munich. In 2018, I received a Bachelor's Degree in Computer Science from the Polytechnical University of Catalonia, Barcelona Tech. From January 2018 until May 2018, I took part in the Erasmus mobility program, in which I was studying at the University of Edinburgh.
+I am an M.Sc. student at the Technical University of Munich. In 2018, I received a Bachelor's Degree in Computer Science from the Polytechnical University of Catalonia, Barcelona Tech. From January 2018 until May 2018, I took part in the Erasmus mobility program, in which I was studying at the University of Edinburgh.
 
 I'm focusing on Computer Vision & Graphics, and Deep Learning areas. My current research interests are 3D Scanning, Computer Vision & Graphics and Visual Computing.
 
