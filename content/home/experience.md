@@ -26,7 +26,7 @@ experience:
   - title: Visual Computing & AI Master Fellowship
     company: Visual Computing & Artificial Intelligence | Technische Universität München
     company_url: 'https://www.niessnerlab.org/'
-    company_logo: niessnerlab
+    company_logo: tum
     location: Munich, DH
     date_start: '2021-04-01'
     date_end: '2022-03-31'
@@ -34,7 +34,7 @@ experience:
   - title: Working student
     company: Visual Computing & Artificial Intelligence | Technische Universität München
     company_url: 'https://www.niessnerlab.org/'
-    company_logo: niessnerlab
+    company_logo: tum
     location: Munich, DH
     date_start: '2020-04-01'
     date_end: '2022-09-30'
@@ -87,7 +87,7 @@ experience:
   - title: Android instructor
     company: JEDI UPC
     company_url: 'https://jediupc.com/'
-    company_logo: jedi
+    company_logo: jedi2
     location: Barcelona, ES
     date_start: '2017-01-01'
     date_end: '2017-01-14'

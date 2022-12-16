@@ -1,13 +1,14 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "StirHack 2016"
+title: "HackUPC 2016"
 summary: ""
 authors: []
-tags: ['Hackathon', 'Android']
+tags: ['Hackathon', 'Web']
 categories: []
-date: 2016-02-12
+date: 2016-02-19
 
+draft: true
 # Optional external URL for project (replaces project detail page).
 external_link: ""
 
@@ -23,11 +24,11 @@ image:
 #   Uncomment and edit lines below to show custom links.
 links:
 - name: Devpost
-  url: https://devpost.com/software/hackworld-gz18v7
+  url: https://devpost.com/software/timed-login-system 
   icon_pack: fab
   icon: house
 
-url_code: "https://github.com/marcbenedi/HackWorld3"
+url_code: "https://github.com/marcbenedi/TimedLoginSystem"
 url_pdf: ""
 url_slides: ""
 url_video: ""
@@ -40,10 +41,4 @@ url_video: ""
 slides: ""
 ---
 
-> Writing about StirHack16, the first hackathon I ever attended, brings me very good memories. In this page I will focus on the project itself, although some day I should write about the hackathon experience. 😃
-
-Android application with Google Maps API interface to help hackathon participants. The app provides the following information: List of upcoming hackathons, their position on Google Maps, and points of interest such as restaurants and hotels around the event.
-
-For more information visit the [project's page on Devpost](https://devpost.com/software/hackworld-gz18v7).
-
-![](tweet.png)
+TODO
