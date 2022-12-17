@@ -41,7 +41,7 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       # Override your bio text from `authors/admin/_index.md`?
-      text:
+      text: 
   # - block: features
   #   content:
   #     title: Skills
@@ -258,10 +258,10 @@ sections:
       #   - 'Monday 10:00 to 13:00'
       #   - 'Wednesday 09:00 to 10:00'
       contact_links:
-        - icon: twitter
-          icon_pack: fab
-          name: DM Me
-          link: 'https://twitter.com/marcbenedi'
+        # - icon: twitter
+        #   icon_pack: fab
+        #   name: DM Me
+        #   link: 'https://twitter.com/marcbenedi'
         # - icon: skype
         #   icon_pack: fab
         #   name: Skype Me
