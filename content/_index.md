@@ -5,6 +5,7 @@ date: 2022-10-24
 type: landing
 
 sections:
+
   # - block: hero
   #   content:
   #     title: Hugo Academic Theme
@@ -35,6 +36,7 @@ sections:
   #       gradient_end: '#1976d2'
   #       gradient_start: '#004ba0'
   #       text_color_light: true
+
   - block: about.avatar
     id: about
     content:
@@ -42,6 +44,7 @@ sections:
       username: admin
       # Override your bio text from `authors/admin/_index.md`?
       text: 
+
   # - block: features
   #   content:
   #     title: Skills
@@ -58,6 +61,7 @@ sections:
   #         description: 10%
   #         icon: camera-retro
   #         icon_pack: fas
+
   - block: experience
     id: experience
     content:
@@ -71,29 +75,84 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: CEO
-          company: GenCoin
-          company_url: ''
-          company_logo: org-gc
-          location: California
-          date_start: '2021-01-01'
+        - title: PhD Candidate
+          company: Visual Computing & Artificial Intelligence Lab, Technische Universität München 
+          company_url: 'https://www.niessnerlab.org/'
+          company_logo: niessnerlab
+          location: Munich, DE
+          date_start: '2023-01-01'
           date_end: ''
           description: |2-
-              Responsibilities include:
-
-              * Analysing
-              * Modelling
-              * Deploying
-        - title: Professor of Semiconductor Physics
-          company: University X
-          company_url: ''
-          company_logo: org-x
-          location: California
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
+              * TODO
+        - title: Research Fellowship
+          company: Visual Computing & Artificial Intelligence Lab, Technische Universität München 
+          company_url: 'https://www.niessnerlab.org/'
+          company_logo: niessnerlab
+          location: Munich, DE
+          date_start: '2021-04-01'
+          date_end: '2022-03-01'
+          description: |2-
+              * TODO
+        - title: Working Student
+          company: Visual Computing & Artificial Intelligence Lab, Technische Universität München
+          company_url: 'https://www.niessnerlab.org/'
+          company_logo: niessnerlab
+          location: Munich, DE
+          date_start: '2020-04-01'
+          date_end: '2022-09-01'
+          description: |2-
+              * Built a high-performance GPU cluster for the Deep Learning laboratory
+              * Built a frontend with vue.js and a backend for the cluster’s users
+        - title: Software Engineer
+          company: HELM Mobile Development
+          company_url: 'https://helm.cat/'
+          company_logo: helm
+          location: Barcelona, ES
+          date_start: '2018-09-01'
+          date_end: '2019-09-01'
+          description: |2-
+              * Android development with Kotlin
+              * Backend development with Kotlin
+              * Frontend development with vue.js
+        - title: Intern
+          company: European Organization for Nuclear Research (CERN)
+          company_url: 'https://home.cern/'
+          company_logo: cern
+          location: Geneva, CH
+          date_start: '2018-06-01'
+          date_end: '2018-09-01'
+          description: |2-
+              * Designed and built a cluster for the BE-OP-LHC team at CERN using Kubernetes
+        - title: Research Assistant
+          company: Polytechnical University of Catalonia, Barcelona Tech
+          company_url: 'https://www.fib.upc.edu/en/research/departments/computer-science'
+          company_logo: upc
+          location: Barcelona, ES
+          date_start: '2017-09-01'
+          date_end: '2018-01-01'
+          description: |2-
+              * Worked on a novel conversion of Binary Decision Trees to Conjunctive Normal Forms
+        - title: Intern
+          company: Ernst & Young
+          company_url: 'https://www.ey.com/'
+          company_logo: ey
+          location: Barcelona, ES
+          date_start: '2017-06-01'
+          date_end: '2017-09-01'
+          description: |2-
+              * Frontend and backend development
+        - title: Android Instructor
+          company: JEDI UPC
+          company_url: 'https://jediupc.com/'
+          company_logo: jedi
+          location: Barcelona, ES
+          date_start: '2017-01-01'
+          date_end: '2017-01-01'
+          description: |2-
+              * Taught a two-week course to introduction to Android development to 25+ students
     design:
       columns: '2'
+
   # - block: accomplishments
   #   content:
   #     # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
@@ -133,6 +192,7 @@ sections:
   #         url: ''
   #   design:
   #     columns: '2'
+
   - block: collection
     id: posts
     content:
@@ -160,6 +220,7 @@ sections:
       # Choose a layout view
       view: compact
       columns: '2'
+
   - block: portfolio
     id: projects
     content:
@@ -187,6 +248,21 @@ sections:
       view: showcase
       # For Showcase view, flip alternate rows?
       flip_alt_rows: false
+
+  - block: markdown
+    content:
+      title: Tags
+      subtitle: ''
+      text: |-
+        {{< list_tags >}}
+
+  - block: markdown
+    content:
+      title: Categories
+      subtitle: ''
+      text: |-
+        {{< list_categories >}}
+
   # - block: markdown
   #   content:
   #     title: Gallery
@@ -195,6 +271,7 @@ sections:
   #       {{< gallery album="demo" >}}
   #   design:
   #     columns: '1'
+
   # - block: collection
   #   id: featured
   #   content:
@@ -206,6 +283,7 @@ sections:
   #   design:
   #     columns: '2'
   #     view: card
+
   # - block: collection
   #   content:
   #     title: Recent Publications
@@ -220,6 +298,7 @@ sections:
   #   design:
   #     columns: '2'
   #     view: citation
+
   # - block: collection
   #   id: talks
   #   content:
@@ -230,11 +309,13 @@ sections:
   #   design:
   #     columns: '2'
   #     view: compact
+
   # - block: tag_cloud
   #   content:
   #     title: Popular Topics
   #   design:
   #     columns: '2'
+
   - block: contact
     id: contact
     content:
