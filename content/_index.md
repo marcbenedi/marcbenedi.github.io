@@ -324,7 +324,8 @@ sections:
       text: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
       # Contact (add or remove contact options as necessary)
-      email: marc(dot)benedi(at)tum(dot)de 
+      email: marc.benedi@tum.de 
+      # email: marc(dot)benedi(at)tum(dot)de 
       # phone: 888 888 88 88
       # appointment_url: 'https://calendly.com'
       # address:
@@ -339,10 +340,14 @@ sections:
       #   - 'Monday 10:00 to 13:00'
       #   - 'Wednesday 09:00 to 10:00'
       contact_links:
-        # - icon: twitter
-        #   icon_pack: fab
-        #   name: DM Me
-        #   link: 'https://twitter.com/marcbenedi'
+        - icon: twitter
+          icon_pack: fab
+          name: '@marcbenedi'
+          link: 'https://twitter.com/marcbenedi'
+        - icon: mastodon
+          icon_pack: fab
+          name: '@marcb@masto.ai'
+          link: 'https://masto.ai/@marcb'
         # - icon: skype
         #   icon_pack: fab
         #   name: Skype Me
@@ -352,7 +357,7 @@ sections:
         #   name: Zoom Me
         #   link: 'https://zoom.com'
       # Automatically link email and phone or display as text?
-      autolink: false
+      autolink: true
       # Email form provider
       # form:
       #   provider: netlify
