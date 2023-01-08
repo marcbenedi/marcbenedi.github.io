@@ -14,7 +14,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: PhD Candidate
+role: PhD Candidate @ <a href="https://niessnerlab.org/" target="_blank">Visual Computing Group</a>
 
 # Organizations/Affiliations to show in About widget
 organizations:
