@@ -36,7 +36,7 @@ education:
     - course: PhD in Computer Vision
       institution: Technische Universität München
       year: In Progress
-    - course: M.Sc in Computer Science
+    - course: M.Sc. in Computer Science
       institution: Technische Universität München
       year: 2022
     - course: BSc in Computer Science & Engineering
@@ -91,12 +91,21 @@ highlight_name: true
 <!-- {style="text-align: justify;"} -->
 </br>
 
-I am an M.Sc. student at the Technical University of Munich. In 2018, I received a Bachelor's Degree in Computer Science from the Polytechnical University of Catalonia, Barcelona Tech. From January 2018 until May 2018, I took part in the Erasmus mobility program, in which I was studying at the University of Edinburgh.
+I am a PhD candidate at [Matthias Nießner](http://niessnerlab.org/members/matthias_niessner/profile.html)'s [Visual Computing Group](http://niessnerlab.org/team.html), at the [Technical University of Munich](https://www.tum.de/). 
 {style="text-align: justify;"}
 
-I'm focusing on Computer Vision & Graphics, and Deep Learning areas. My current research interests are 3D Scanning, Computer Vision & Graphics and Visual Computing.
+I'm interested in computer vision, deep learning and optimization. My research is mostly focused on robust correspondence estimation for rigid 3D reconstruction.
 {style="text-align: justify;"}
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+Before joining the group, I received a Master's Degree in Computer Science from the [Technical University of Munich](https://www.tum.de/) and a Bachelor's Degree in Computer Science from the [Polytechnical University of Catalonia](https://www.tum.de/).
 {style="text-align: justify;"}
+
+<!-- I am an M.Sc. student at the Technical University of Munich. In 2018, I received a Bachelor's Degree in Computer Science from the Polytechnical University of Catalonia, Barcelona Tech. From January 2018 until May 2018, I took part in the Erasmus mobility program, in which I was studying at the University of Edinburgh. -->
+<!-- {style="text-align: justify;"} -->
+
+<!-- I'm focusing on Computer Vision & Graphics, and Deep Learning areas. My current research interests are 3D Scanning, Computer Vision & Graphics and Visual Computing. -->
+<!-- {style="text-align: justify;"} -->
+
+<!-- {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}. -->
+<!-- {style="text-align: justify;"} -->
 

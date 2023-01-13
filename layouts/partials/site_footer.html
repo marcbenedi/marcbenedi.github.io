@@ -13,7 +13,8 @@
   <p class="powered-by">
     {{ $is_sponsor := site.Params.i_am_a_sponsor | default true }}
     {{ $hide_published_with_footer := site.Params.power_ups.hide_published_with | default true }}
-    Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> - Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> - Powered by <a href="https://gohugo.io/">Hugo</a>
+    <!-- Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> - Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> - Powered by <a href="https://gohugo.io/">Hugo</a> -->
+    Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> | Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
     {{ if not (and $is_sponsor $hide_published_with_footer) }}
       {{ $default := "Published with {wowchemy} — the free, {repo_link}open source{/repo_link} website builder that empowers creators." }}
       {{ $i18n_published_with := i18n "published_with" | default $default }}
