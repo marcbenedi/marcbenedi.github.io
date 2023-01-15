@@ -4,7 +4,7 @@
 title: "Hackathon Hackupc 2016"
 summary: ""
 authors: []
-tags: ["Hackathon", "Web"]
+tags: ["B.Sc", "Hackathon", "Web"]
 categories: []
 date: 2016-02-19T17:37:24+01:00
 

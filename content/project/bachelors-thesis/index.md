@@ -4,7 +4,7 @@
 title: "Design of an environment for solving pseudo-Boolean optimization problems"
 summary: ""
 authors: []
-tags: ["Optimization", "SAT"]
+tags: ["B.Sc", "Optimization", "SAT"]
 categories: []
 date: 2018-06-26T20:05:18+01:00
 

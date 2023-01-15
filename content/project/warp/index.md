@@ -4,7 +4,7 @@
 title: "SLAM for autonomous vehicles"
 summary: ""
 authors: []
-tags: ["Computer Vision"]
+tags: ["M.Sc", "Computer Vision"]
 categories: []
 date: 2020-09-15T20:11:42+01:00
 

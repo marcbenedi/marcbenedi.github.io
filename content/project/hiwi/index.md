@@ -4,7 +4,7 @@
 title: "Slurm cluster setup with web dashboard"
 summary: ""
 authors: []
-tags: []
+tags: ["M.Sc"]
 categories: []
 date: 2023-01-06T17:36:11+01:00
 
