@@ -276,19 +276,19 @@ sections:
       # For Showcase view, flip alternate rows?
       flip_alt_rows: false
 
-  - block: markdown
-    content:
-      title: Tags
-      subtitle: ''
-      text: |-
-        {{< list_tags >}}
+  # - block: markdown
+  #   content:
+  #     title: Tags
+  #     subtitle: ''
+  #     text: |-
+  #       {{< list_tags >}}
 
-  - block: markdown
-    content:
-      title: Categories
-      subtitle: ''
-      text: |-
-        {{< list_categories >}}
+  # - block: markdown
+  #   content:
+  #     title: Categories
+  #     subtitle: ''
+  #     text: |-
+  #       {{< list_categories >}}
 
   # - block: markdown
   #   content:
