@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Back-End | Marc B</title>
+    <link>https://marcb.pro/tag/back-end/</link>
+      <atom:link href="https://marcb.pro/tag/back-end/index.xml" rel="self" type="application/rss+xml" />
+    <description>Back-End</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 12 Feb 2016 19:59:25 +0100</lastBuildDate>
+    <image>
+      <url>https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_512x512_fill_lanczos_center_3.png</url>
+      <title>Back-End</title>
+      <link>https://marcb.pro/tag/back-end/</link>
+    </image>
+    
+    <item>
+      <title>StirHack 2016</title>
+      <link>https://marcb.pro/project/hackathon-stirhack-2016/</link>
+      <pubDate>Fri, 12 Feb 2016 19:59:25 +0100</pubDate>
+      <guid>https://marcb.pro/project/hackathon-stirhack-2016/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Writing about StirHack16, the first hackathon I ever attended, brings me very good memories. In this page I will focus on the project itself, although some day I should write about the hackathon experience. 😃&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Android application with Google Maps API interface to help hackathon participants. The app provides the following information: List of upcoming hackathons, their position on Google Maps, and points of interest such as restaurants and hotels around the event.&lt;/p&gt;
+&lt;p&gt;For more information visit the &lt;a href=&#34;https://devpost.com/software/hackworld-gz18v7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;project&amp;rsquo;s page on Devpost&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /project/hackathon-stirhack-2016/tweet_hud4067377e6f941c58964826ef00f110c_142754_cb96ac78de0f3def16eb438622ba6941.webp 400w,
+               /project/hackathon-stirhack-2016/tweet_hud4067377e6f941c58964826ef00f110c_142754_c12bdbf40f9722c3c53976969874d4c1.webp 760w,
+               /project/hackathon-stirhack-2016/tweet_hud4067377e6f941c58964826ef00f110c_142754_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/hackathon-stirhack-2016/tweet_hud4067377e6f941c58964826ef00f110c_142754_cb96ac78de0f3def16eb438622ba6941.webp&#34;
+               width=&#34;356&#34;
+               height=&#34;508&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

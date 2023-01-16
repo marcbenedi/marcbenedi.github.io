@@ -4,7 +4,7 @@
 title: "Kinect Fusion: Dense Surface Mapping and Tracking"
 summary: "Implementation of the paper “Kinect Fusion: Real-Time Dense Surface Mapping and Tracking”"
 authors: []
-tags: ["M.Sc", "Computer Vision", "Computer Graphics"]
+tags: ["M.Sc", "Computer Vision", "3D Reconstruction"]
 categories: []
 date: 2021-03-27T17:56:52+01:00
 

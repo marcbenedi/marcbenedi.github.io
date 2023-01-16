@@ -83,7 +83,7 @@ sections:
           date_start: '2023-01-01'
           date_end: ''
           description: |2-
-              * TODO
+
         - title: Research Fellowship
           company: Visual Computing & Artificial Intelligence Lab, Technische Universität München 
           company_url: 'https://www.niessnerlab.org/'
@@ -265,10 +265,16 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
-        - name: Other
-          tag: Demo
+        - name: B.Sc
+          tag: 'B\.Sc'
+        - name: M.Sc
+          tag: 'M\.Sc'
+        - name: Computer Vision
+          tag: 'Computer Vision'
+        - name: Hackathon
+          tag: 'Hackathon'
+        - name: Android
+          tag: 'Android'
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
@@ -349,7 +355,7 @@ sections:
       title: Contact
       subtitle:
       text: |-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
+        Don't hesitate to reach out in any of the following ways! 
       # Contact (add or remove contact options as necessary)
       email: marc.benedi@tum.de 
       # email: marc(dot)benedi(at)tum(dot)de 

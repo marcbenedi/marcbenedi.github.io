@@ -4,7 +4,7 @@
 title: "StirHack 2016"
 summary: ""
 authors: []
-tags: ["B.Sc", "Hackathon", "Android"]
+tags: ["B.Sc", "Hackathon", "Android", "Back-End"]
 categories: []
 date: 2016-02-12T19:59:25+01:00
 

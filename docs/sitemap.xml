@@ -38,7 +38,7 @@
     <lastmod>2021-11-01T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/tag/computer-graphics/</loc>
+    <loc>https://marcb.pro/tag/3d-reconstruction/</loc>
     <lastmod>2021-03-27T17:56:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -48,6 +48,10 @@
   </url><url>
     <loc>https://marcb.pro/project/warp/</loc>
     <lastmod>2020-09-15T20:11:42+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/computer-graphics/</loc>
+    <lastmod>2020-04-27T20:09:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/project/idp/</loc>
@@ -103,6 +107,10 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/tag/android/</loc>
+    <lastmod>2016-02-12T19:59:25+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/back-end/</loc>
     <lastmod>2016-02-12T19:59:25+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
