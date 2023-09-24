@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: September 24, 2023 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.0f229d4b7ebad1917a9a357cba2effab.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Marc Benedí San Millán" />
+
+
+
+
+
+  
+
+<meta name="description" content="Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor.
+(The solution presented here also works for PyCharm[4]!" />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://marcb.pro/post/vscode-slurm/" />
+<link rel="canonical" href="https://marcb.pro/post/vscode-slurm/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" />
+<meta property="og:site_name" content="Marc B" />
+<meta property="og:url" content="https://marcb.pro/post/vscode-slurm/" />
+<meta property="og:title" content="Using VSCode in Slurm | Marc B" />
+<meta property="og:description" content="Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor.
+(The solution presented here also works for PyCharm[4]!" /><meta property="og:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2023-08-07T15:10:29&#43;02:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2023-08-07T15:10:29&#43;02:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcb.pro/post/vscode-slurm/"
+  },
+  "headline": "Using VSCode in Slurm",
+  
+  "image": [
+    "https://marcb.pro/post/vscode-slurm/featured.jpg"
+  ],
+  
+  "datePublished": "2023-08-07T15:10:29+02:00",
+  "dateModified": "2023-08-07T15:10:29+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Marc Benedí San Millán"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marc B",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Although I don\u0026rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor.\n(The solution presented here also works for PyCharm[4]!"
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Using VSCode in Slurm | Marc B</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="54309b017a1d0dbe44e3ffc7e91bd44e" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>About</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#experience"><span>Experience</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/marcbenedi" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Using VSCode in Slurm</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Aug 7, 2023
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 629px; max-height: 217px;">
+  <div style="position: relative">
+    <img src="/post/vscode-slurm/featured_hu2d58490c1104482723f32df43054a5a5_15378_720x2500_fit_q75_h2_lanczos.webp" width="629" height="217" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Although I don&rsquo;t use Visual Studio Code[<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">1</a>] as a code editor (I use Neovim[<a href="https://www.lunarvim.org/" target="_blank" rel="noopener">2</a>] 🦸), many colleagues use it as their primary editor.</p>
+<p>(The solution presented here also works for PyCharm[<a href="https://www.jetbrains.com/help/pycharm/getting-started.html" target="_blank" rel="noopener">4</a>]!)</p>
+<h2 id="the-problem">The problem</h2>
+<p>To develop in our Slurm[<a href="https://slurm.schedmd.com/" target="_blank" rel="noopener">3</a>] cluster, the users connect the VSCode to the &ldquo;Login node&rdquo; which starts the <code>vscode-server</code> process.</p>
+<p>This is not a problem by itself, but when many users do it simultaneously, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.</p>
+<p>Additionally, this setup only allows for editing the code, not for executing (or at least I hope they are not running code in the &ldquo;Login node&rdquo; 🤞) or even debugging.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="htop" srcset="
+               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp 400w,
+               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_aad60294c02d5bec57d3844df23dce14.webp 760w,
+               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp"
+               width="760"
+               height="492"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      The Login Node is full of <code>vscode-server</code> processes from many users taking 30GB of memory!
+    </figcaption></figure>
+</p>
+<h2 id="advantages">Advantages</h2>
+<p>In the following sections, I will explain how to run VSCode inside Slurm[<a href="https://slurm.schedmd.com/" target="_blank" rel="noopener">3</a>].</p>
+<p>This solves the problem of adding load to the login node. Additionally, since the code editor process will live inside a Slurm job, we will be able to debug and run code directly in the job. That&rsquo;s very convenient!</p>
+<h2 id="-the-easy-solution-vscode-on-the-web">🧑‍💻 The easy solution: VSCode on the web!</h2>
+<p>This solution is super simple to set up! It consists of running <code>code-server</code>[<a href="https://coder.com/docs/code-server/latest" target="_blank" rel="noopener">5</a>] as a Slurm job and accessing it through the web browser.</p>
+<p>First, we need to install the binary in our system. There are many options for that, so just pick up the most convenient for you. See the list of options <a href="https://coder.com/docs/code-server/latest/install" target="_blank" rel="noopener">here</a>. In my case, I choose the <code>Standalone release</code> and put the binary in my path.</p>
+<p>Second, we will create a job file, for example <code>code-server.job</code>, with the following content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash 
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --job-name=code-server</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --time=04:00:00</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --output=%x_%j_%N.log </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --mem=8gb </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --gpus=1 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --cpus-per-task=4 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH -p submit</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="nv">PASSWORD</span><span class="o">=</span><span class="m">1234</span> <span class="c1"># TODO: Change to secure password</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PORT</span><span class="o">=</span><span class="k">$(</span>python -c <span class="s1">&#39;import socket; s=socket.socket(); s.bind((&#34;&#34;, 0)); print(s.getsockname()[1]); s.close()&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;********************************************************************&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Starting code-server in Slurm&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Environment information:&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Date:&#34;</span> <span class="k">$(</span>date<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Allocated node:&#34;</span> <span class="k">$(</span>hostname<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Node IP:&#34;</span> <span class="k">$(</span>ip a <span class="p">|</span> grep 131.159<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Path:&#34;</span> <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Password to access VSCode:&#34;</span> <span class="nv">$PASSWORD</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Listening on:&#34;</span> <span class="nv">$PORT</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;********************************************************************&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">PASSWORD</span><span class="o">=</span><span class="nv">$PASSWORD</span> code-server --bind-addr 0.0.0.0:<span class="nv">$PORT</span> --auth password --disable-telemetry
+</span></span></code></pre></div><p>❗ Remember to change the password! ❗</p>
+<p>Finally, once the job has started, we can open the editor using any web browser and navigating to the <code>IP</code> of the node and the <code>PORT</code>.</p>
+<p>That&rsquo;s it!</p>
+<p>If the node is not accessible from the Internet, use port-forwarding <a href="https://coder.com/docs/code-server/latest/guide#port-forwarding-via-ssh" target="_blank" rel="noopener">https://coder.com/docs/code-server/latest/guide#port-forwarding-via-ssh</a>.</p>
+<h2 id="-the-complex-solution-start-your-own-sshd-process">👷 The complex solution: Start your own <code>sshd</code> process</h2>
+<p>If you are up for a more complex solution or use other IDEs like PyCharm, you can use the next configuration. It involves starting <code>sshd</code> in a Slurm  job and then connecting our IDEs to the new process (instead of the global <code>sshd</code> process).</p>
+<h3 id="step-1-create-the-ssh-keys">Step 1: Create the SSH keys</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -f .ssh/vcg_cluster_user_sshd
+</span></span></code></pre></div><p>Then, copy the generated keys to the login node. (We assume here that the user&rsquo;s home directories are accessible on all nodes).</p>
+<h3 id="step-2-sshd-slurm-job">Step 2: <code>sshd</code> Slurm job</h3>
+<p>Copy the following content to a new file such as <code>sshd.job</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash 
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --job-name=sshd</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --time=04:00:00</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --output=%x_%j_%N.log </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --mem=8gb </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --gpus=1 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --cpus-per-task=4 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#SBATCH -p submit</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="nv">PORT</span><span class="o">=</span><span class="k">$(</span>python -c <span class="s1">&#39;import socket; s=socket.socket(); s.bind((&#34;&#34;, 0)); print(s.getsockname()[1]); s.close()&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;********************************************************************&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Starting sshd in Slurm as user&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Environment information:&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Date:&#34;</span> <span class="k">$(</span>date<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Allocated node:&#34;</span> <span class="k">$(</span>hostname<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Node IP:&#34;</span> <span class="k">$(</span>ip a <span class="p">|</span> grep 131.159<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Path:&#34;</span> <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Listening on:&#34;</span> <span class="nv">$PORT</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;********************************************************************&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/sbin/sshd -D -p <span class="si">${</span><span class="nv">PORT</span><span class="si">}</span> -f /dev/null -h <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.ssh/vcg_cluster_user_sshd
+</span></span></code></pre></div><h3 id="step-3-test-the-connection">Step 3: Test the connection</h3>
+<p>At this point, you should be able to connect using ssh to the Slurm job.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh user@node -p &lt;PORT where the server started&gt; -i ~/.ssh/vcg_cluster_user_sshd
+</span></span></code></pre></div><p>Notice that the ssh session can only see the resources allocated to the job (for example the gpus).</p>
+<h3 id="step-4-connect-your-ide">Step 4: Connect your IDE</h3>
+<p>Finally, use your IDEs &ldquo;Remote Connection&rdquo; feature to connect to the job.</p>
+<h3 id="step-5-remember-to-end-the-sshd-process">Step 5: Remember to end the <code>sshd</code> process</h3>
+<p>It is important to cancel the Slurm job when we don&rsquo;t need the <code>sshd</code> listening anymore.</p>
+<h2 id="-references">📑 References</h2>
+<p>[<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">1</a>]: <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a></p>
+<p>[<a href="https://www.lunarvim.org/" target="_blank" rel="noopener">2</a>]: <a href="https://www.lunarvim.org/" target="_blank" rel="noopener">https://www.lunarvim.org/</a></p>
+<p>[<a href="https://slurm.schedmd.com/" target="_blank" rel="noopener">3</a>]: <a href="https://slurm.schedmd.com/" target="_blank" rel="noopener">https://slurm.schedmd.com/</a></p>
+<p>[<a href="https://www.jetbrains.com/help/pycharm/getting-started.html" target="_blank" rel="noopener">4</a>]: <a href="https://www.jetbrains.com/help/pycharm/getting-started.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/pycharm/getting-started.html</a></p>
+<p>[<a href="https://coder.com/docs/code-server/latest" target="_blank" rel="noopener">5</a>]: <a href="https://coder.com/docs/code-server/latest" target="_blank" rel="noopener">https://coder.com/docs/code-server/latest</a></p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/slurm/">Slurm</a>
+  
+  <a class="badge badge-light" href="/tag/vscode/">VSCode</a>
+  
+  <a class="badge badge-light" href="/tag/pycharm/">PyCharm</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmarcb.pro%2Fpost%2Fvscode-slurm%2F&amp;text=Using&#43;VSCode&#43;in&#43;Slurm" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmarcb.pro%2Fpost%2Fvscode-slurm%2F&amp;t=Using&#43;VSCode&#43;in&#43;Slurm" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Using%20VSCode%20in%20Slurm&amp;body=https%3A%2F%2Fmarcb.pro%2Fpost%2Fvscode-slurm%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fmarcb.pro%2Fpost%2Fvscode-slurm%2F&amp;title=Using&#43;VSCode&#43;in&#43;Slurm" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Using&#43;VSCode&#43;in&#43;Slurm%20https%3A%2F%2Fmarcb.pro%2Fpost%2Fvscode-slurm%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fmarcb.pro%2Fpost%2Fvscode-slurm%2F&amp;title=Using&#43;VSCode&#43;in&#43;Slurm" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huef7c1eccb0931f64491b6b3e31b78bc7_139904_270x270_fill_q75_lanczos_center.jpg" alt="Marc Benedí San Millán"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://marcb.pro/">Marc Benedí San Millán</a></h5>
+      <h6 class="card-subtitle">PhD Candidate @ <a href="https://niessnerlab.org/" target="_blank">Visual Computing Group</a></h6>
+      <p class="card-text">My research interests include Computer Vision, Computer Graphics and Deep Learning.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/marcbenedi/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2023 marcb.pro. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> | Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.32ee83730ed883becad04bc5170512cc.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.91534f6cb18c3621254d412c69186d7c.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

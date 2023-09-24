@@ -10,6 +10,30 @@
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://marcb.pro/post/</loc>
+    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/pycharm/</loc>
+    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/slurm/</loc>
+    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tags/</loc>
+    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/post/vscode-slurm/</loc>
+    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/vscode/</loc>
+    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://marcb.pro/</loc>
     <lastmod>2022-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,10 +55,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/project/</loc>
-    <lastmod>2021-11-01T00:00:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tags/</loc>
     <lastmod>2021-11-01T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -142,9 +162,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/categories/</loc>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/post/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PyCharm | Marc B</title>
+    <link>https://marcb.pro/tag/pycharm/</link>
+      <atom:link href="https://marcb.pro/tag/pycharm/index.xml" rel="self" type="application/rss+xml" />
+    <description>PyCharm</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Aug 2023 15:10:29 +0200</lastBuildDate>
+    <image>
+      <url>https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_512x512_fill_lanczos_center_3.png</url>
+      <title>PyCharm</title>
+      <link>https://marcb.pro/tag/pycharm/</link>
+    </image>
+    
+    <item>
+      <title>Using VSCode in Slurm</title>
+      <link>https://marcb.pro/post/vscode-slurm/</link>
+      <pubDate>Mon, 07 Aug 2023 15:10:29 +0200</pubDate>
+      <guid>https://marcb.pro/post/vscode-slurm/</guid>
+      <description>&lt;p&gt;Although I don&amp;rsquo;t use Visual Studio Code[&lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;] as a code editor (I use Neovim[&lt;a href=&#34;https://www.lunarvim.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;] 🦸), many colleagues use it as their primary editor.&lt;/p&gt;
+&lt;p&gt;(The solution presented here also works for PyCharm[&lt;a href=&#34;https://www.jetbrains.com/help/pycharm/getting-started.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4&lt;/a&gt;]!)&lt;/p&gt;
+&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
+&lt;p&gt;To develop in our Slurm[&lt;a href=&#34;https://slurm.schedmd.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3&lt;/a&gt;] cluster, the users connect the VSCode to the &amp;ldquo;Login node&amp;rdquo; which starts the &lt;code&gt;vscode-server&lt;/code&gt; process.&lt;/p&gt;
+&lt;p&gt;This is not a problem by itself, but when many users do it simultaneously, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.&lt;/p&gt;
+&lt;p&gt;Additionally, this setup only allows for editing the code, not for executing (or at least I hope they are not running code in the &amp;ldquo;Login node&amp;rdquo; 🤞) or even debugging.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;htop&#34; srcset=&#34;
+               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp 400w,
+               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_aad60294c02d5bec57d3844df23dce14.webp 760w,
+               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;492&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      The Login Node is full of &lt;code&gt;vscode-server&lt;/code&gt; processes from many users taking 30GB of memory!
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;advantages&#34;&gt;Advantages&lt;/h2&gt;
+&lt;p&gt;In the following sections, I will explain how to run VSCode inside Slurm[&lt;a href=&#34;https://slurm.schedmd.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;This solves the problem of adding load to the login node. Additionally, since the code editor process will live inside a Slurm job, we will be able to debug and run code directly in the job. That&amp;rsquo;s very convenient!&lt;/p&gt;
+&lt;h2 id=&#34;-the-easy-solution-vscode-on-the-web&#34;&gt;🧑‍💻 The easy solution: VSCode on the web!&lt;/h2&gt;
+&lt;p&gt;This solution is super simple to set up! It consists of running &lt;code&gt;code-server&lt;/code&gt;[&lt;a href=&#34;https://coder.com/docs/code-server/latest&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;5&lt;/a&gt;] as a Slurm job and accessing it through the web browser.&lt;/p&gt;
+&lt;p&gt;First, we need to install the binary in our system. There are many options for that, so just pick up the most convenient for you. See the list of options &lt;a href=&#34;https://coder.com/docs/code-server/latest/install&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. In my case, I choose the &lt;code&gt;Standalone release&lt;/code&gt; and put the binary in my path.&lt;/p&gt;
+&lt;p&gt;Second, we will create a job file, for example &lt;code&gt;code-server.job&lt;/code&gt;, with the following content:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --job-name=code-server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --time=04:00:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --output=%x_%j_%N.log &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --mem=8gb &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --gpus=1 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --cpus-per-task=4 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH -p submit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1234&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# TODO: Change to secure password&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;PORT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;python -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;import socket; s=socket.socket(); s.bind((&amp;#34;&amp;#34;, 0)); print(s.getsockname()[1]); s.close()&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;********************************************************************&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Starting code-server in Slurm&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Environment information:&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Date:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Allocated node:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;hostname&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Node IP:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;ip a &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep 131.159&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Path:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Password to access VSCode:&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$PASSWORD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Listening on:&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$PORT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;********************************************************************&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PASSWORD&lt;/span&gt; code-server --bind-addr 0.0.0.0:&lt;span class=&#34;nv&#34;&gt;$PORT&lt;/span&gt; --auth password --disable-telemetry
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;❗ Remember to change the password! ❗&lt;/p&gt;
+&lt;p&gt;Finally, once the job has started, we can open the editor using any web browser and navigating to the &lt;code&gt;IP&lt;/code&gt; of the node and the &lt;code&gt;PORT&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it!&lt;/p&gt;
+&lt;p&gt;If the node is not accessible from the Internet, use port-forwarding &lt;a href=&#34;https://coder.com/docs/code-server/latest/guide#port-forwarding-via-ssh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://coder.com/docs/code-server/latest/guide#port-forwarding-via-ssh&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;-the-complex-solution-start-your-own-sshd-process&#34;&gt;👷 The complex solution: Start your own &lt;code&gt;sshd&lt;/code&gt; process&lt;/h2&gt;
+&lt;p&gt;If you are up for a more complex solution or use other IDEs like PyCharm, you can use the next configuration. It involves starting &lt;code&gt;sshd&lt;/code&gt; in a Slurm  job and then connecting our IDEs to the new process (instead of the global &lt;code&gt;sshd&lt;/code&gt; process).&lt;/p&gt;
+&lt;h3 id=&#34;step-1-create-the-ssh-keys&#34;&gt;Step 1: Create the SSH keys&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t rsa -f .ssh/vcg_cluster_user_sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, copy the generated keys to the login node. (We assume here that the user&amp;rsquo;s home directories are accessible on all nodes).&lt;/p&gt;
+&lt;h3 id=&#34;step-2-sshd-slurm-job&#34;&gt;Step 2: &lt;code&gt;sshd&lt;/code&gt; Slurm job&lt;/h3&gt;
+&lt;p&gt;Copy the following content to a new file such as &lt;code&gt;sshd.job&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --job-name=sshd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --time=04:00:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --output=%x_%j_%N.log &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --mem=8gb &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --gpus=1 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH --cpus-per-task=4 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#SBATCH -p submit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;PORT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;python -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;import socket; s=socket.socket(); s.bind((&amp;#34;&amp;#34;, 0)); print(s.getsockname()[1]); s.close()&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;********************************************************************&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Starting sshd in Slurm as user&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Environment information:&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Date:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Allocated node:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;hostname&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Node IP:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;ip a &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep 131.159&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Path:&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Listening on:&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$PORT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;********************************************************************&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/sbin/sshd -D -p &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PORT&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; -f /dev/null -h &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.ssh/vcg_cluster_user_sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;step-3-test-the-connection&#34;&gt;Step 3: Test the connection&lt;/h3&gt;
+&lt;p&gt;At this point, you should be able to connect using ssh to the Slurm job.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh user@node -p &amp;lt;PORT where the server started&amp;gt; -i ~/.ssh/vcg_cluster_user_sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Notice that the ssh session can only see the resources allocated to the job (for example the gpus).&lt;/p&gt;
+&lt;h3 id=&#34;step-4-connect-your-ide&#34;&gt;Step 4: Connect your IDE&lt;/h3&gt;
+&lt;p&gt;Finally, use your IDEs &amp;ldquo;Remote Connection&amp;rdquo; feature to connect to the job.&lt;/p&gt;
+&lt;h3 id=&#34;step-5-remember-to-end-the-sshd-process&#34;&gt;Step 5: Remember to end the &lt;code&gt;sshd&lt;/code&gt; process&lt;/h3&gt;
+&lt;p&gt;It is important to cancel the Slurm job when we don&amp;rsquo;t need the &lt;code&gt;sshd&lt;/code&gt; listening anymore.&lt;/p&gt;
+&lt;h2 id=&#34;-references&#34;&gt;📑 References&lt;/h2&gt;
+&lt;p&gt;[&lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;]: &lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://code.visualstudio.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://www.lunarvim.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;]: &lt;a href=&#34;https://www.lunarvim.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.lunarvim.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://slurm.schedmd.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3&lt;/a&gt;]: &lt;a href=&#34;https://slurm.schedmd.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://slurm.schedmd.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://www.jetbrains.com/help/pycharm/getting-started.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4&lt;/a&gt;]: &lt;a href=&#34;https://www.jetbrains.com/help/pycharm/getting-started.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.jetbrains.com/help/pycharm/getting-started.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://coder.com/docs/code-server/latest&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;5&lt;/a&gt;]: &lt;a href=&#34;https://coder.com/docs/code-server/latest&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://coder.com/docs/code-server/latest&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
