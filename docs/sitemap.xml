@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://marcb.pro/talk/example-talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>https://marcb.pro/teaching/3d_scanning_motion_capture/</loc>
+    <lastmod>2023-10-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/event/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>https://marcb.pro/teaching/</loc>
+    <lastmod>2023-10-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/post/</loc>
@@ -86,34 +86,6 @@
     <lastmod>2020-04-27T20:09:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/publication-type/3/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/publication/preprint/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/publication_types/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/publication/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tag/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/tag/b.sc/</loc>
     <lastmod>2018-06-26T20:05:18+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -142,26 +114,19 @@
     <lastmod>2016-02-12T19:59:25+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/publication-type/2/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/publication/journal-article/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/publication-type/1/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/publication/conference-paper/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/admin/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/categories/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/publication_types/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/publication/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/event/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
