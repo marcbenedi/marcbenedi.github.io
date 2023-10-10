@@ -283,6 +283,22 @@ sections:
       # For Showcase view, flip alternate rows?
       flip_alt_rows: false
 
+  - block: collection
+    id: teaching
+    content:
+      title: Teaching
+      subtitle: ''
+      text: ''
+      count: 5
+      filters:
+        folders:
+          - teaching
+      sort_by: 'Date'
+      sort_ascending: false
+    design:
+      view: compact
+      columns: '1'
+
   # - block: markdown
   #   content:
   #     title: Tags
