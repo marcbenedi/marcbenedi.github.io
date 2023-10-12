@@ -1,7 +1,7 @@
 ---
 title: "3D Scanning & Motion Capture (IN2354)"
 subtitle: ""
-summary: "Winter Semester 2024"
+summary: "Winter Semester 23/24"
 authors: []
 tags: []
 categories: []
