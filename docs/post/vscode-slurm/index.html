@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: October 12, 2023 --><html lang="en-us" >
+<!-- Last Published: October 13, 2023 --><html lang="en-us" >
 
 
 <head>
@@ -279,8 +279,7 @@
 
   
 
-<meta name="description" content="Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor.
-(The solution presented here also works for PyCharm[4]!" />
+<meta name="description" content="Table of Contents The problem Advantages 🧑‍💻 The easy solution: VSCode on the web! 👷 The complex solution: Start your own sshd process Step 1: Create the SSH keys Step 2: sshd Slurm job Step 3: Test the connection Step 4: Connect your IDE Step 5: Remember to end the sshd process 📑 References Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." />
 
 
 
@@ -319,8 +318,7 @@
 <meta property="og:site_name" content="Marc B" />
 <meta property="og:url" content="https://marcb.pro/post/vscode-slurm/" />
 <meta property="og:title" content="Using VSCode in Slurm | Marc B" />
-<meta property="og:description" content="Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor.
-(The solution presented here also works for PyCharm[4]!" /><meta property="og:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Table of Contents The problem Advantages 🧑‍💻 The easy solution: VSCode on the web! 👷 The complex solution: Start your own sshd process Step 1: Create the SSH keys Step 2: sshd Slurm job Step 3: Test the connection Step 4: Connect your IDE Step 5: Remember to end the sshd process 📑 References Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." /><meta property="og:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -379,7 +377,7 @@
       "url": "https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Although I don\u0026rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor.\n(The solution presented here also works for PyCharm[4]!"
+  "description": "Table of Contents The problem Advantages 🧑‍💻 The easy solution: VSCode on the web! 👷 The complex solution: Start your own sshd process Step 1: Create the SSH keys Step 2: sshd Slurm job Step 3: Test the connection Step 4: Connect your IDE Step 5: Remember to end the sshd process 📑 References Although I don\u0026rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor."
 }
 </script>
 
@@ -935,7 +933,30 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Although I don&rsquo;t use Visual Studio Code[<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">1</a>] as a code editor (I use Neovim[<a href="https://www.lunarvim.org/" target="_blank" rel="noopener">2</a>] 🦸), many colleagues use it as their primary editor.</p>
+      
+
+<details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">Table of Contents</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#advantages">Advantages</a></li>
+    <li><a href="#-the-easy-solution-vscode-on-the-web">🧑‍💻 The easy solution: VSCode on the web!</a></li>
+    <li><a href="#-the-complex-solution-start-your-own-sshd-process">👷 The complex solution: Start your own <code>sshd</code> process</a>
+      <ul>
+        <li><a href="#step-1-create-the-ssh-keys">Step 1: Create the SSH keys</a></li>
+        <li><a href="#step-2-sshd-slurm-job">Step 2: <code>sshd</code> Slurm job</a></li>
+        <li><a href="#step-3-test-the-connection">Step 3: Test the connection</a></li>
+        <li><a href="#step-4-connect-your-ide">Step 4: Connect your IDE</a></li>
+        <li><a href="#step-5-remember-to-end-the-sshd-process">Step 5: Remember to end the <code>sshd</code> process</a></li>
+      </ul>
+    </li>
+    <li><a href="#-references">📑 References</a></li>
+  </ul>
+</nav>
+</details>
+
+<p>Although I don&rsquo;t use Visual Studio Code[<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">1</a>] as a code editor (I use Neovim[<a href="https://www.lunarvim.org/" target="_blank" rel="noopener">2</a>] 🦸), many colleagues use it as their primary editor.</p>
 <p>(The solution presented here also works for PyCharm[<a href="https://www.jetbrains.com/help/pycharm/getting-started.html" target="_blank" rel="noopener">4</a>]!)</p>
 <h2 id="the-problem">The problem</h2>
 <p>To develop in our Slurm[<a href="https://slurm.schedmd.com/" target="_blank" rel="noopener">3</a>] cluster, the users connect the VSCode to the &ldquo;Login node&rdquo; which starts the <code>vscode-server</code> process.</p>

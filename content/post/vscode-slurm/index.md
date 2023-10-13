@@ -28,6 +28,8 @@ image:
 projects: []
 ---
 
+{{< toc >}}
+
 
 Although I don't use Visual Studio Code[[1]] as a code editor (I use Neovim[[2]] 🦸), many colleagues use it as their primary editor. 
 
