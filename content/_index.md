@@ -65,7 +65,7 @@ sections:
   - block: experience
     id: experience
     content:
-      title: Experience
+      title: 👷‍♂ Experience
       # Date format for experience
       #   Refer to https://wowchemy.com/docs/customization/#date-format
       date_format: Jan 2006
@@ -223,7 +223,7 @@ sections:
   - block: collection
     id: posts
     content:
-      title: Recent Posts
+      title: 📰 Recent Posts
       subtitle: ''
       text: ''
       link: posts/
@@ -252,7 +252,7 @@ sections:
   - block: portfolio
     id: projects
     content:
-      title: Projects
+      title: 🏗️ Projects
       filters:
         folders:
           - project
@@ -286,7 +286,7 @@ sections:
   - block: collection
     id: teaching
     content:
-      title: Teaching
+      title: 👨‍🏫 Teaching
       subtitle: ''
       text: ''
       count: 5
@@ -369,7 +369,7 @@ sections:
   - block: contact
     id: contact
     content:
-      title: Contact
+      title: 📫 Contact
       subtitle:
       text: |-
         Don't hesitate to reach out in any of the following ways! 
