@@ -16,9 +16,9 @@ slides:
   highlight_style: dracula
 ---
 
-# Create slides in Markdown with Wowchemy
+# Create slides in Markdown with Hugo Blox Builder
 
-[Wowchemy](https://wowchemy.com/) | [Documentation](https://wowchemy.com/docs/content/slides/)
+[Hugo Blox Builder](https://hugoblox.com/) | [Documentation](https://docs.hugoblox.com/content/slides/)
 
 ---
 
@@ -169,4 +169,4 @@ Create `assets/css/reveal_custom.css` with:
 
 [Ask](https://discord.gg/z8wNYzb)
 
-[Documentation](https://wowchemy.com/docs/content/slides/)
+[Documentation](https://docs.hugoblox.com/content/slides/)
