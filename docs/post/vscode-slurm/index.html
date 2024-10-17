@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: May 2, 2024 --><html lang="en-us" >
+<!-- Last Published: October 17, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -265,6 +265,7 @@
 
 
 
+
   
   
   
@@ -282,7 +283,28 @@
 
   
 
-<meta name="description" content="Table of Contents The problem Advantages 🧑‍💻 The easy solution: VSCode on the web! 👷 The complex solution: Start your own sshd process Step 1: Create the SSH keys Step 2: sshd Slurm job Step 3: Test the connection Step 4: Connect your IDE Step 5: Remember to end the sshd process 📑 References Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." />
+<meta name="description" content="
+  Table of Contents
+  
+  
+    The problem
+    Advantages
+    🧑‍💻 The easy solution: VSCode on the web!
+    👷 The complex solution: Start your own sshd process
+      
+        Step 1: Create the SSH keys
+        Step 2: sshd Slurm job
+        Step 3: Test the connection
+        Step 4: Connect your IDE
+        Step 5: Remember to end the sshd process
+      
+    
+    📑 References
+  
+
+
+
+Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." />
 
 
 
@@ -295,8 +317,8 @@
 
 
 
-<link rel="icon" type="image/png" href="/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_32x32_fill_lanczos_center_3.png" />
-<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_180x180_fill_lanczos_center_3.png" />
+<link rel="icon" type="image/png" href="/media/icon_hu82380365825469734.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu12672438894742618941.png" />
 
 <meta name="theme-color" content="#1565c0" />
 
@@ -327,7 +349,28 @@
 <meta property="og:site_name" content="Marc B" />
 <meta property="og:url" content="https://marcb.pro/post/vscode-slurm/" />
 <meta property="og:title" content="Using VSCode in Slurm | Marc B" />
-<meta property="og:description" content="Table of Contents The problem Advantages 🧑‍💻 The easy solution: VSCode on the web! 👷 The complex solution: Start your own sshd process Step 1: Create the SSH keys Step 2: sshd Slurm job Step 3: Test the connection Step 4: Connect your IDE Step 5: Remember to end the sshd process 📑 References Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." /><meta property="og:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="
+  Table of Contents
+  
+  
+    The problem
+    Advantages
+    🧑‍💻 The easy solution: VSCode on the web!
+    👷 The complex solution: Start your own sshd process
+      
+        Step 1: Create the SSH keys
+        Step 2: sshd Slurm job
+        Step 3: Test the connection
+        Step 4: Connect your IDE
+        Step 5: Remember to end the sshd process
+      
+    
+    📑 References
+  
+
+
+
+Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." /><meta property="og:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -383,10 +426,10 @@
     "name": "Marc B",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_192x192_fill_lanczos_center_3.png"
+      "url": "https://marcb.pro/media/icon_hu7412274475904707120.png"
     }
   },
-  "description": "Table of Contents The problem Advantages 🧑‍💻 The easy solution: VSCode on the web! 👷 The complex solution: Start your own sshd process Step 1: Create the SSH keys Step 2: sshd Slurm job Step 3: Test the connection Step 4: Connect your IDE Step 5: Remember to end the sshd process 📑 References Although I don\u0026rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor."
+  "description": "\u003cdetails class=\"toc-inpage d-print-none  \" open\u003e\n  \u003csummary class=\"font-weight-bold\"\u003eTable of Contents\u003c/summary\u003e\n  \u003cnav id=\"TableOfContents\"\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\"#the-problem\"\u003eThe problem\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#advantages\"\u003eAdvantages\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-easy-solution-vscode-on-the-web\"\u003e🧑‍💻 The easy solution: VSCode on the web!\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-complex-solution-start-your-own-sshd-process\"\u003e👷 The complex solution: Start your own \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\"#step-1-create-the-ssh-keys\"\u003eStep 1: Create the SSH keys\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-2-sshd-slurm-job\"\u003eStep 2: \u003ccode\u003esshd\u003c/code\u003e Slurm job\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-3-test-the-connection\"\u003eStep 3: Test the connection\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-4-connect-your-ide\"\u003eStep 4: Connect your IDE\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-5-remember-to-end-the-sshd-process\"\u003eStep 5: Remember to end the \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-references\"\u003e📑 References\u003c/a\u003e\u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/nav\u003e\n\u003c/details\u003e\n\n\u003cp\u003eAlthough I don\u0026rsquo;t use Visual Studio Code[\u003ca href=\"https://code.visualstudio.com/\" target=\"_blank\" rel=\"noopener\"\u003e1\u003c/a\u003e] as a code editor (I use Neovim[\u003ca href=\"https://www.lunarvim.org/\" target=\"_blank\" rel=\"noopener\"\u003e2\u003c/a\u003e] 🦸), many colleagues use it as their primary editor.\u003c/p\u003e"
 }
 </script>
 
@@ -933,7 +976,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 629px; max-height: 217px;">
   <div style="position: relative">
-    <img src="/post/vscode-slurm/featured_hu2d58490c1104482723f32df43054a5a5_15378_26185de383a0056f2cebddcfad9a8469.webp" width="629" height="217" alt="" class="featured-image">
+    <img src="/post/vscode-slurm/featured_hu9735174471507816190.webp" width="629" height="217" alt="" class="featured-image">
     
   </div>
 </div>
@@ -991,10 +1034,10 @@
 <figure  id="figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="htop" srcset="
-               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp 400w,
-               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_aad60294c02d5bec57d3844df23dce14.webp 760w,
-               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
-               src="/post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp"
+               /post/vscode-slurm/htop_hu8494327152023964508.webp 400w,
+               /post/vscode-slurm/htop_hu6760754647867626513.webp 760w,
+               /post/vscode-slurm/htop_hu9606479908353669952.webp 1200w"
+               src="/post/vscode-slurm/htop_hu8494327152023964508.webp"
                width="760"
                height="492"
                loading="lazy" data-zoomable /></div>
@@ -1242,7 +1285,7 @@
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huef7c1eccb0931f64491b6b3e31b78bc7_139904_270x270_fill_q75_lanczos_center.jpg" alt="Marc Benedí San Millán"></a>
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu3483359593397361900.jpg" alt="Marc Benedí San Millán"></a>
     
 
     <div class="media-body">
@@ -1437,17 +1480,12 @@
   <p class="powered-by">
     
     
-    
-      
-      
-      
-      
-      
-      
-      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> | Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
+
     
   </p>
 </footer>
+
 
     </div>
     
@@ -1456,7 +1494,7 @@
   
 
 
-<script src="/js/vendor-bundle.min.ff7771056d34ad9f2de2d8f6a466e748.js"></script>
+<script src="/js/vendor-bundle.min.50933d940896e49f984a778650d5f7f5.js"></script>
 
 
 

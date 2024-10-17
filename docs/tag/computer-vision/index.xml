@@ -7,7 +7,7 @@
     <description>Computer Vision</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0100</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_512x512_fill_lanczos_center_3.png</url>
+      <url>https://marcb.pro/media/icon_hu7278467068447599620.png</url>
       <title>Computer Vision</title>
       <link>https://marcb.pro/tag/computer-vision/</link>
     </image>
@@ -37,10 +37,10 @@
 &lt;figure  id=&#34;figure-pipeline-of-our-method-given-a-pair-of-rgb-d-images-i1-d1-i2-d2-we-estimate-the-relative-pose-between-these-frames-as-r-in-so3-and-t-in-r3--first-i1-i2-are-fed-into-the-correspondence-and-visibility-prediction-component-the-visible-predicted-correspondences-are-weighted-in-the-correspondence-weighting-component-finally-they-are-back-projected-into-3d-and-feed-into-the-weighted-procrustes-aligner-which-estimates-the-relative-pose&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Components of the network&#34; srcset=&#34;
-               /project/gr/components_hu72fee0d4c4ad89edfe762f1a6a0f9247_155348_4ec1a5759ecd3cd05be370093352a715.webp 400w,
-               /project/gr/components_hu72fee0d4c4ad89edfe762f1a6a0f9247_155348_1c6cf721cf8606b40fd2abad0941feff.webp 760w,
-               /project/gr/components_hu72fee0d4c4ad89edfe762f1a6a0f9247_155348_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/gr/components_hu72fee0d4c4ad89edfe762f1a6a0f9247_155348_4ec1a5759ecd3cd05be370093352a715.webp&#34;
+               /project/gr/components_hu15904271227194171968.webp 400w,
+               /project/gr/components_hu10364728518287782599.webp 760w,
+               /project/gr/components_hu16217144426837872915.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/gr/components_hu15904271227194171968.webp&#34;
                width=&#34;581&#34;
                height=&#34;372&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -92,10 +92,10 @@
 &lt;figure  id=&#34;figure-a-caption&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;A caption&#34; srcset=&#34;
-               /project/kinect-fusion/sidebyside_hucf10c783d6407f1a6f352ff6166590d6_121387_c8414a75cc17b5333eebcb8d35713c33.webp 400w,
-               /project/kinect-fusion/sidebyside_hucf10c783d6407f1a6f352ff6166590d6_121387_43461ef68a3f6f9ffec15c5990c83ced.webp 760w,
-               /project/kinect-fusion/sidebyside_hucf10c783d6407f1a6f352ff6166590d6_121387_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/kinect-fusion/sidebyside_hucf10c783d6407f1a6f352ff6166590d6_121387_c8414a75cc17b5333eebcb8d35713c33.webp&#34;
+               /project/kinect-fusion/sidebyside_hu6977214877126391275.webp 400w,
+               /project/kinect-fusion/sidebyside_hu10801717048972366410.webp 760w,
+               /project/kinect-fusion/sidebyside_hu3483564292537808377.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/kinect-fusion/sidebyside_hu6977214877126391275.webp&#34;
                width=&#34;760&#34;
                height=&#34;414&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -124,10 +124,10 @@
 &lt;figure  id=&#34;figure-a-caption&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;A caption&#34; srcset=&#34;
-               /project/kinect-fusion/snap_hu7142ece359247743daf3f145f6ebb63f_798400_728344d73080c84741ddf9d4b35f37ef.webp 400w,
-               /project/kinect-fusion/snap_hu7142ece359247743daf3f145f6ebb63f_798400_090aebf261534b9bfbe1aaee1facf9fb.webp 760w,
-               /project/kinect-fusion/snap_hu7142ece359247743daf3f145f6ebb63f_798400_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/kinect-fusion/snap_hu7142ece359247743daf3f145f6ebb63f_798400_728344d73080c84741ddf9d4b35f37ef.webp&#34;
+               /project/kinect-fusion/snap_hu11017619812430102650.webp 400w,
+               /project/kinect-fusion/snap_hu6059672321614514695.webp 760w,
+               /project/kinect-fusion/snap_hu17073304798016913143.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/kinect-fusion/snap_hu11017619812430102650.webp&#34;
                width=&#34;760&#34;
                height=&#34;320&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -201,10 +201,10 @@ The cost value is also used to express &amp;ldquo;preferred&amp;rdquo; surfaces:
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Cost map&#34; srcset=&#34;
-               /project/warp/costmap_hu44627bc17488b6d9c6aff366b1bca238_157606_b8263f9efdbd1ed5ea31391c0f968e49.webp 400w,
-               /project/warp/costmap_hu44627bc17488b6d9c6aff366b1bca238_157606_f7cc1ed98c4ee135d19d059f3d8c1bf6.webp 760w,
-               /project/warp/costmap_hu44627bc17488b6d9c6aff366b1bca238_157606_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/warp/costmap_hu44627bc17488b6d9c6aff366b1bca238_157606_b8263f9efdbd1ed5ea31391c0f968e49.webp&#34;
+               /project/warp/costmap_hu2878952910471070744.webp 400w,
+               /project/warp/costmap_hu4843652453929555716.webp 760w,
+               /project/warp/costmap_hu7892964167120711589.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/warp/costmap_hu2878952910471070744.webp&#34;
                width=&#34;760&#34;
                height=&#34;218&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;

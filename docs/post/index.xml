@@ -7,7 +7,7 @@
     <description>Posts</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 04 Nov 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_512x512_fill_lanczos_center_3.png</url>
+      <url>https://marcb.pro/media/icon_hu7278467068447599620.png</url>
       <title>Posts</title>
       <link>https://marcb.pro/post/</link>
     </image>
@@ -65,10 +65,10 @@
 &lt;figure  id=&#34;figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;htop&#34; srcset=&#34;
-               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp 400w,
-               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_aad60294c02d5bec57d3844df23dce14.webp 760w,
-               /post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://marcb.pro/post/vscode-slurm/htop_hu54cb5587056b0d689f63d908461630c2_201913_c497a43a2fa99537feb28b7ba6222c2c.webp&#34;
+               /post/vscode-slurm/htop_hu8494327152023964508.webp 400w,
+               /post/vscode-slurm/htop_hu6760754647867626513.webp 760w,
+               /post/vscode-slurm/htop_hu9606479908353669952.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/vscode-slurm/htop_hu8494327152023964508.webp&#34;
                width=&#34;760&#34;
                height=&#34;492&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;

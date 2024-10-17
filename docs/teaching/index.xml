@@ -5,12 +5,21 @@
     <link>https://marcb.pro/teaching/</link>
       <atom:link href="https://marcb.pro/teaching/index.xml" rel="self" type="application/rss+xml" />
     <description>Teaching</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2024 15:10:29 +0200</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Oct 2024 15:10:29 +0200</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu70342a21c76a6b108e6681806083fa2b_864_512x512_fill_lanczos_center_3.png</url>
+      <url>https://marcb.pro/media/icon_hu7278467068447599620.png</url>
       <title>Teaching</title>
       <link>https://marcb.pro/teaching/</link>
     </image>
+    
+    <item>
+      <title>3D Scanning &amp; Motion Capture (IN2354)</title>
+      <link>https://marcb.pro/teaching/3dsmc_ws2025/</link>
+      <pubDate>Mon, 07 Oct 2024 15:10:29 +0200</pubDate>
+      <guid>https://marcb.pro/teaching/3dsmc_ws2025/</guid>
+      <description>&lt;p&gt;Visit this link for more information: &lt;a href=&#34;https://niessner.github.io/3DScanning/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://niessner.github.io/3DScanning/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>3D Scanning &amp; Motion Capture (IN2354)</title>
