@@ -472,6 +472,24 @@ Their method cannot model such deformation because a vector field can only conta
     </item>
     
     <item>
+      <title>Example Page 1</title>
+      <link>https://marcb.pro/course/intro/example1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://marcb.pro/course/intro/example1/</guid>
+      <description>&lt;p&gt;Content&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Page 2</title>
+      <link>https://marcb.pro/course/intro/example2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://marcb.pro/course/intro/example2/</guid>
+      <description>&lt;p&gt;Content&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Design of an environment for solving pseudo-Boolean optimization problems</title>
       <link>https://marcb.pro/project/bachelors-thesis/</link>
       <pubDate>Tue, 26 Jun 2018 20:05:18 +0100</pubDate>
@@ -565,6 +583,27 @@ For more details see the &lt;a href=&#34;https://marcb.pro/project/tfg/slides.pd
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Knapsack_problem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://en.wikipedia.org/wiki/Knapsack_problem&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Android Introduction</title>
+      <link>https://marcb.pro/teaching/jedi_android/</link>
+      <pubDate>Sun, 01 Jan 2017 15:10:29 +0200</pubDate>
+      <guid>https://marcb.pro/teaching/jedi_android/</guid>
+      <description>&lt;h2 id=&#34;content&#34;&gt;Content:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Introduction, tools and basic structure&lt;/li&gt;
+&lt;li&gt;Basic components and UI&lt;/li&gt;
+&lt;li&gt;Activities and Intents&lt;/li&gt;
+&lt;li&gt;Material Design and Notifications&lt;/li&gt;
+&lt;li&gt;Storage and Threads&lt;/li&gt;
+&lt;li&gt;Fragments, Lists and Pagers&lt;/li&gt;
+&lt;li&gt;Background Services&lt;/li&gt;
+&lt;li&gt;Hardware Interaction&lt;/li&gt;
+&lt;li&gt;Connection to APIs&lt;/li&gt;
+&lt;li&gt;Apps and Google Play&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>

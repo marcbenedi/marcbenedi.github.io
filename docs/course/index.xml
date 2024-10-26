@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses | Marc B</title>
+    <link>https://marcb.pro/course/</link>
+      <atom:link href="https://marcb.pro/course/index.xml" rel="self" type="application/rss+xml" />
+    <description>Courses</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://marcb.pro/media/icon_hu7278467068447599620.png</url>
+      <title>Courses</title>
+      <link>https://marcb.pro/course/</link>
+    </image>
+    
+  </channel>
+</rss>
