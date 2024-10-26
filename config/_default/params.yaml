@@ -5,11 +5,12 @@
 
 # Appearance
 
+# https://bootstrap.hugoblox.com/getting-started/customization/#appearance
 appearance:
   theme_day: minimal
   theme_night: minimal
   font: minimal
-  font_size: L
+  font_size: M #L
 
 # SEO
 

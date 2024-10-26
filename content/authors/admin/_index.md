@@ -40,7 +40,7 @@ education:
       institution: Technische Universität München
       year: 2022
     - course: BSc in Computer Science & Engineering
-      institution: Polytechnical University of Catalonia, Barcelona Tech
+      institution: Polytechnic University of Catalonia, Barcelona Tech
       year: 2018
 
 # Skills
@@ -131,9 +131,8 @@ highlight_name: true
 I am a PhD candidate at [Matthias Nießner](http://niessnerlab.org/members/matthias_niessner/profile.html)'s [Visual Computing Group](http://niessnerlab.org/team.html), at the [Technical University of Munich](https://www.tum.de/). 
 {style="text-align: justify;"}
 
-I'm interested in computer vision, deep learning and optimization. My research is mostly focused on robust correspondence estimation for rigid 3D reconstruction.
+I'm interested in computer vision, deep learning and optimization. My current research interests are focused on virtual avatars, generative models and 3D scene representations. 
 {style="text-align: justify;"}
 
-Before joining the group, I received a Master's Degree in Computer Science from the [Technical University of Munich](https://www.tum.de/) and a Bachelor's Degree in Computer Science from the [Polytechnical University of Catalonia](https://www.tum.de/).
+Before joining the group, I received a Master's Degree in Computer Science from the [Technical University of Munich](https://www.tum.de/) and a Bachelor's Degree in Computer Science from the [Polytechnic University of Catalonia](https://www.tum.de/).
 {style="text-align: justify;"}
-

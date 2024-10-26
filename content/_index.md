@@ -54,7 +54,8 @@ sections:
   - block: experience
     id: experience
     content:
-      title: 👷‍♂ Experience
+      # title: 👷‍♂ Experience
+      title: Experience
       # Date format for experience
       #   Refer to https://docs.hugoblox.com/customization/#date-format
       date_format: Jan 2006
@@ -71,7 +72,7 @@ sections:
           location: Munich, DE
           date_start: '2023-01-01'
           date_end: ''
-          description: |2-
+          # description: |2-
 
         - title: Research Fellowship
           company: Visual Computing & Artificial Intelligence Lab, Technische Universität München 
@@ -104,7 +105,7 @@ sections:
               * Android development with [Kotlin](https://kotlinlang.org/).
               * Backend development with [Kotlin](https://kotlinlang.org/).
               * Frontend development with [Vue.js](https://vuejs.org/)
-        - title: Intern
+        - title: Summer Intern
           company: European Organization for Nuclear Research (CERN)
           company_url: 'https://home.cern/'
           company_logo: cern
@@ -114,7 +115,7 @@ sections:
           description: |2-
               * Designed and built a cluster for the BE-OP-LHC team at CERN using Kubernetes.
         - title: Research Assistant
-          company: Polytechnical University of Catalonia, Barcelona Tech
+          company: Polytechnic University of Catalonia, Barcelona Tech
           company_url: 'https://www.fib.upc.edu/en/research/departments/computer-science'
           company_logo: upc
           location: Barcelona, ES
@@ -132,15 +133,15 @@ sections:
           date_end: '2017-09-01'
           description: |2-
               * Frontend and backend development.
-        - title: Android Instructor
-          company: JEDI UPC
-          company_url: 'https://jediupc.com/'
-          company_logo: jedi
-          location: Barcelona, ES
-          date_start: '2017-01-01'
-          date_end: '2017-01-01'
-          description: |2-
-              * Taught a two-week course to introduction to Android development to 25+ students.
+        # - title: Android Instructor
+        #   company: JEDI UPC
+        #   company_url: 'https://jediupc.com/'
+        #   company_logo: jedi
+        #   location: Barcelona, ES
+        #   date_start: '2017-01-01'
+        #   date_end: '2017-01-01'
+        #   description: |2-
+        #       * Taught a two-week course to introduction to Android development to 25+ students.
     design:
       columns: '2'
 
@@ -253,7 +254,8 @@ sections:
   - block: collection
     id: posts
     content:
-      title: 📰 Recent Posts
+      # title: 📰 Recent Posts
+      title: Recent Posts
       subtitle: ''
       text: ''
       link: posts/
@@ -282,7 +284,8 @@ sections:
   - block: portfolio
     id: projects
     content:
-      title: 🏗️ Projects
+      # title: 🏗️ Projects
+      title: Projects
       filters:
         folders:
           - project
@@ -316,7 +319,8 @@ sections:
   - block: collection
     id: teaching
     content:
-      title: 👨‍🏫 Teaching
+      # title: 👨‍🏫 Teaching
+      title: Teaching
       subtitle: ''
       text: ''
       count: 5
@@ -399,7 +403,8 @@ sections:
   - block: contact
     id: contact
     content:
-      title: 📫 Contact
+      # title: 📫 Contact
+      title: Contact
       subtitle:
       text: |-
         Don't hesitate to reach out in any of the following ways! 
@@ -431,10 +436,10 @@ sections:
           icon_pack: fab
           name: '@marcbenedi'
           link: 'https://twitter.com/marcbenedi'
-        - icon: mastodon
-          icon_pack: fab
-          name: '@marcb@masto.ai'
-          link: 'https://masto.ai/@marcb'
+        # - icon: mastodon
+        #   icon_pack: fab
+        #   name: '@marcb@masto.ai'
+        #   link: 'https://masto.ai/@marcb'
         # - icon: skype
         #   icon_pack: fab
         #   name: Skype Me
