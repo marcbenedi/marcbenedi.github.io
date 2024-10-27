@@ -1,10 +1,11 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
+# title: 'Learning Correspondences For Relative Pose Estimation'
+title: 'End-to-end Sparse Correspondence Prediction for Relative Camera Pose Estimation'
 
-title: 'Learning Correspondences For Relative Pose Estimation'
 summary: "We present an end-to-end learnable, differentiable method for pairwise relative pose registration of RGB-D frames. Our method is robust to big camera motions thanks to a self-supervised weighting of the predicted correspondences between the frames. Given a pair of frames, our method estimates matches of points and their visibility score. A self-supervised model predicts a confidence weight for visible matches. Finally, visible matches and their weight are fed into a differentiable weighted Procrustes aligner which estimates the rigid transformation between the input frames."
 authors: []
-tags: ["M.Sc", "Computer Vision", "Deep Learning"]
+tags: ["Computer Vision", "Deep Learning", "M.Sc", "featured"]
 categories: []
 date: 2021-11-01T00:00:00+01:00
 

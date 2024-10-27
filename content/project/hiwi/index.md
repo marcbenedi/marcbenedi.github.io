@@ -6,7 +6,7 @@ summary: ""
 authors: []
 tags: ["M.Sc"]
 categories: []
-date: 2023-01-06T17:36:11+01:00
+date: 2020-01-06T17:36:11+01:00
 
 draft: true
 
@@ -42,4 +42,10 @@ url_video: ""
 slides: ""
 ---
 
-TODO
+<!-- ![text1](home.png "caption") -->
+
+- the web
+- the api
+- nodes setup boot image netboot
+- ldap triggers
+- ldap other

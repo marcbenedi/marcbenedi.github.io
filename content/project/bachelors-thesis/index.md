@@ -1,10 +1,10 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Design of an environment for solving pseudo-Boolean optimization problems"
+title: "Design of an Environment for Solving pseudo-Boolean Optimization Problems"
 summary: ""
 authors: []
-tags: ["B.Sc", "Optimization", "SAT"]
+tags: ["Optimization", "SAT", "B.Sc", "featured"]
 categories: []
 date: 2018-06-26T20:05:18+01:00
 
@@ -40,7 +40,7 @@ url_slides: "/project/bachelors-thesis/slides.pdf"
 slides: ""
 ---
 
-> Bachelor's thesis
+<!-- > Bachelor's thesis -->
 
 
 [Boolean Satisfiability problems (SAT)](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) consists of finding a valid assignment (model) for a set of Boolean variables. It was the first problem proven to be NP-Complete which allowed reducing many NP-Complete problems to it. Because of this, it is one of the pillars of Computer Science. 
@@ -79,4 +79,34 @@ For more details see the [slides](/project/tfg/slides.pdf).
 1. https://www.semanticscholar.org/paper/MPBO-A-Distributed-Pseudo-Boolean-Optimization-Santos-Godinho/52ee5d8996c6f6d5caa43ad35155f404ddc584e3
 
 2. https://en.wikipedia.org/wiki/Knapsack_problem
+
+
+
+
+
+
+---
+
+
+This dissertation focuses on creating a robust environment to solve **Pseudo-Boolean Optimization (PB) problems**, a specific type of optimization commonly used in fields like **Artificial Intelligence, Planners, Computer Vision**, and **Circuit Design**. The main goal is to reduce the time required to solve these problems by using an efficient **C++ library** for representing and optimizing PB problems.
+
+# Key Contributions
+The project builds on previous work by developing a C++ library for PB minimization, using the **PBLib** to translate Pseudo-Boolean constraints into **Conjunctive Normal Form (CNF)** for solving with SAT solvers. The following methods and features were implemented:
+
+1. **Pseudo-Boolean Formula Representation:** A library that allows smooth representation and manipulation of PB formulas.
+2. **Optimization Algorithms:**
+   - **Linear Search:** Sequentially checks potential solutions to find the minimum.
+   - **Binary Search:** More efficient search for minimum values by dividing the search space.
+3. **Timeout Strategies:** 
+   - **General Timeout:** Limits the total execution time, returning the best solution found.
+   - **Simple Timeout:** Stops individual solver calls after a set time to ensure timely results.
+
+# Results and Evaluation
+The library was evaluated using benchmarks to compare the efficiency of the linear and binary search methods. The timeout strategies were particularly beneficial in cases where obtaining a timely solution was more critical than achieving optimal results.
+
+# Conclusion
+This project successfully reduced the time required to solve **Pseudo-Boolean minimization** problems, making it more accessible to fields like AI and Planners. The developed tools provide an easier interface to work with PB minimization problems, especially for C++ programmers. Future work could focus on improving multi-threading support and further optimizing search algorithms.
+
+**Source Code:** [GitHub Link](https://github.com/marcbenedi/SAT-TFG)
+
 

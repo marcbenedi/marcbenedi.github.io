@@ -1,10 +1,10 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "SLAM for autonomous vehicles"
+title: "SLAM for Autonomous Vehicles"
 summary: ""
 authors: []
-tags: ["M.Sc", "Computer Vision", "3D Reconstruction"]
+tags: ["Computer Vision", "3D Reconstruction", "M.Sc", "featured"]
 categories: []
 date: 2020-09-15T20:11:42+01:00
 

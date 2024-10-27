@@ -84,6 +84,7 @@ sections:
           description: |2-
               * Fellowship awarded to outstanding Master students to allow them developing state-of-the-art models. See [page](https://niessnerlab.org/fellowship.html).
               * See [project's page](/project/gr/).
+
         - title: Working Student
           company: Visual Computing & Artificial Intelligence Lab, Technische Universität München
           company_url: 'https://www.niessnerlab.org/'
@@ -94,6 +95,7 @@ sections:
           description: |2-
               * Built a high-performance GPU cluster for the Deep Learning laboratory.
               * Built a frontend with [Vue.js](https://vuejs.org/) and a backend for the cluster’s users.
+
         - title: Software Engineer
           company: HELM Mobile Development
           company_url: 'https://helm.cat/'
@@ -105,6 +107,7 @@ sections:
               * Android development with [Kotlin](https://kotlinlang.org/).
               * Backend development with [Kotlin](https://kotlinlang.org/).
               * Frontend development with [Vue.js](https://vuejs.org/)
+
         - title: Summer Intern
           company: European Organization for Nuclear Research (CERN)
           company_url: 'https://home.cern/'
@@ -114,6 +117,7 @@ sections:
           date_end: '2018-09-01'
           description: |2-
               * Designed and built a cluster for the BE-OP-LHC team at CERN using Kubernetes.
+
         - title: Research Assistant
           company: Polytechnic University of Catalonia, Barcelona Tech
           company_url: 'https://www.fib.upc.edu/en/research/departments/computer-science'
@@ -124,7 +128,8 @@ sections:
           description: |2-
               * Worked on a novel conversion of Binary Decision Trees to Conjunctive Normal Forms.
               * See [project's page](project/bachelors-thesis/).
-        - title: Intern
+
+        - title: Summer Intern
           company: Ernst & Young
           company_url: 'https://www.ey.com/'
           company_logo: ey
@@ -133,6 +138,7 @@ sections:
           date_end: '2017-09-01'
           description: |2-
               * Frontend and backend development.
+
         # - title: Android Instructor
         #   company: JEDI UPC
         #   company_url: 'https://jediupc.com/'
@@ -251,6 +257,55 @@ sections:
   #   design:
   #     columns: '2'
 
+  - block: portfolio
+    id: projects
+    content:
+      # title: 🏗️ Projects
+      title: Projects
+
+      text: |-
+        {{% callout note %}}
+        Quickly discover relevant content by filtering projects or by [clicking here](./project/).
+        {{% /callout %}}
+      subtitle: ""
+      filters:
+        folders:
+          - project
+      # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
+      default_button_index: 0
+      # Filter toolbar (optional).
+      # Add or remove as many filters (`filter_button` instances) as you like.
+      # To show all items, set `tag` to "*".
+      # To filter by a specific tag, set `tag` to an existing tag name.
+      # To remove the toolbar, delete the entire `filter_button` block.
+      buttons:
+        - name: ⭐
+          tag: 'featured'
+
+        - name: All
+          tag: '*'
+
+        - name: M.Sc
+          tag: 'M\.Sc'
+
+        - name: B.Sc
+          tag: 'B\.Sc'
+
+        - name: Hackathons
+          tag: 'Hackathon'
+
+        - name: Computer Vision
+          tag: 'Computer Vision'
+
+    design:
+      # Choose how many columns the section has. Valid values: '1' or '2'.
+      columns: '2'
+      # view: showcase
+      view: compact
+      # view: card
+      # For Showcase view, flip alternate rows?
+      flip_alt_rows: false
+
   - block: collection
     id: posts
     content:
@@ -269,7 +324,7 @@ sections:
         category: ""
         tag: ""
         exclude_featured: false
-        exclude_future: false
+        exclude_future: true
         exclude_past: false
         publication_type: ""
       # Choose how many pages you would like to offset by
@@ -280,41 +335,6 @@ sections:
       # Choose a layout view
       view: compact
       columns: '2'
-
-  - block: portfolio
-    id: projects
-    content:
-      # title: 🏗️ Projects
-      title: Projects
-      filters:
-        folders:
-          - project
-      # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
-      default_button_index: 0
-      # Filter toolbar (optional).
-      # Add or remove as many filters (`filter_button` instances) as you like.
-      # To show all items, set `tag` to "*".
-      # To filter by a specific tag, set `tag` to an existing tag name.
-      # To remove the toolbar, delete the entire `filter_button` block.
-      buttons:
-        - name: All
-          tag: '*'
-        - name: B.Sc
-          tag: 'B\.Sc'
-        - name: M.Sc
-          tag: 'M\.Sc'
-        - name: Computer Vision
-          tag: 'Computer Vision'
-        - name: Hackathon
-          tag: 'Hackathon'
-        - name: Android
-          tag: 'Android'
-    design:
-      # Choose how many columns the section has. Valid values: '1' or '2'.
-      columns: '1'
-      view: showcase
-      # For Showcase view, flip alternate rows?
-      flip_alt_rows: false
 
   - block: collection
     id: teaching
@@ -331,7 +351,7 @@ sections:
       sort_ascending: false
     design:
       view: compact
-      columns: '1'
+      columns: '2'
 
   # - block: markdown
   #   content:

@@ -5,7 +5,7 @@
     <link>https://marcb.pro/project/</link>
       <atom:link href="https://marcb.pro/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 06 Jan 2023 17:36:39 +0100</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 15 Sep 2022 20:05:18 +0100</lastBuildDate>
     <image>
       <url>https://marcb.pro/media/icon_hu7278467068447599620.png</url>
       <title>Projects</title>
@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>Learning Correspondences For Relative Pose Estimation</title>
+      <title>End-to-end Sparse Correspondence Prediction for Relative Camera Pose Estimation</title>
       <link>https://marcb.pro/project/gr/</link>
       <pubDate>Mon, 01 Nov 2021 00:00:00 +0100</pubDate>
       <guid>https://marcb.pro/project/gr/</guid>
@@ -174,7 +174,7 @@
     </item>
     
     <item>
-      <title>SLAM for autonomous vehicles</title>
+      <title>SLAM for Autonomous Vehicles</title>
       <link>https://marcb.pro/project/warp/</link>
       <pubDate>Tue, 15 Sep 2020 20:11:42 +0100</pubDate>
       <guid>https://marcb.pro/project/warp/</guid>
@@ -294,13 +294,11 @@ Their method cannot model such deformation because a vector field can only conta
     </item>
     
     <item>
-      <title>Design of an environment for solving pseudo-Boolean optimization problems</title>
+      <title>Design of an Environment for Solving pseudo-Boolean Optimization Problems</title>
       <link>https://marcb.pro/project/bachelors-thesis/</link>
       <pubDate>Tue, 26 Jun 2018 20:05:18 +0100</pubDate>
       <guid>https://marcb.pro/project/bachelors-thesis/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Bachelor&amp;rsquo;s thesis&lt;/p&gt;
-&lt;/blockquote&gt;
+      <description>&lt;!-- &gt; Bachelor&#39;s thesis --&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Boolean_satisfiability_problem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Boolean Satisfiability problems (SAT)&lt;/a&gt; consists of finding a valid assignment (model) for a set of Boolean variables. It was the first problem proven to be NP-Complete which allowed reducing many NP-Complete problems to it. Because of this, it is one of the pillars of Computer Science.&lt;/p&gt;
 &lt;p&gt;An extension to SAT is Pseud-Boolean optimization problems. Unlike SAT, which can only express binary relationships among variables, Pseudo-Boolean optimization can formalize more &lt;a href=&#34;https://en.wikipedia.org/wiki/Pseudo-Boolean_function&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;complex relationships&lt;/a&gt;. These problems are defined in the following manner:&lt;/p&gt;
 &lt;p&gt;
@@ -388,6 +386,30 @@ For more details see the &lt;a href=&#34;https://marcb.pro/project/tfg/slides.pd
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Knapsack_problem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://en.wikipedia.org/wiki/Knapsack_problem&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;This dissertation focuses on creating a robust environment to solve &lt;strong&gt;Pseudo-Boolean Optimization (PB) problems&lt;/strong&gt;, a specific type of optimization commonly used in fields like &lt;strong&gt;Artificial Intelligence, Planners, Computer Vision&lt;/strong&gt;, and &lt;strong&gt;Circuit Design&lt;/strong&gt;. The main goal is to reduce the time required to solve these problems by using an efficient &lt;strong&gt;C++ library&lt;/strong&gt; for representing and optimizing PB problems.&lt;/p&gt;
+&lt;h1 id=&#34;key-contributions&#34;&gt;Key Contributions&lt;/h1&gt;
+&lt;p&gt;The project builds on previous work by developing a C++ library for PB minimization, using the &lt;strong&gt;PBLib&lt;/strong&gt; to translate Pseudo-Boolean constraints into &lt;strong&gt;Conjunctive Normal Form (CNF)&lt;/strong&gt; for solving with SAT solvers. The following methods and features were implemented:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Pseudo-Boolean Formula Representation:&lt;/strong&gt; A library that allows smooth representation and manipulation of PB formulas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Optimization Algorithms:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linear Search:&lt;/strong&gt; Sequentially checks potential solutions to find the minimum.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Binary Search:&lt;/strong&gt; More efficient search for minimum values by dividing the search space.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Timeout Strategies:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;General Timeout:&lt;/strong&gt; Limits the total execution time, returning the best solution found.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Simple Timeout:&lt;/strong&gt; Stops individual solver calls after a set time to ensure timely results.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;results-and-evaluation&#34;&gt;Results and Evaluation&lt;/h1&gt;
+&lt;p&gt;The library was evaluated using benchmarks to compare the efficiency of the linear and binary search methods. The timeout strategies were particularly beneficial in cases where obtaining a timely solution was more critical than achieving optimal results.&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;This project successfully reduced the time required to solve &lt;strong&gt;Pseudo-Boolean minimization&lt;/strong&gt; problems, making it more accessible to fields like AI and Planners. The developed tools provide an easier interface to work with PB minimization problems, especially for C++ programmers. Future work could focus on improving multi-threading support and further optimizing search algorithms.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source Code:&lt;/strong&gt; &lt;a href=&#34;https://github.com/marcbenedi/SAT-TFG&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Link&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
