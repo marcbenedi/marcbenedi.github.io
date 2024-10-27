@@ -191,6 +191,31 @@
     </item>
     
     <item>
+      <title>Learning Robust Correspondences Estimation</title>
+      <link>https://marcb.pro/project/masters-thesis/</link>
+      <pubDate>Thu, 15 Sep 2022 20:05:18 +0100</pubDate>
+      <guid>https://marcb.pro/project/masters-thesis/</guid>
+      <description>&lt;!-- **Author:** Marc Benedí San Millán   --&gt;
+&lt;!-- **Institution:** Technical University of Munich (TUM)   --&gt;
+&lt;!-- **Thesis Title:** Learning Robust Correspondences Estimation (LRCE) --&gt;
+&lt;p&gt;LRCE addresses the challenging problem of &lt;strong&gt;relative camera pose estimation&lt;/strong&gt; in computer vision, essential for applications like 3D reconstruction, Structure from Motion (SfM), and Simultaneous Localization and Mapping (SLAM). Estimating a camera&amp;rsquo;s position and orientation from a sequence of images has been a long-standing issue in the field.&lt;/p&gt;
+&lt;h1 id=&#34;main-contributions&#34;&gt;Main Contributions&lt;/h1&gt;
+&lt;p&gt;LRCE introduces an &lt;strong&gt;end-to-end differentiable model&lt;/strong&gt; for pose estimation between pairs of RGB-D frames (color + depth). The key idea is learning &lt;strong&gt;confidence scores for correspondences&lt;/strong&gt; (matched points between images) in a &lt;strong&gt;self-supervised&lt;/strong&gt; manner, helping to filter outliers and improve pose accuracy.&lt;/p&gt;
+&lt;h2 id=&#34;key-components&#34;&gt;Key Components:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Correspondence and Visibility Estimation:&lt;/strong&gt; Predicts matching points between two frames and their visibility.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Correspondence Weighting:&lt;/strong&gt; Assigns confidence scores to filter unreliable correspondences.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Differentiable Weighted Procrustes:&lt;/strong&gt; Optimizes the final pose estimation by aligning the points using their confidence scores.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h1&gt;
+&lt;p&gt;LRCE was tested on the &lt;strong&gt;ScanNet&lt;/strong&gt; dataset, showing improved performance in matching and pose estimation compared to traditional methods (e.g., SIFT, ORB) and modern deep learning techniques (e.g., LoFTR). Its differentiable, self-supervised nature makes it particularly robust in wide-baseline and occlusion-heavy scenarios.&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;This thesis demonstrates how integrating &lt;strong&gt;end-to-end learning&lt;/strong&gt; and self-supervised weighting can make camera pose estimation more accurate and robust. The source code is publicly available for further research and improvements.&lt;/p&gt;
+&lt;!-- **Read more:** [GitHub Link](https://github.com/marcbenedi/LRCE) --&gt;
+</description>
+    </item>
+    
+    <item>
       <title>End-to-end Sparse Correspondence Prediction for Relative Camera Pose Estimation</title>
       <link>https://marcb.pro/project/gr/</link>
       <pubDate>Mon, 01 Nov 2021 00:00:00 +0100</pubDate>

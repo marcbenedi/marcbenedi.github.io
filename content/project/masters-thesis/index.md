@@ -1,6 +1,6 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
-draft: true
+draft: false
 
 title: "Learning Robust Correspondences Estimation"
 summary: ""
