@@ -432,14 +432,19 @@ sections:
       # title: 📫 Contact
       title: Contact
       subtitle:
-      text: |2-
-        Don't hesitate to reach out in any of the following ways! 
+      # text: |2-
+      #   Don't hesitate to reach out in any of the following ways! 
       # Contact (add or remove contact options as necessary)
 
       email: marc.benedi@tum.de 
-      # email: marc(dot)benedi(at)tum(dot)de 
-      # phone: 888 888 88 88
-      # appointment_url: 'https://calendly.com'
+      # email: marc (dot) benedi (at) tum (dot) de 
+      phone: +49-89-289-18165
+
+      # Choose a map provider in `params.yaml` to show a map from these coordinates
+      #coordinates:
+      #  latitude: '37.4275'
+      #  longitude: '-122.1697'
+
       # address:
       #   street: 450 Serra Mall
       #   city: Stanford
@@ -447,15 +452,11 @@ sections:
       #   postcode: '94305'
       #   country: United States
       #   country_code: US
-      # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
-      # office_hours:
-      #   - 'Monday 10:00 to 13:00'
-      #   - 'Wednesday 09:00 to 10:00'
-      # appointment_url: 'https://calendly.com'
-      # Choose a map provider in `params.yaml` to show a map from these coordinates
-      #coordinates:
-      #  latitude: '37.4275'
-      #  longitude: '-122.1697'  
+      directions: "[02.07.034](https://nav.tum.de/room/5607.02.034#18/48.262748/11.668185) MI building - Garching TUM Campus"
+      office_hours:
+        - '**Office Hours:**'
+        - 'Tuesday 14:15 to 15:45'
+      appointment_url: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2l6Imq2j4Z5sTSsBmlguRhAKsQCpsELpUaNVy4gI1sRzckazjMgZRsrtOlM-4aY4YX1BsA96na'
 
       contact_links:
         - icon: twitter
@@ -474,8 +475,10 @@ sections:
         #   icon_pack: fas
         #   name: Zoom Me
         #   link: 'https://zoom.com'
+
       # Automatically link email and phone or display as text?
       autolink: true
+
       # Email form provider
       # form:
       #   provider: netlify
