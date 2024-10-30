@@ -318,5 +318,224 @@ Their method cannot model such deformation because a vector field can only conta
 </description>
     </item>
     
+    <item>
+      <title>SLURM Cluster - Dashboard and other tools</title>
+      <link>https://marcb.pro/project/hiwi/</link>
+      <pubDate>Mon, 06 Jan 2020 17:36:11 +0100</pubDate>
+      <guid>https://marcb.pro/project/hiwi/</guid>
+      <description>&lt;!-- 
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#milestones&#34;&gt;Milestones&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#other-developed-tools&#34;&gt;Other Developed Tools&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#ldap-triggers&#34;&gt;LDAP Triggers&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#ldap-emails&#34;&gt;LDAP Emails&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#gallery&#34;&gt;Gallery&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/details&gt;
+  --&gt;
+&lt;p&gt;This project is part of my work in the Visual Computing Group (&lt;a href=&#34;https://marcb.pro/#experience&#34;&gt;see my work experience here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The lab was not familiar with SLURM and job queues. Part of my responsibilities was to set up the system and ensure that researchers could understand and efficiently use the new cluster setup.&lt;/p&gt;
+&lt;p&gt;To achieve this, I developed a website, along with all the necessary back-end systems, so that users could visualize the state of the cluster, their jobs, and resource usage. Additionally, none of the members were familiar with Linux DevOps or SLURM. It was my job to understand their requirements and translate them into practical implementations.&lt;/p&gt;
+&lt;h2 id=&#34;milestones&#34;&gt;Milestones&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Cluster Setup&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LDAP server and user authentication accross nodes&lt;/li&gt;
+&lt;li&gt;NFS storage accessible accross all nodes, mounted on demand with &lt;em&gt;autofs&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;SLURM cluster setup, user accounts, welcome to the group email, and priority management&lt;/li&gt;
+&lt;li&gt;Metrics collection with Graphana and Telegraf&lt;/li&gt;
+&lt;li&gt;Netboot and node boot configurations&lt;/li&gt;
+&lt;li&gt;Ansible Playbooks&lt;/li&gt;
+&lt;li&gt;Storage benchmarks&lt;/li&gt;
+&lt;li&gt;Modulefiles&lt;/li&gt;
+&lt;li&gt;Storage quotas&lt;/li&gt;
+&lt;li&gt;Enroot integration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dashboard&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Web interface with Vue.js&lt;/li&gt;
+&lt;li&gt;Backend development with Flask&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Others&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maintenance tasks and updates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;other-developed-tools&#34;&gt;Other Developed Tools&lt;/h2&gt;
+&lt;h3 id=&#34;ldap-triggers&#34;&gt;LDAP Triggers&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a href=&#34;https://github.com/marcbenedi/ldap-triggers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/marcbenedi/ldap-triggers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;LDAP Triggers is an Open Source python package under MIT license which triggers an action every time an LDAP action is done. The current supported actions are creation/deletion of users/groups.&lt;/p&gt;
+&lt;p&gt;It comes with very clear documentation and it’s very easy to set up.&lt;/p&gt;
+&lt;p&gt;More information: &lt;a href=&#34;https://blog.marcb.pro/posts/ldap-triggers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.marcb.pro/posts/ldap-triggers/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ldap-emails&#34;&gt;LDAP Emails&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a href=&#34;https://github.com/marcbenedi/ldap-email&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/marcbenedi/ldap-email&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This tool allows sending (templated) emails to users in an LDAP database by username or group.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ldapemail send -u user1 -u user2 email-template
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ldapemail send -g group1 group-template
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;gallery&#34;&gt;Gallery&lt;/h2&gt;
+&lt;p&gt;UI/UX is not one of my strengths 😅, but I am still proud of the website, as it is still used in the lab and people find it very convinient.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Parts of the image may be blurried to preserve user and node information.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t be shy, click on the images! 👇&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;gallery-grid&#34;&gt;
+
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/00_home.png&#34; data-caption=&#34;HOME&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/00_home_hu10880179299393642101.webp&#34; loading=&#34;lazy&#34; alt=&#34;HOME&#34; width=&#34;750&#34; height=&#34;457&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/01_jobs.png&#34; data-caption=&#34;JOBS - Overview of job status and requested resources&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/01_jobs_hu1650351182823623089.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOBS - Overview of job status and requested resources&#34; width=&#34;750&#34; height=&#34;457&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1.png&#34; data-caption=&#34;JOB - User, job id, time information and all requested resources&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1_hu4832332696465509765.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOB - User, job id, time information and all requested resources&#34; width=&#34;750&#34; height=&#34;519&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/02_nodes.png&#34; data-caption=&#34;NODES - Available resources per node and their usage over time&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/02_nodes_hu18341291515366219674.webp&#34; loading=&#34;lazy&#34; alt=&#34;NODES - Available resources per node and their usage over time&#34; width=&#34;750&#34; height=&#34;457&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user.png&#34; data-caption=&#34;RESOURCES - List and chart of the resources being used per user&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user_hu15183878349347943694.webp&#34; loading=&#34;lazy&#34; alt=&#34;RESOURCES - List and chart of the resources being used per user&#34; width=&#34;750&#34; height=&#34;457&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/04_storage.png&#34; data-caption=&#34;STORAGE - A list of the storage used per user on each node&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/04_storage_hu1875875335302845796.webp&#34; loading=&#34;lazy&#34; alt=&#34;STORAGE - A list of the storage used per user on each node&#34; width=&#34;750&#34; height=&#34;457&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode.png&#34; data-caption=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode_hu11706430596073730881.webp&#34; loading=&#34;lazy&#34; alt=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34; width=&#34;750&#34; height=&#34;457&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+
+&lt;/div&gt;
+
+</description>
+    </item>
+    
   </channel>
 </rss>

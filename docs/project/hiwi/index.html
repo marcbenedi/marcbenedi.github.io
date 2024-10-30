@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: October 30, 2024 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Hugo Blox Builder 5.9.7" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.26c458e6907dc03073573976b7f4044e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.f6689966c0a10712f95f034011917db0.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Marc Benedí San Millán" />
+
+
+
+
+
+  
+
+<meta name="description" content="
+This project is part of my work in the Visual Computing Group (see my work experience here)." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://marcb.pro/project/hiwi/" />
+<link rel="canonical" href="https://marcb.pro/project/hiwi/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu82380365825469734.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu12672438894742618941.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://marcb.pro/project/hiwi/featured.png" />
+
+
+
+  
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marc B" />
+<meta property="og:url" content="https://marcb.pro/project/hiwi/" />
+<meta property="og:title" content="SLURM Cluster - Dashboard and other tools | Marc B" />
+<meta property="og:description" content="
+This project is part of my work in the Visual Computing Group (see my work experience here)." /><meta property="og:image" content="https://marcb.pro/project/hiwi/featured.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2020-01-06T17:36:11&#43;01:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2020-01-06T17:36:11&#43;01:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcb.pro/project/hiwi/"
+  },
+  "headline": "SLURM Cluster - Dashboard and other tools",
+  
+  "image": [
+    "https://marcb.pro/project/hiwi/featured.png"
+  ],
+  
+  "datePublished": "2020-01-06T17:36:11+01:00",
+  "dateModified": "2020-01-06T17:36:11+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Marc Benedí San Millán"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marc B",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcb.pro/media/icon_hu7412274475904707120.png"
+    }
+  },
+  "description": "\u003c!-- \n\n\u003cdetails class=\"toc-inpage d-print-none  \" open\u003e\n  \u003csummary class=\"font-weight-bold\"\u003eTable of Contents\u003c/summary\u003e\n  \u003cnav id=\"TableOfContents\"\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\"#milestones\"\u003eMilestones\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#other-developed-tools\"\u003eOther Developed Tools\u003c/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\"#ldap-triggers\"\u003eLDAP Triggers\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#ldap-emails\"\u003eLDAP Emails\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#gallery\"\u003eGallery\u003c/a\u003e\u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/nav\u003e\n\u003c/details\u003e\n  --\u003e\n\u003cp\u003eThis project is part of my work in the Visual Computing Group (\u003ca href=\"/#experience\"\u003esee my work experience here\u003c/a\u003e).\u003c/p\u003e"
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>SLURM Cluster - Dashboard and other tools | Marc B</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="4f6501cf097d0d899189f3da6ebf8fb0" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9e4214442a7711d35691acd58f6f6361.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>👋 About</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#experience"><span>👷 Experience</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>🏗️ Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>📰 Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#teaching"><span>👨‍🏫 Teaching</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>📫 Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/uploads/resume.pdf"><span>📃 CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/marcbenedi" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article article-project">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>SLURM Cluster - Dashboard and other tools</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 6, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <!-- 
+
+<details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">Table of Contents</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#milestones">Milestones</a></li>
+    <li><a href="#other-developed-tools">Other Developed Tools</a>
+      <ul>
+        <li><a href="#ldap-triggers">LDAP Triggers</a></li>
+        <li><a href="#ldap-emails">LDAP Emails</a></li>
+      </ul>
+    </li>
+    <li><a href="#gallery">Gallery</a></li>
+  </ul>
+</nav>
+</details>
+  -->
+<p>This project is part of my work in the Visual Computing Group (<a href="/#experience">see my work experience here</a>).</p>
+<p>The lab was not familiar with SLURM and job queues. Part of my responsibilities was to set up the system and ensure that researchers could understand and efficiently use the new cluster setup.</p>
+<p>To achieve this, I developed a website, along with all the necessary back-end systems, so that users could visualize the state of the cluster, their jobs, and resource usage. Additionally, none of the members were familiar with Linux DevOps or SLURM. It was my job to understand their requirements and translate them into practical implementations.</p>
+<h2 id="milestones">Milestones</h2>
+<ul>
+<li>
+<p>Cluster Setup</p>
+<ul>
+<li>LDAP server and user authentication accross nodes</li>
+<li>NFS storage accessible accross all nodes, mounted on demand with <em>autofs</em></li>
+<li>SLURM cluster setup, user accounts, welcome to the group email, and priority management</li>
+<li>Metrics collection with Graphana and Telegraf</li>
+<li>Netboot and node boot configurations</li>
+<li>Ansible Playbooks</li>
+<li>Storage benchmarks</li>
+<li>Modulefiles</li>
+<li>Storage quotas</li>
+<li>Enroot integration</li>
+</ul>
+</li>
+<li>
+<p>Dashboard</p>
+<ul>
+<li>Web interface with Vue.js</li>
+<li>Backend development with Flask</li>
+</ul>
+</li>
+<li>
+<p>Others</p>
+<ul>
+<li>Maintenance tasks and updates</li>
+</ul>
+</li>
+</ul>
+<h2 id="other-developed-tools">Other Developed Tools</h2>
+<h3 id="ldap-triggers">LDAP Triggers</h3>
+<p><strong>GitHub:</strong> <a href="https://github.com/marcbenedi/ldap-triggers" target="_blank" rel="noopener">https://github.com/marcbenedi/ldap-triggers</a></p>
+<p>LDAP Triggers is an Open Source python package under MIT license which triggers an action every time an LDAP action is done. The current supported actions are creation/deletion of users/groups.</p>
+<p>It comes with very clear documentation and it’s very easy to set up.</p>
+<p>More information: <a href="https://blog.marcb.pro/posts/ldap-triggers/" target="_blank" rel="noopener">https://blog.marcb.pro/posts/ldap-triggers/</a></p>
+<h3 id="ldap-emails">LDAP Emails</h3>
+<p><strong>GitHub:</strong> <a href="https://github.com/marcbenedi/ldap-email" target="_blank" rel="noopener">https://github.com/marcbenedi/ldap-email</a></p>
+<p>This tool allows sending (templated) emails to users in an LDAP database by username or group.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ldapemail send -u user1 -u user2 email-template
+</span></span><span class="line"><span class="cl">$ ldapemail send -g group1 group-template
+</span></span></code></pre></div><h2 id="gallery">Gallery</h2>
+<p>UI/UX is not one of my strengths 😅, but I am still proud of the website, as it is still used in the lab and people find it very convinient.</p>
+<p><em>Parts of the image may be blurried to preserve user and node information.</em></p>
+<p>Don&rsquo;t be shy, click on the images! 👇</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gallery-grid">
+
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  <div class="gallery-item gallery-item--medium">
+    <a data-fancybox="gallery-hiwi" href="/media/albums/hiwi/00_home.png" data-caption="HOME">
+      <img src="/media/albums/hiwi/00_home_hu10880179299393642101.webp" loading="lazy" alt="HOME" width="750" height="457">
+    </a>
+  </div>
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  <div class="gallery-item gallery-item--medium">
+    <a data-fancybox="gallery-hiwi" href="/media/albums/hiwi/01_jobs.png" data-caption="JOBS - Overview of job status and requested resources">
+      <img src="/media/albums/hiwi/01_jobs_hu1650351182823623089.webp" loading="lazy" alt="JOBS - Overview of job status and requested resources" width="750" height="457">
+    </a>
+  </div>
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  <div class="gallery-item gallery-item--medium">
+    <a data-fancybox="gallery-hiwi" href="/media/albums/hiwi/011_jobs_detailed1.png" data-caption="JOB - User, job id, time information and all requested resources">
+      <img src="/media/albums/hiwi/011_jobs_detailed1_hu4832332696465509765.webp" loading="lazy" alt="JOB - User, job id, time information and all requested resources" width="750" height="519">
+    </a>
+  </div>
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  <div class="gallery-item gallery-item--medium">
+    <a data-fancybox="gallery-hiwi" href="/media/albums/hiwi/02_nodes.png" data-caption="NODES - Available resources per node and their usage over time">
+      <img src="/media/albums/hiwi/02_nodes_hu18341291515366219674.webp" loading="lazy" alt="NODES - Available resources per node and their usage over time" width="750" height="457">
+    </a>
+  </div>
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  <div class="gallery-item gallery-item--medium">
+    <a data-fancybox="gallery-hiwi" href="/media/albums/hiwi/03_resources_per_user.png" data-caption="RESOURCES - List and chart of the resources being used per user">
+      <img src="/media/albums/hiwi/03_resources_per_user_hu15183878349347943694.webp" loading="lazy" alt="RESOURCES - List and chart of the resources being used per user" width="750" height="457">
+    </a>
+  </div>
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  <div class="gallery-item gallery-item--medium">
+    <a data-fancybox="gallery-hiwi" href="/media/albums/hiwi/04_storage.png" data-caption="STORAGE - A list of the storage used per user on each node">
+      <img src="/media/albums/hiwi/04_storage_hu1875875335302845796.webp" loading="lazy" alt="STORAGE - A list of the storage used per user on each node" width="750" height="457">
+    </a>
+  </div>
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  
+  
+  <div class="gallery-item gallery-item--medium">
+    <a data-fancybox="gallery-hiwi" href="/media/albums/hiwi/05_dark_mode.png" data-caption="Dark Mode 🌛 - Because no one should use light mode!">
+      <img src="/media/albums/hiwi/05_dark_mode_hu11706430596073730881.webp" loading="lazy" alt="Dark Mode 🌛 - Because no one should use light mode!" width="750" height="457">
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/back-end/">Back-End</a>
+  
+  <a class="badge badge-light" href="/tag/front-end/">Front-End</a>
+  
+  <a class="badge badge-light" href="/tag/slurm/">Slurm</a>
+  
+  <a class="badge badge-light" href="/tag/m.sc/">M.Sc</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmarcb.pro%2Fproject%2Fhiwi%2F&amp;text=SLURM&#43;Cluster&#43;-&#43;Dashboard&#43;and&#43;other&#43;tools" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmarcb.pro%2Fproject%2Fhiwi%2F&amp;t=SLURM&#43;Cluster&#43;-&#43;Dashboard&#43;and&#43;other&#43;tools" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=SLURM%20Cluster%20-%20Dashboard%20and%20other%20tools&amp;body=https%3A%2F%2Fmarcb.pro%2Fproject%2Fhiwi%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fmarcb.pro%2Fproject%2Fhiwi%2F&amp;title=SLURM&#43;Cluster&#43;-&#43;Dashboard&#43;and&#43;other&#43;tools" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu6821051787016900529.jpg" alt="Marc Benedí San Millán"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://marcb.pro/">Marc Benedí San Millán</a></h5>
+      <h6 class="card-subtitle">PhD Candidate @ <a href="https://niessnerlab.org/" target="_blank">Visual Computing Group</a></h6>
+      <p class="card-text">My research interests include Computer Vision, Computer Graphics and Deep Learning.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/marcbenedi/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="project-related-pages content-widget-hr">
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+    </div>
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2024 marcb.pro. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> | Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
+
+    
+  </p>
+</footer>
+
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.50933d940896e49f984a778650d5f7f5.js"></script>
+
+
+
+
+  
+
+  
+  
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous"></script>
+  
+
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.7f5ebaff62ae468cff8bb3dd1337bb9b.js"></script>
+
+
+
+  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

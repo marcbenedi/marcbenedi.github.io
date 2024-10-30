@@ -297,6 +297,9 @@ sections:
         - name: Computer Vision
           tag: 'Computer Vision'
 
+        - name: Open Source
+          tag: 'open-source'
+
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '2'
@@ -353,12 +356,15 @@ sections:
       view: compact
       columns: '2'
 
-  # - block: markdown
-  #   content:
-  #     title: Tags
-  #     subtitle: ''
-  #     text: |-
-  #       {{< list_tags >}}
+  - block: markdown
+    content:
+      title: Tags
+      subtitle: ''
+      text: |-
+        **Looking for a specific topic?** Click on [tags](/tags) to browse them all!
+      #        {{< list_tags >}}
+    design:
+      columns: '2'
 
   # - block: markdown
   #   content:
@@ -426,7 +432,7 @@ sections:
       # title: 📫 Contact
       title: Contact
       subtitle:
-      text: |-
+      text: |2-
         Don't hesitate to reach out in any of the following ways! 
       # Contact (add or remove contact options as necessary)
 
