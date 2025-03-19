@@ -4,20 +4,27 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  # - name: 🙋 About
-  - name: 👋 About
+  # - name: 👋 About
+  - name: About
     url: '#about'
     weight: 10
 
-  - name: 👷 Experience
+  - name: Publications
+    url: '#publication'
+    weight: 19
+
+  # - name: 👷 Experience
+  - name: Experience
     url: '#experience'
     weight: 20
 
-  - name: 🏗️ Projects
+  # - name: 🏗️ Projects
+  - name: Projects
     url: '#projects'
     weight: 40
 
-  - name: 📰 Posts
+  # - name: 📰 Posts
+  - name: Posts
     url: '#posts'
     weight: 41
 
@@ -29,16 +36,19 @@ main:
   #   url: '#featured'
   #   weight: 50
   #
-  - name: 👨‍🏫 Teaching
+  # - name: 👨‍🏫 Teaching
+  - name: Teaching
     url: '#teaching'
     weight: 45
 
-  - name: 📫 Contact
+  # - name: 📫 Contact
+  - name: Contact
     url: '#contact'
     weight: 60
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
-  - name: 📃 CV
+  # - name: 📃 CV
+  - name: CV
     url: uploads/resume.pdf
     weight: 70

@@ -51,6 +51,23 @@ sections:
   #   design:
   #     columns: '1'
 
+  - block: collection
+    id: publication
+    content:
+      title: Publications
+      text: |-
+        {{% callout note %}}
+        Quickly discover relevant content by [filtering publications](./publication/).
+        {{% /callout %}}
+      filters:
+        folders:
+          - publication
+        exclude_featured: false
+    design:
+      columns: '2'
+      # view: citation
+      view: compact
+
   - block: experience
     id: experience
     content:
@@ -393,21 +410,6 @@ sections:
   #   design:
   #     columns: '2'
   #     view: card
-
-  # - block: collection
-  #   content:
-  #     title: Recent Publications
-  #     text: |-
-  #       {{% callout note %}}
-  #       Quickly discover relevant content by [filtering publications](./publication/).
-  #       {{% /callout %}}
-  #     filters:
-  #       folders:
-  #         - publication
-  #       exclude_featured: true
-  #   design:
-  #     columns: '2'
-  #     view: citation
 
   # - block: collection
   #   id: talks
