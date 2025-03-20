@@ -56,3 +56,6 @@ https://bootstrap.hugoblox.com/
 
 `hugo serve -D`
 
+ hugo serve -b http:// --bind=0.0.0.0 
+
+hugo -d docs --cleanDestinationDir 
