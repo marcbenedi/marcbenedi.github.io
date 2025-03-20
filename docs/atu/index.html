@@ -516,6 +516,28 @@
 </section>
 <!-- Comparisons with MDM -->
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let videos = document.querySelectorAll("video[data-src]");
+  
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let video = entry.target;
+          let source = document.createElement("source");
+          source.src = video.getAttribute("data-src");
+          source.type = "video/mp4";
+          video.appendChild(source);
+          video.load(); // Load the video
+          observer.unobserve(video); // Stop observing once loaded
+        }
+      });
+    });
+  
+    videos.forEach((video) => observer.observe(video));
+  });  
+</script>
+
 <!-- All results -->
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -527,45 +549,50 @@
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"protecting his eyes from the sun"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_27/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_27/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"pushing a trolly"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_19/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_19/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"practicing ice skating"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_5/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_5/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"walking"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-01-18_13-12-23_mixamo_multiple_7/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-01-18_13-12-23_mixamo_multiple_7/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"energetically dancing"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-05_18-19-51_kai_romero_sophie_7/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-05_18-19-51_kai_romero_sophie_7/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
@@ -806,9 +833,10 @@
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"celebrating a victory"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-03_11-05-43_mixamo_ninja_broader_7/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-03_11-05-43_mixamo_ninja_broader_7/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
@@ -833,9 +861,10 @@
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"energetically clapping"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-03_11-05-43_mixamo_ninja_broader_10/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-03_11-05-43_mixamo_ninja_broader_10/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
@@ -878,45 +907,50 @@
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"doing squats"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-05_18-19-51_kai_romero_sophie_8/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-05_18-19-51_kai_romero_sophie_8/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"playing tennis"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-05_18-19-51_kai_romero_sophie_10/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-05_18-19-51_kai_romero_sophie_10/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"kicking a soccer ball"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-06_19-41-05_kai_ninja_wo_xb_wo_reg_rot_norm_3/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-06_19-41-05_kai_ninja_wo_xb_wo_reg_rot_norm_3/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"practicing ice skating"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-06_23-09-31_kai_wo_xb_wo_reg_rot_norm_8/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-06_23-09-31_kai_wo_xb_wo_reg_rot_norm_8/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"doing side lunges"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-07_22-59-04_kai_wo_xb_3/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-07_22-59-04_kai_wo_xb_3/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
@@ -932,27 +966,30 @@
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"riding a horse"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_17-47-27_kai28_7/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_17-47-27_kai28_7/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"digging a hole</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_17-47-27_kai28_14/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_17-47-27_kai28_14/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"dancing a waltz"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_17-47-27_kai28_25/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_17-47-27_kai28_25/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
@@ -968,9 +1005,10 @@
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"shooting with a bow"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_9/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_9/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
@@ -1004,18 +1042,20 @@
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"laughing hysterically"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_17/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_17/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="box">
             <h2 class="subtitle has-text-centered"><i>"exercising with battle ropes"</i></h2>
-            <video poster="" autoplay controls muted loop width="100%">
+            <video poster="" autoplay controls muted loop width="100%" data-src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_22/front.mp4"></video>
+            <!-- <video poster="" autoplay controls muted loop width="100%">
               <source src="/publication/atu/results/2025-02-10_23-32-11_kai28_less_global_rot_norm_22/front.mp4" type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
 
