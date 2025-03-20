@@ -7,7 +7,7 @@
     <description>Android</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 12 Feb 2016 19:59:25 +0100</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu7278467068447599620.png</url>
+      <url>https://marcb.pro/media/icon_hu_3e8c0acd7bb820fc.png</url>
       <title>Android</title>
       <link>https://marcb.pro/tag/android/</link>
     </image>
@@ -18,8 +18,7 @@
       <pubDate>Fri, 12 Feb 2016 19:59:25 +0100</pubDate>
       <guid>https://marcb.pro/project/hackathon-stirhack-2016/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Writing about StirHack16, the first hackathon I ever attended, brings me very good memories. In this page I will focus on the project itself, although some day I should write about the hackathon experience. 😃&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Writing about StirHack16, the first hackathon I ever attended, brings me very good memories. In this page I will focus on the project itself, although some day I should write about the hackathon experience. 😃&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Android application with Google Maps API interface to help hackathon participants. The app provides the following information: List of upcoming hackathons, their position on Google Maps, and points of interest such as restaurants and hotels around the event.&lt;/p&gt;
 &lt;p&gt;For more information visit the &lt;a href=&#34;https://devpost.com/software/hackworld-gz18v7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;project&amp;rsquo;s page on Devpost&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;
@@ -41,10 +40,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
-               /project/hackathon-stirhack-2016/tweet_hu12278515664223778947.webp 400w,
-               /project/hackathon-stirhack-2016/tweet_hu15851234228157232282.webp 760w,
-               /project/hackathon-stirhack-2016/tweet_hu14774158385383209834.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/hackathon-stirhack-2016/tweet_hu12278515664223778947.webp&#34;
+               /project/hackathon-stirhack-2016/tweet_hu_f923da23b440f7e8.webp 400w,
+               /project/hackathon-stirhack-2016/tweet_hu_a01d201dce6419dc.webp 760w,
+               /project/hackathon-stirhack-2016/tweet_hu_ef9956ec93c3c6e6.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/hackathon-stirhack-2016/tweet_hu_f923da23b440f7e8.webp&#34;
                width=&#34;356&#34;
                height=&#34;508&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
