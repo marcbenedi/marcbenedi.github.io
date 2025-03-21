@@ -42,7 +42,7 @@ links:
   icon_pack: fas
   icon: file-pdf
 - name: ArXiv
-  url: http://example.org
+  url: https://arxiv.org/abs/2503.15996
   icon_pack: ai
   icon: arxiv
 - name: Video
