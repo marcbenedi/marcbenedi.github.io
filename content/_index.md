@@ -458,7 +458,7 @@ sections:
       office_hours:
         - '**Office Hours:**'
         - 'Tuesday 14:15 to 15:45'
-      appointment_url: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2l6Imq2j4Z5sTSsBmlguRhAKsQCpsELpUaNVy4gI1sRzckazjMgZRsrtOlM-4aY4YX1BsA96na'
+      appointment_url: 'https://cal.com/marcbpro'
 
       contact_links:
         - icon: twitter
