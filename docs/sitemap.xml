@@ -2,10 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://marcb.pro/event/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/publication/atu/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -42,12 +38,12 @@
     <lastmod>2024-04-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/post/</loc>
-    <lastmod>2023-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/teaching/3dsmc_ws2024/</loc>
     <lastmod>2023-10-07T15:10:29+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/post/</loc>
+    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/tag/pycharm/</loc>
@@ -150,10 +146,6 @@
     <lastmod>2019-05-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/tag/b.sc/</loc>
     <lastmod>2018-06-26T20:05:18+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -182,6 +174,9 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/publication_types/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/event/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

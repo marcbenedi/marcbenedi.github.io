@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: September 30, 2025 --><html lang="en-us" >
+<!-- Last Published: February 8, 2026 --><html lang="en-us" >
 
 
 <head>
@@ -217,7 +217,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.e3cf9cd65ed6006d444e4f18aaac40f8.css" />
+  <link rel="stylesheet" href="/css/wowchemy.5adeb309104bf059bfce5194cee5d4d8.css" />
 
   
   
@@ -317,8 +317,8 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 
 
 
-<link rel="icon" type="image/png" href="/media/icon_hu_c082d943060bd124.png" />
-<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_77f0a50f872091c0.png" />
+<link rel="icon" type="image/png" href="/media/icon_hu_b1f7b716423eaad9.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_36212f6a2927d0e4.png" />
 
 <meta name="theme-color" content="#1565c0" />
 
@@ -426,7 +426,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
     "name": "Marc B",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://marcb.pro/media/icon_hu_74339abbec4662d8.png"
+      "url": "https://marcb.pro/media/icon_hu_9112f5e276aefd0f.png"
     }
   },
   "description": "\u003cdetails class=\"toc-inpage d-print-none  \" open\u003e\n  \u003csummary class=\"font-weight-bold\"\u003eTable of Contents\u003c/summary\u003e\n  \u003cnav id=\"TableOfContents\"\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\"#the-problem\"\u003eThe problem\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#advantages\"\u003eAdvantages\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-easy-solution-vscode-on-the-web\"\u003e🧑‍💻 The easy solution: VSCode on the web!\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-complex-solution-start-your-own-sshd-process\"\u003e👷 The complex solution: Start your own \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\"#step-1-create-the-ssh-keys\"\u003eStep 1: Create the SSH keys\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-2-sshd-slurm-job\"\u003eStep 2: \u003ccode\u003esshd\u003c/code\u003e Slurm job\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-3-test-the-connection\"\u003eStep 3: Test the connection\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-4-connect-your-ide\"\u003eStep 4: Connect your IDE\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-5-remember-to-end-the-sshd-process\"\u003eStep 5: Remember to end the \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-references\"\u003e📑 References\u003c/a\u003e\u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/nav\u003e\n\u003c/details\u003e\n\n\u003cp\u003eAlthough I don\u0026rsquo;t use Visual Studio Code[\u003ca href=\"https://code.visualstudio.com/\" target=\"_blank\" rel=\"noopener\"\u003e1\u003c/a\u003e] as a code editor (I use Neovim[\u003ca href=\"https://www.lunarvim.org/\" target=\"_blank\" rel=\"noopener\"\u003e2\u003c/a\u003e] 🦸), many colleagues use it as their primary editor.\u003c/p\u003e"
@@ -1013,7 +1013,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 629px; max-height: 217px;">
   <div style="position: relative">
-    <img src="/post/vscode-slurm/featured_hu_bb49ff6b124d0e99.webp" width="629" height="217" alt="" class="featured-image">
+    <img src="/post/vscode-slurm/featured_hu_e0059ec3e7086db3.webp" width="629" height="217" alt="" class="featured-image">
     
   </div>
 </div>
@@ -1071,10 +1071,10 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <figure  id="figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="htop" srcset="
-               /post/vscode-slurm/htop_hu_3109b452d6155869.webp 400w,
-               /post/vscode-slurm/htop_hu_8f7ceab2c763452b.webp 760w,
-               /post/vscode-slurm/htop_hu_9369e594271e5aec.webp 1200w"
-               src="/post/vscode-slurm/htop_hu_3109b452d6155869.webp"
+               /post/vscode-slurm/htop_hu_9822c6603cd0ea76.webp 400w,
+               /post/vscode-slurm/htop_hu_6cf9c2465ff25681.webp 760w,
+               /post/vscode-slurm/htop_hu_65945f145afe6932.webp 1200w"
+               src="/post/vscode-slurm/htop_hu_9822c6603cd0ea76.webp"
                width="760"
                height="492"
                loading="lazy" data-zoomable /></div>
@@ -1090,7 +1090,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <p>First, we need to install the binary in our system. There are many options for that, so just pick up the most convenient for you. See the list of options <a href="https://coder.com/docs/code-server/latest/install" target="_blank" rel="noopener">here</a>. In my case, I choose the <code>Standalone release</code> and put the binary in my path.</p>
 <p>Second, we will create a job file, for example <code>code-server.job</code>, with the following content:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash 
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
+</span></span></span><span class="line"><span class="cl"> 
 </span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --job-name=code-server</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --time=04:00:00</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --output=%x_%j_%N.log </span>
@@ -1128,7 +1128,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <h3 id="step-2-sshd-slurm-job">Step 2: <code>sshd</code> Slurm job</h3>
 <p>Copy the following content to a new file such as <code>sshd.job</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash 
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
+</span></span></span><span class="line"><span class="cl"> 
 </span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --job-name=sshd</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --time=04:00:00</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#SBATCH --output=%x_%j_%N.log </span>
@@ -1288,7 +1288,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_79901f357f233ce4.jpg" alt="Marc Benedí San Millán"></a>
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_e91ed502b1206e25.jpg" alt="Marc Benedí San Millán"></a>
     
 
     <div class="media-body">
@@ -1473,7 +1473,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 
   
   <p class="powered-by copyright-license-text">
-    © 2025 marcb.pro. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+    © 2026 marcb.pro. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
   </p>
   
 
@@ -1511,7 +1511,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
   
 
 
-<script src="/js/vendor-bundle.min.0dfcdd67ca42b8dbc94d6bf1aa446ffb.js"></script>
+<script src="/js/vendor-bundle.min.6782e3f6a4f06ea4766df038c45ecf40.js"></script>
 
 
 
@@ -1592,7 +1592,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
-  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+  <script src="/js/wowchemy-headroom.b95a7e109243f29d04930ae8cb49a756.js" type="module"></script>
 
 
 
