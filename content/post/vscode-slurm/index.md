@@ -28,6 +28,8 @@ image:
 projects: []
 ---
 
+> ⭐ **Check out my latest Python library: [autocast](https://github.com/marcbenedi/autocast)!** A smart library that automates **type conversion** between PyTorch, NumPy, Open3D (and many others!) so you can **stop writing boilerplate**. ⭐
+
 {{< toc >}}
 
 
@@ -39,7 +41,7 @@ Although I don't use Visual Studio Code[[1]] as a code editor (I use Neovim[[2]]
 
 To develop in our Slurm[[3]] cluster, the users connect the VSCode to the "Login node" which starts the `vscode-server` process. 
 
-This is not a problem by itself, but when many users do it simultaneously, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.
+This is not a problem by itself, but when many users do it simultaneouslly, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.
 
 Additionally, this setup only allows for editing the code, not for executing (or at least I hope they are not running code in the "Login node" 🤞) or even debugging. 
 

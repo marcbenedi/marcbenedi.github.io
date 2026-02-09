@@ -17,7 +17,10 @@
       <link>https://marcb.pro/post/vscode-slurm/</link>
       <pubDate>Mon, 07 Aug 2023 15:10:29 +0200</pubDate>
       <guid>https://marcb.pro/post/vscode-slurm/</guid>
-      <description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;⭐ &lt;strong&gt;Check out my latest Python library: &lt;a href=&#34;https://github.com/marcbenedi/autocast&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;autocast&lt;/a&gt;!&lt;/strong&gt; A smart library that automates &lt;strong&gt;type conversion&lt;/strong&gt; between PyTorch, NumPy, Open3D (and many others!) so you can &lt;strong&gt;stop writing boilerplate&lt;/strong&gt;. ⭐&lt;/p&gt;
+&lt;/blockquote&gt;
+
 
 &lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
   &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
@@ -44,7 +47,7 @@
 &lt;p&gt;(The solution presented here also works for PyCharm[&lt;a href=&#34;https://www.jetbrains.com/help/pycharm/getting-started.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4&lt;/a&gt;]!)&lt;/p&gt;
 &lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
 &lt;p&gt;To develop in our Slurm[&lt;a href=&#34;https://slurm.schedmd.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3&lt;/a&gt;] cluster, the users connect the VSCode to the &amp;ldquo;Login node&amp;rdquo; which starts the &lt;code&gt;vscode-server&lt;/code&gt; process.&lt;/p&gt;
-&lt;p&gt;This is not a problem by itself, but when many users do it simultaneously, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.&lt;/p&gt;
+&lt;p&gt;This is not a problem by itself, but when many users do it simultaneouslly, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.&lt;/p&gt;
 &lt;p&gt;Additionally, this setup only allows for editing the code, not for executing (or at least I hope they are not running code in the &amp;ldquo;Login node&amp;rdquo; 🤞) or even debugging.&lt;/p&gt;
 &lt;p&gt;
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 8, 2026 --><html lang="en-us" >
+<!-- Last Published: February 9, 2026 --><html lang="en-us" >
 
 
 <head>
@@ -284,6 +284,11 @@
   
 
 <meta name="description" content="
+⭐ Check out my latest Python library: autocast! A smart library that automates type conversion between PyTorch, NumPy, Open3D (and many others!) so you can stop writing boilerplate. ⭐
+
+
+
+
   Table of Contents
   
   
@@ -350,6 +355,11 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <meta property="og:url" content="https://marcb.pro/post/vscode-slurm/" />
 <meta property="og:title" content="Using VSCode in Slurm | Marc B" />
 <meta property="og:description" content="
+⭐ Check out my latest Python library: autocast! A smart library that automates type conversion between PyTorch, NumPy, Open3D (and many others!) so you can stop writing boilerplate. ⭐
+
+
+
+
   Table of Contents
   
   
@@ -429,7 +439,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
       "url": "https://marcb.pro/media/icon_hu_9112f5e276aefd0f.png"
     }
   },
-  "description": "\u003cdetails class=\"toc-inpage d-print-none  \" open\u003e\n  \u003csummary class=\"font-weight-bold\"\u003eTable of Contents\u003c/summary\u003e\n  \u003cnav id=\"TableOfContents\"\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\"#the-problem\"\u003eThe problem\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#advantages\"\u003eAdvantages\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-easy-solution-vscode-on-the-web\"\u003e🧑‍💻 The easy solution: VSCode on the web!\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-complex-solution-start-your-own-sshd-process\"\u003e👷 The complex solution: Start your own \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\"#step-1-create-the-ssh-keys\"\u003eStep 1: Create the SSH keys\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-2-sshd-slurm-job\"\u003eStep 2: \u003ccode\u003esshd\u003c/code\u003e Slurm job\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-3-test-the-connection\"\u003eStep 3: Test the connection\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-4-connect-your-ide\"\u003eStep 4: Connect your IDE\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-5-remember-to-end-the-sshd-process\"\u003eStep 5: Remember to end the \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-references\"\u003e📑 References\u003c/a\u003e\u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/nav\u003e\n\u003c/details\u003e\n\n\u003cp\u003eAlthough I don\u0026rsquo;t use Visual Studio Code[\u003ca href=\"https://code.visualstudio.com/\" target=\"_blank\" rel=\"noopener\"\u003e1\u003c/a\u003e] as a code editor (I use Neovim[\u003ca href=\"https://www.lunarvim.org/\" target=\"_blank\" rel=\"noopener\"\u003e2\u003c/a\u003e] 🦸), many colleagues use it as their primary editor.\u003c/p\u003e"
+  "description": "\u003cblockquote\u003e\n\u003cp\u003e⭐ \u003cstrong\u003eCheck out my latest Python library: \u003ca href=\"https://github.com/marcbenedi/autocast\" target=\"_blank\" rel=\"noopener\"\u003eautocast\u003c/a\u003e!\u003c/strong\u003e A smart library that automates \u003cstrong\u003etype conversion\u003c/strong\u003e between PyTorch, NumPy, Open3D (and many others!) so you can \u003cstrong\u003estop writing boilerplate\u003c/strong\u003e. ⭐\u003c/p\u003e\n\u003c/blockquote\u003e\n\n\n\u003cdetails class=\"toc-inpage d-print-none  \" open\u003e\n  \u003csummary class=\"font-weight-bold\"\u003eTable of Contents\u003c/summary\u003e\n  \u003cnav id=\"TableOfContents\"\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\"#the-problem\"\u003eThe problem\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#advantages\"\u003eAdvantages\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-easy-solution-vscode-on-the-web\"\u003e🧑‍💻 The easy solution: VSCode on the web!\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-complex-solution-start-your-own-sshd-process\"\u003e👷 The complex solution: Start your own \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\"#step-1-create-the-ssh-keys\"\u003eStep 1: Create the SSH keys\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-2-sshd-slurm-job\"\u003eStep 2: \u003ccode\u003esshd\u003c/code\u003e Slurm job\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-3-test-the-connection\"\u003eStep 3: Test the connection\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-4-connect-your-ide\"\u003eStep 4: Connect your IDE\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-5-remember-to-end-the-sshd-process\"\u003eStep 5: Remember to end the \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-references\"\u003e📑 References\u003c/a\u003e\u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/nav\u003e\n\u003c/details\u003e\n\n\u003cp\u003eAlthough I don\u0026rsquo;t use Visual Studio Code[\u003ca href=\"https://code.visualstudio.com/\" target=\"_blank\" rel=\"noopener\"\u003e1\u003c/a\u003e] as a code editor (I use Neovim[\u003ca href=\"https://www.lunarvim.org/\" target=\"_blank\" rel=\"noopener\"\u003e2\u003c/a\u003e] 🦸), many colleagues use it as their primary editor.\u003c/p\u003e"
 }
 </script>
 
@@ -1023,7 +1033,10 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
   <div class="article-container">
 
     <div class="article-style">
-      
+      <blockquote>
+<p>⭐ <strong>Check out my latest Python library: <a href="https://github.com/marcbenedi/autocast" target="_blank" rel="noopener">autocast</a>!</strong> A smart library that automates <strong>type conversion</strong> between PyTorch, NumPy, Open3D (and many others!) so you can <strong>stop writing boilerplate</strong>. ⭐</p>
+</blockquote>
+
 
 <details class="toc-inpage d-print-none  " open>
   <summary class="font-weight-bold">Table of Contents</summary>
@@ -1050,7 +1063,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <p>(The solution presented here also works for PyCharm[<a href="https://www.jetbrains.com/help/pycharm/getting-started.html" target="_blank" rel="noopener">4</a>]!)</p>
 <h2 id="the-problem">The problem</h2>
 <p>To develop in our Slurm[<a href="https://slurm.schedmd.com/" target="_blank" rel="noopener">3</a>] cluster, the users connect the VSCode to the &ldquo;Login node&rdquo; which starts the <code>vscode-server</code> process.</p>
-<p>This is not a problem by itself, but when many users do it simultaneously, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.</p>
+<p>This is not a problem by itself, but when many users do it simultaneouslly, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.</p>
 <p>Additionally, this setup only allows for editing the code, not for executing (or at least I hope they are not running code in the &ldquo;Login node&rdquo; 🤞) or even debugging.</p>
 <p>
 

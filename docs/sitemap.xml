@@ -2,6 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://marcb.pro/categories/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/computer-vision/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/machine-learning/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/category/open-source/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/open-source/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/post/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/python/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/pytorch/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tags/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/post/autocast/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://marcb.pro/publication/atu/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -14,15 +54,7 @@
     <lastmod>2024-10-30T08:11:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/tag/open-source/</loc>
-    <lastmod>2024-10-30T08:11:42+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/project/</loc>
-    <lastmod>2024-10-30T08:11:42+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tags/</loc>
     <lastmod>2024-10-30T08:11:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -40,10 +72,6 @@
   </url><url>
     <loc>https://marcb.pro/teaching/3dsmc_ws2024/</loc>
     <lastmod>2023-10-07T15:10:29+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/post/</loc>
-    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/tag/pycharm/</loc>
@@ -84,10 +112,6 @@
   </url><url>
     <loc>https://marcb.pro/tag/sat/</loc>
     <lastmod>2022-09-15T20:05:18+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tag/computer-vision/</loc>
-    <lastmod>2021-11-01T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/tag/deep-learning/</loc>
@@ -168,9 +192,6 @@
   </url><url>
     <loc>https://marcb.pro/project/hackathon-stirhack-2016/</loc>
     <lastmod>2016-02-12T19:59:25+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/categories/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/publication_types/</loc>
