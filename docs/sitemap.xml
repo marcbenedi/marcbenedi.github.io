@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://marcb.pro/post/autocast/</loc>
+    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://marcb.pro/categories/</loc>
     <lastmod>2026-02-09T21:54:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -35,10 +39,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/tags/</loc>
-    <lastmod>2026-02-09T21:54:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/post/autocast/</loc>
     <lastmod>2026-02-09T21:54:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>

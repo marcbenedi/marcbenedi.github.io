@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "🧑‍💻 autocast - Stop writing boilerplate"
+title: "autocast - Stop writing boilerplate"
 subtitle: ""
 summary: "Introducing `autocast`, a new Python library that automates type conversion using a directed graph, saving you from writing verbose `.detach().cpu().numpy()` chains."
 authors: []
