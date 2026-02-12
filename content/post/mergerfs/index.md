@@ -73,3 +73,5 @@ In short: It grants non-root users the permission to use the allow_other mount o
 
 
 Yes, exactly. If you are running mergerfs as a regular user (which is a good practice), enabling user_allow_other is practically mandatory if you want any other software on your system to actually use that storage pool.
+
+https://github.com/trapexit/mergerfs-tools -> i should check this out and see if i can replace my script with it
