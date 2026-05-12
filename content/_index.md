@@ -99,7 +99,7 @@ sections:
           date_start: '2021-04-01'
           date_end: '2022-03-01'
           description: |2-
-              * Fellowship awarded to outstanding Master students to allow them developing state-of-the-art models. See [page](https://niessnerlab.org/fellowship.html).
+              * Fellowship awarded to outstanding Master students to allow them developing state-of-the-art models. See [page](https://web.archive.org/web/20221127014944/https://niessnerlab.org/fellowship.html).
               * See [project's page](/project/gr/).
 
         - title: Working Student
