@@ -42,6 +42,34 @@
     <lastmod>2026-02-09T21:54:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://marcb.pro/tag/ansible/</loc>
+    <lastmod>2025-10-01T11:03:24+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/bash/</loc>
+    <lastmod>2025-10-01T11:03:24+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/fuse/</loc>
+    <lastmod>2025-10-01T11:03:24+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/mergerfs/</loc>
+    <lastmod>2025-10-01T11:03:24+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/post/mergerfs/</loc>
+    <lastmod>2025-10-01T11:03:24+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/slurm/</loc>
+    <lastmod>2025-10-01T11:03:24+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/storage/</loc>
+    <lastmod>2025-10-01T11:03:24+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://marcb.pro/publication/atu/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -58,7 +86,7 @@
     <lastmod>2024-10-30T08:11:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/teaching/3dsmc_ws2025/</loc>
+    <loc>https://marcb.pro/teaching/3dsmc/</loc>
     <lastmod>2024-10-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -66,19 +94,7 @@
     <lastmod>2024-10-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/teaching/3dsmc_ss2024/</loc>
-    <lastmod>2024-04-07T15:10:29+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/teaching/3dsmc_ws2024/</loc>
-    <lastmod>2023-10-07T15:10:29+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/tag/pycharm/</loc>
-    <lastmod>2023-08-07T15:10:29+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tag/slurm/</loc>
     <lastmod>2023-08-07T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -94,6 +110,14 @@
     <lastmod>2022-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://marcb.pro/tag/3d-reconstruction/</loc>
+    <lastmod>2022-09-15T20:05:18+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/deep-learning/</loc>
+    <lastmod>2022-09-15T20:05:18+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://marcb.pro/tag/featured/</loc>
     <lastmod>2022-09-15T20:05:18+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,24 +130,8 @@
     <lastmod>2022-09-15T20:05:18+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://marcb.pro/tag/optimization/</loc>
-    <lastmod>2022-09-15T20:05:18+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tag/sat/</loc>
-    <lastmod>2022-09-15T20:05:18+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tag/deep-learning/</loc>
-    <lastmod>2021-11-01T00:00:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://marcb.pro/project/gr/</loc>
     <lastmod>2021-11-01T00:00:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://marcb.pro/tag/3d-reconstruction/</loc>
-    <lastmod>2021-03-27T17:56:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/project/kinect-fusion/</loc>
@@ -139,6 +147,10 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/project/idp/</loc>
+    <lastmod>2020-04-27T20:09:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/tag/optimization/</loc>
     <lastmod>2020-04-27T20:09:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -178,6 +190,10 @@
     <lastmod>2018-06-26T20:05:18+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://marcb.pro/tag/sat/</loc>
+    <lastmod>2018-06-26T20:05:18+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://marcb.pro/teaching/jedi_android/</loc>
     <lastmod>2017-01-01T15:10:29+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -198,6 +214,9 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://marcb.pro/event/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://marcb.pro/slides/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

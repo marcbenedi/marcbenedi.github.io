@@ -45,6 +45,10 @@ links:
   url: https://arxiv.org/abs/2503.15996
   icon_pack: ai
   icon: arxiv
+- name: ICLR
+  url: https://iclr.cc/virtual/2026/poster/10010792
+  icon_pack: fas
+  icon: external-link-alt
 - name: Video
   url: https://youtu.be/hgFj-MJoEjM
   icon_pack: fab

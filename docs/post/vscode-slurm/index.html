@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 12, 2026 --><html lang="en-us" >
+<!-- Last Published: May 12, 2026 --><html lang="en-us" >
 
 
 <head>
@@ -283,33 +283,7 @@
 
   
 
-<meta name="description" content="
-⭐ Check out my latest Python library: autocast! A smart library that automates type conversion between PyTorch, NumPy, Open3D (and many others!) so you can stop writing boilerplate. ⭐
-
-
-
-
-  Table of Contents
-  
-  
-    The problem
-    Advantages
-    🧑‍💻 The easy solution: VSCode on the web!
-    👷 The complex solution: Start your own sshd process
-      
-        Step 1: Create the SSH keys
-        Step 2: sshd Slurm job
-        Step 3: Test the connection
-        Step 4: Connect your IDE
-        Step 5: Remember to end the sshd process
-      
-    
-    📑 References
-  
-
-
-
-Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." />
+<meta name="description" content="Two recipes for moving VSCode (and PyCharm) off the Slurm login node and into actual compute jobs: a quick `code-server` web setup, and a per-job `sshd` workflow for full IDE remote-development. Stops resource-hungry editor processes from piling up on shared login nodes and lets you debug on the GPU you actually allocated." />
 
 
 
@@ -322,8 +296,8 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 
 
 
-<link rel="icon" type="image/png" href="/media/icon_hu_b1f7b716423eaad9.png" />
-<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_36212f6a2927d0e4.png" />
+<link rel="icon" type="image/png" href="/media/icon_hu_883d34e56ca5c965.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_fa0e0b89167ef10a.png" />
 
 <meta name="theme-color" content="#1565c0" />
 
@@ -354,33 +328,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <meta property="og:site_name" content="Marc B" />
 <meta property="og:url" content="https://marcb.pro/post/vscode-slurm/" />
 <meta property="og:title" content="Using VSCode in Slurm | Marc B" />
-<meta property="og:description" content="
-⭐ Check out my latest Python library: autocast! A smart library that automates type conversion between PyTorch, NumPy, Open3D (and many others!) so you can stop writing boilerplate. ⭐
-
-
-
-
-  Table of Contents
-  
-  
-    The problem
-    Advantages
-    🧑‍💻 The easy solution: VSCode on the web!
-    👷 The complex solution: Start your own sshd process
-      
-        Step 1: Create the SSH keys
-        Step 2: sshd Slurm job
-        Step 3: Test the connection
-        Step 4: Connect your IDE
-        Step 5: Remember to end the sshd process
-      
-    
-    📑 References
-  
-
-
-
-Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[2] 🦸), many colleagues use it as their primary editor." /><meta property="og:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Two recipes for moving VSCode (and PyCharm) off the Slurm login node and into actual compute jobs: a quick `code-server` web setup, and a per-job `sshd` workflow for full IDE remote-development. Stops resource-hungry editor processes from piling up on shared login nodes and lets you debug on the GPU you actually allocated." /><meta property="og:image" content="https://marcb.pro/post/vscode-slurm/featured.jpg" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -436,10 +384,10 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
     "name": "Marc B",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://marcb.pro/media/icon_hu_9112f5e276aefd0f.png"
+      "url": "https://marcb.pro/media/icon_hu_226bcf9d58080f64.png"
     }
   },
-  "description": "\u003cblockquote\u003e\n\u003cp\u003e⭐ \u003cstrong\u003eCheck out my latest Python library: \u003ca href=\"https://github.com/marcbenedi/autocast\" target=\"_blank\" rel=\"noopener\"\u003eautocast\u003c/a\u003e!\u003c/strong\u003e A smart library that automates \u003cstrong\u003etype conversion\u003c/strong\u003e between PyTorch, NumPy, Open3D (and many others!) so you can \u003cstrong\u003estop writing boilerplate\u003c/strong\u003e. ⭐\u003c/p\u003e\n\u003c/blockquote\u003e\n\n\n\u003cdetails class=\"toc-inpage d-print-none  \" open\u003e\n  \u003csummary class=\"font-weight-bold\"\u003eTable of Contents\u003c/summary\u003e\n  \u003cnav id=\"TableOfContents\"\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\"#the-problem\"\u003eThe problem\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#advantages\"\u003eAdvantages\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-easy-solution-vscode-on-the-web\"\u003e🧑‍💻 The easy solution: VSCode on the web!\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-the-complex-solution-start-your-own-sshd-process\"\u003e👷 The complex solution: Start your own \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\"#step-1-create-the-ssh-keys\"\u003eStep 1: Create the SSH keys\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-2-sshd-slurm-job\"\u003eStep 2: \u003ccode\u003esshd\u003c/code\u003e Slurm job\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-3-test-the-connection\"\u003eStep 3: Test the connection\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-4-connect-your-ide\"\u003eStep 4: Connect your IDE\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"#step-5-remember-to-end-the-sshd-process\"\u003eStep 5: Remember to end the \u003ccode\u003esshd\u003c/code\u003e process\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/li\u003e\n    \u003cli\u003e\u003ca href=\"#-references\"\u003e📑 References\u003c/a\u003e\u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/nav\u003e\n\u003c/details\u003e\n\n\u003cp\u003eAlthough I don\u0026rsquo;t use Visual Studio Code[\u003ca href=\"https://code.visualstudio.com/\" target=\"_blank\" rel=\"noopener\"\u003e1\u003c/a\u003e] as a code editor (I use Neovim[\u003ca href=\"https://www.lunarvim.org/\" target=\"_blank\" rel=\"noopener\"\u003e2\u003c/a\u003e] 🦸), many colleagues use it as their primary editor.\u003c/p\u003e"
+  "description": "Two recipes for moving VSCode (and PyCharm) off the Slurm login node and into actual compute jobs: a quick `code-server` web setup, and a per-job `sshd` workflow for full IDE remote-development. Stops resource-hungry editor processes from piling up on shared login nodes and lets you debug on the GPU you actually allocated."
 }
 </script>
 
@@ -1023,7 +971,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 629px; max-height: 217px;">
   <div style="position: relative">
-    <img src="/post/vscode-slurm/featured_hu_e0059ec3e7086db3.webp" width="629" height="217" alt="" class="featured-image">
+    <img src="/post/vscode-slurm/featured_hu_e10478459c5d81ec.webp" width="629" height="217" alt="" class="featured-image">
     
   </div>
 </div>
@@ -1084,10 +1032,10 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
 <figure  id="figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="htop" srcset="
-               /post/vscode-slurm/htop_hu_9822c6603cd0ea76.webp 400w,
-               /post/vscode-slurm/htop_hu_6cf9c2465ff25681.webp 760w,
-               /post/vscode-slurm/htop_hu_65945f145afe6932.webp 1200w"
-               src="/post/vscode-slurm/htop_hu_9822c6603cd0ea76.webp"
+               /post/vscode-slurm/htop_hu_54731c610c5a7b98.webp 400w,
+               /post/vscode-slurm/htop_hu_f7a80cc7fe64010b.webp 760w,
+               /post/vscode-slurm/htop_hu_a60850ab4da36ed0.webp 1200w"
+               src="/post/vscode-slurm/htop_hu_54731c610c5a7b98.webp"
                width="760"
                height="492"
                loading="lazy" data-zoomable /></div>
@@ -1301,7 +1249,7 @@ Although I don&rsquo;t use Visual Studio Code[1] as a code editor (I use Neovim[
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_e91ed502b1206e25.jpg" alt="Marc Benedí San Millán"></a>
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_1225e79493157a79.jpg" alt="Marc Benedí San Millán"></a>
     
 
     <div class="media-body">

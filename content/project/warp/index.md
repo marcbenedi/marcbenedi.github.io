@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "SLAM for Autonomous Vehicles"
-summary: ""
+summary: "Worked on the SLAM pipeline of an autonomous driving vehicle using ROS, C++, PCL, Ceres Solver, and Google Cartographer. Developed a ROS package that turns SLAM point clouds into a cost map encoding both occupancy and surface preference (e.g., asphalt over grass) for path planning."
 authors: []
 tags: ["Computer Vision", "3D Reconstruction", "M.Sc", "featured"]
 categories: []

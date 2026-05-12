@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 12, 2026 --><html lang="en-us" >
+<!-- Last Published: May 12, 2026 --><html lang="en-us" >
 
 
 <head>
@@ -296,8 +296,8 @@
 
 
 
-<link rel="icon" type="image/png" href="/media/icon_hu_b1f7b716423eaad9.png" />
-<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_36212f6a2927d0e4.png" />
+<link rel="icon" type="image/png" href="/media/icon_hu_883d34e56ca5c965.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_fa0e0b89167ef10a.png" />
 
 <meta name="theme-color" content="#1565c0" />
 
@@ -319,7 +319,7 @@
 
 
 <meta property="twitter:card" content="summary" />
-<meta property="twitter:image" content="https://marcb.pro/media/icon_hu_551491ca759302e6.png" />
+<meta property="twitter:image" content="https://marcb.pro/media/icon_hu_a402a3727ae24634.png" />
 
 
 
@@ -329,10 +329,10 @@
 <meta property="og:site_name" content="Marc B" />
 <meta property="og:url" content="https://marcb.pro/tag/slurm/" />
 <meta property="og:title" content="Slurm | Marc B" />
-<meta property="og:description" content="PhD Candidate @ &lt;a href=&#34;https://niessnerlab.org/&#34; target=&#34;_blank&#34;&gt;Visual Computing Group&lt;/a&gt;" /><meta property="og:image" content="https://marcb.pro/media/icon_hu_551491ca759302e6.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="PhD Candidate @ &lt;a href=&#34;https://niessnerlab.org/&#34; target=&#34;_blank&#34;&gt;Visual Computing Group&lt;/a&gt;" /><meta property="og:image" content="https://marcb.pro/media/icon_hu_a402a3727ae24634.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta property="og:updated_time" content="2023-08-07T15:10:29&#43;02:00" />
+    <meta property="og:updated_time" content="2025-10-01T11:03:24&#43;02:00" />
   
 
 
@@ -896,39 +896,100 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/mergerfs/" >Pooling per-node scratch storage with mergerfs</a>
+    </div>
+
+    
+    <a href="/post/mergerfs/"  class="summary-link">
+      <div class="article-style">
+        How I glued together the per-node scratch directories of our SLURM cluster into a single, unified mount point — using mergerfs — and an interactive bash script to manage mounts across all nodes from one place.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 1, 2025
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/post/vscode-slurm/" >Using VSCode in Slurm</a>
     </div>
 
     
     <a href="/post/vscode-slurm/"  class="summary-link">
       <div class="article-style">
-        <blockquote>
-<p>⭐ <strong>Check out my latest Python library: <a href="https://github.com/marcbenedi/autocast" target="_blank" rel="noopener">autocast</a>!</strong> A smart library that automates <strong>type conversion</strong> between PyTorch, NumPy, Open3D (and many others!) so you can <strong>stop writing boilerplate</strong>. ⭐</p>
-</blockquote>
-
-
-<details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">Table of Contents</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#the-problem">The problem</a></li>
-    <li><a href="#advantages">Advantages</a></li>
-    <li><a href="#-the-easy-solution-vscode-on-the-web">🧑‍💻 The easy solution: VSCode on the web!</a></li>
-    <li><a href="#-the-complex-solution-start-your-own-sshd-process">👷 The complex solution: Start your own <code>sshd</code> process</a>
-      <ul>
-        <li><a href="#step-1-create-the-ssh-keys">Step 1: Create the SSH keys</a></li>
-        <li><a href="#step-2-sshd-slurm-job">Step 2: <code>sshd</code> Slurm job</a></li>
-        <li><a href="#step-3-test-the-connection">Step 3: Test the connection</a></li>
-        <li><a href="#step-4-connect-your-ide">Step 4: Connect your IDE</a></li>
-        <li><a href="#step-5-remember-to-end-the-sshd-process">Step 5: Remember to end the <code>sshd</code> process</a></li>
-      </ul>
-    </li>
-    <li><a href="#-references">📑 References</a></li>
-  </ul>
-</nav>
-</details>
-
-<p>Although I don&rsquo;t use Visual Studio Code[<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">1</a>] as a code editor (I use Neovim[<a href="https://www.lunarvim.org/" target="_blank" rel="noopener">2</a>] 🦸), many colleagues use it as their primary editor.</p>
+        Two recipes for moving VSCode (and PyCharm) off the Slurm login node and into actual compute jobs: a quick <code>code-server</code> web setup, and a per-job <code>sshd</code> workflow for full IDE remote-development. Stops resource-hungry editor processes from piling up on shared login nodes and lets you debug on the GPU you actually allocated.
       </div>
     </a>
     
@@ -987,7 +1048,7 @@
       
       
       <a href="/post/vscode-slurm/" >
-        <img src="/post/vscode-slurm/featured_hu_a5db8bb54e4160f2.webp" height="52" width="150"
+        <img src="/post/vscode-slurm/featured_hu_17268a8ea8a38de.webp" height="52" width="150"
             alt="Using VSCode in Slurm" loading="lazy">
       </a>
     
@@ -1024,25 +1085,7 @@
     
     <a href="/project/hiwi/"  class="summary-link">
       <div class="article-style">
-        <!-- 
-
-<details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">Table of Contents</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#milestones">Milestones</a></li>
-    <li><a href="#other-developed-tools">Other Developed Tools</a>
-      <ul>
-        <li><a href="#ldap-triggers">LDAP Triggers</a></li>
-        <li><a href="#ldap-emails">LDAP Emails</a></li>
-      </ul>
-    </li>
-    <li><a href="#gallery">Gallery</a></li>
-  </ul>
-</nav>
-</details>
-  -->
-<p>This project is part of my work in the Visual Computing Group (<a href="/#experience">see my work experience here</a>).</p>
+        Designed and deployed a SLURM cluster for the TUM Visual Computing Group, including LDAP-backed authentication, NFS storage, monitoring, and Ansible-driven node provisioning. Built a Vue.js + Flask dashboard so researchers can visualize cluster state, jobs, and resource usage, and released companion open-source tools (LDAP Triggers, LDAP Emails) used in day-to-day administration.
       </div>
     </a>
     
@@ -1063,7 +1106,7 @@
       
       
       <a href="/project/hiwi/" >
-        <img src="/project/hiwi/featured_hu_581a6307428f2c8d.webp" height="91" width="150"
+        <img src="/project/hiwi/featured_hu_cca20f6e77fb0fa5.webp" height="115" width="150"
             alt="SLURM Cluster - Dashboard and other tools" loading="lazy">
       </a>
     

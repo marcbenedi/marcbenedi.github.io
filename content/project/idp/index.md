@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Divergence-Free Shape Correspondence with Time Dependent Vector Fields"
-summary: ""
+summary: "Extended Eisenberger et al.'s divergence-free shape interpolation by introducing time-dependent vector fields, lifting the limitation that different parts of a shape cannot move in conflicting directions through the same point in space. Correspondence and matching are jointly solved over the full sequence during optimization."
 authors: []
 tags: ["Shape Analysis", "Computer Graphics", "Optimization", "M.Sc", "featured"]
 categories: []

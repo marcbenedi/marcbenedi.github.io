@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: May 12, 2026 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Hugo Blox Builder 5.9.7" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.26c458e6907dc03073573976b7f4044e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5adeb309104bf059bfce5194cee5d4d8.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Marc Benedí San Millán" />
+
+
+
+
+
+  
+
+<meta name="description" content="How I glued together the per-node scratch directories of our SLURM cluster into a single, unified mount point — using mergerfs — and an interactive bash script to manage mounts across all nodes from one place." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://marcb.pro/post/mergerfs/" />
+<link rel="canonical" href="https://marcb.pro/post/mergerfs/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu_883d34e56ca5c965.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_fa0e0b89167ef10a.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://marcb.pro/media/icon_hu_a402a3727ae24634.png" />
+
+
+
+  
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marc B" />
+<meta property="og:url" content="https://marcb.pro/post/mergerfs/" />
+<meta property="og:title" content="Pooling per-node scratch storage with mergerfs | Marc B" />
+<meta property="og:description" content="How I glued together the per-node scratch directories of our SLURM cluster into a single, unified mount point — using mergerfs — and an interactive bash script to manage mounts across all nodes from one place." /><meta property="og:image" content="https://marcb.pro/media/icon_hu_a402a3727ae24634.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2025-10-01T11:03:24&#43;02:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2025-10-01T11:03:24&#43;02:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcb.pro/post/mergerfs/"
+  },
+  "headline": "Pooling per-node scratch storage with mergerfs",
+  
+  "datePublished": "2025-10-01T11:03:24+02:00",
+  "dateModified": "2025-10-01T11:03:24+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Marc Benedí San Millán"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marc B",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcb.pro/media/icon_hu_226bcf9d58080f64.png"
+    }
+  },
+  "description": "How I glued together the per-node scratch directories of our SLURM cluster into a single, unified mount point — using mergerfs — and an interactive bash script to manage mounts across all nodes from one place."
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Pooling per-node scratch storage with mergerfs | Marc B</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="15e5e3cb305bb8147ac8ff3e3411b53f" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9e4214442a7711d35691acd58f6f6361.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>About</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publication"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#experience"><span>Experience</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#teaching"><span>Teaching</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/marcbenedi" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Pooling per-node scratch storage with mergerfs</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 1, 2025
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>After my <a href="/post/vscode-slurm/">VSCode-on-Slurm post</a> seemed to land well, here&rsquo;s another small tool that has saved me an embarrassing amount of <code>cd</code>-ing around our cluster: <strong><a href="https://github.com/trapexit/mergerfs" target="_blank" rel="noopener">mergerfs</a></strong>.</p>
+<blockquote>
+<p><strong>TL;DR:</strong> mergerfs is a FUSE filesystem that lets you mount <em>N</em> directories as if they were one. I use it to pool the per-node scratch storage on our SLURM cluster into a single tidy mount under my home directory, so I can <code>ls</code>, <code>tail</code>, and <code>rsync</code> across nodes without thinking about which node a file lives on.</p>
+</blockquote>
+<p>📥 <strong>In a hurry?</strong> <a href="cluster_mergerfs.sh">Download <code>cluster_mergerfs.sh</code></a> — the interactive wrapper script discussed below.</p>
+
+
+<details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">Table of Contents</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#what-mergerfs-is-mental-model">What mergerfs is (mental model)</a></li>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#ssh-from-where-you-run-the-script">SSH from where you run the script</a></li>
+      </ul>
+    </li>
+    <li><a href="#my-mergerfs-options">My mergerfs options</a></li>
+    <li><a href="#a-script-to-manage-it-across-the-cluster">A script to manage it across the cluster</a></li>
+    <li><a href="#a-few-practical-notes">A few practical notes</a></li>
+    <li><a href="#wrap-up">Wrap-up</a>
+      <ul>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</details>
+
+<h2 id="the-problem">The problem</h2>
+<p>Like a lot of academic clusters, ours doesn&rsquo;t have one big shared scratch pool. Each compute node has its own local-ish fast storage:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/cluster/node1/&lt;user&gt;/...
+</span></span><span class="line"><span class="cl">/cluster/node2/&lt;user&gt;/...
+</span></span><span class="line"><span class="cl">/cluster/node3/&lt;user&gt;/...
+</span></span><span class="line"><span class="cl">/cluster/node4/&lt;user&gt;/...
+</span></span></code></pre></div><p>This is great for IO performance — jobs hit the storage attached to the node they ran on — but bad for the human running them. A single training run that scheduled across multiple nodes leaves logs scattered everywhere. Tailing one log means knowing which node produced it. Backing things up means looping over nodes. Pointing tools (TensorBoard, viewers, scripts) at a single root is impossible.</p>
+<p>What I want is a <em>view</em>: one path that looks like the union of all those per-node directories, transparently.</p>
+<p>That&rsquo;s exactly what mergerfs gives you.</p>
+<h2 id="what-mergerfs-is-mental-model">What mergerfs is (mental model)</h2>
+<p>mergerfs is a userspace, <strong>policy-driven</strong> union filesystem. You hand it a list of <em>branches</em> (existing directories) and a mount point, and it presents the union of those branches at the mount point. Reads transparently fall through to whichever branch has the file; writes get routed to a branch according to a <strong>create policy</strong> you configure.</p>
+<p>Crucially, <strong>mergerfs doesn&rsquo;t move data</strong>. Each file still lives on exactly one branch on disk — mergerfs just makes the namespace look unified. If you bypass the mount and look at a branch directly, you still see the real underlying files. That&rsquo;s what makes it safe to bolt on top of an existing setup without migrations.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before any of this works, two things need to be true on <strong>every node</strong> you want to mount on:</p>
+<ol>
+<li>
+<p><strong><code>mergerfs</code> is installed.</strong> It&rsquo;s packaged for most distributions (<code>apt install mergerfs</code>, <code>dnf install mergerfs</code>, etc.); otherwise grab a release from <a href="https://github.com/trapexit/mergerfs/releases" target="_blank" rel="noopener">the project&rsquo;s GitHub</a>. How you push that out is up to you (Ansible, Salt, your distro&rsquo;s image, or just SSH-ing it in) — the important thing is that the binary is there and on <code>PATH</code>.</p>
+</li>
+<li>
+<p><strong>FUSE allows <code>user_allow_other</code>.</strong> mergerfs is intended to run as a normal user (don&rsquo;t run it as root), and you&rsquo;ll almost certainly want the merged view to be readable by other tools/users on the box — daemons, jobs running as a different user, root doing backups. That requires <code>user_allow_other</code> in <code>/etc/fuse.conf</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># /etc/fuse.conf</span>
+</span></span><span class="line"><span class="cl">user_allow_other
+</span></span></code></pre></div><p>This is a one-time, root-level change per node.</p>
+</li>
+</ol>
+<h3 id="ssh-from-where-you-run-the-script">SSH from where you run the script</h3>
+<p>The script orchestrates every node by SSHing into it (<code>ssh -o ConnectTimeout=5 &lt;node&gt; bash &lt;&lt;EOF ... EOF</code>), so the host you launch it from needs to be able to SSH into every cluster node <strong>without a password prompt</strong>. In practice that means:</p>
+<ul>
+<li>
+<p><strong>Key-based auth</strong> set up to all nodes (an <code>ssh-agent</code> with your key loaded, or a key without a passphrase). The script doesn&rsquo;t handle interactive password entry — it&rsquo;ll just hang.</p>
+</li>
+<li>
+<p><strong>Hostnames resolvable</strong> by the names that come back from <code>sinfo</code> / <code>scontrol show hostnames</code>. If your SLURM short hostnames aren&rsquo;t directly DNS-resolvable, add an entry per node in <code>~/.ssh/config</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host node1
+</span></span><span class="line"><span class="cl">    HostName node1.cluster.example.org
+</span></span><span class="line"><span class="cl">    User &lt;your-user&gt;
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>bash</code> available on the remote side</strong> (the script runs heredoc&rsquo;d bash on each node).</p>
+</li>
+<li>
+<p><strong>No host-key prompts on first contact</strong>. Either pre-populate <code>~/.ssh/known_hosts</code>, or add <code>StrictHostKeyChecking=accept-new</code> in <code>~/.ssh/config</code> for your cluster hosts so the first SSH doesn&rsquo;t block waiting for a y/n.</p>
+</li>
+</ul>
+<p>If you can run <code>ssh &lt;node&gt; hostname</code> against every node and it just prints the hostname with no prompts, you&rsquo;re set.</p>
+<h2 id="my-mergerfs-options">My mergerfs options</h2>
+<p>Here are the options I mount with, and why each one:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cache.files=off,use_ino,func.getattr=newest,
+</span></span><span class="line"><span class="cl">category.create=mfs,moveonenospc=true,
+</span></span><span class="line"><span class="cl">minfreespace=300G,allow_other
+</span></span></code></pre></div><ul>
+<li><strong><code>cache.files=off</code></strong> — disable kernel page caching of file content. With networked-ish per-node storage this avoids stale-cache surprises; performance is rarely the bottleneck for what I use the merged view for (browsing logs, rsync).</li>
+<li><strong><code>use_ino</code></strong> — preserve the underlying filesystem&rsquo;s inode numbers in the merged view. Tools that compare files by <code>(dev, ino)</code> (rsync, tar) behave correctly.</li>
+<li><strong><code>func.getattr=newest</code></strong> — if the same path exists on several branches, <code>stat()</code> returns the version with the most recent mtime. Handy when a job&rsquo;s log file ends up on multiple nodes.</li>
+<li><strong><code>category.create=mfs</code></strong> — <em>most-free-space</em> create policy. New files go to whichever branch currently has the most free space. Keeps things naturally balanced.</li>
+<li><strong><code>moveonenospc=true</code></strong> — if a write fails with <code>ENOSPC</code>, mergerfs will transparently move the file to another branch and retry. Saves a job from dying because the branch it landed on filled up.</li>
+<li><strong><code>minfreespace=300G</code></strong> — branches with less than 300 GB free are excluded from new file creation. With ML workloads writing big checkpoints this prevents pathological &ldquo;write 200 GB onto a branch that had 250 GB and lock everything up&rdquo; cases.</li>
+<li><strong><code>allow_other</code></strong> — combined with <code>user_allow_other</code> in <code>fuse.conf</code> (above), allows other users on the box to read the mount.</li>
+</ul>
+<h2 id="a-script-to-manage-it-across-the-cluster">A script to manage it across the cluster</h2>
+<p>Mounting one merged view by hand is <code>mergerfs &lt;opts&gt; /a:/b:/c /mnt</code>. Doing that interactively across N nodes for M merge sets, and remembering to clean up, gets old fast. So I wrote a small interactive bash tool. It can:</p>
+<ul>
+<li><strong>Mount</strong> any subset of merge sets on any subset of nodes (creates source dirs if missing, refuses to mount if a source is unreachable, replaces stale mounts).</li>
+<li><strong>Check mounts</strong> — for each (set, node), show whether it&rsquo;s active, the merged-view <code>df</code>, the active mount options, per-source disk usage, and flag any branch that has dropped below <code>minfreespace</code> (so you know mergerfs has stopped writing to it). Optional file-count and <code>du -sh</code> (gated, because they&rsquo;re slow on big trees).</li>
+<li><strong>Unmount</strong> safely (<code>fusermount -uz</code>).</li>
+<li><strong>Kill mergerfs process</strong> — for the case where a mount has gone unresponsive: it locates the right <code>mergerfs</code> PID by matching the mount point at the <em>end</em> of <code>/proc/&lt;pid&gt;/cmdline</code> (so a path that appears as a <em>source</em> in another mergerfs instance doesn&rsquo;t false-match), <code>kill -9</code>s it, then attempts <code>fusermount -uz</code>, falling back to <code>umount -l</code> if needed.</li>
+<li><strong>Show rsync commands</strong> — emit ready-to-paste <code>rsync</code> lines for migrating each merge set into a single consolidated directory, for the day you outgrow the union view and want to physically merge.</li>
+</ul>
+<p>Node discovery uses <code>sinfo</code> + <code>scontrol show hostnames</code> so it always picks up what SLURM currently knows about, plus the head node.</p>
+<p>The whole thing is one self-contained file. Configure your merge sets at the top — each entry is <code>mount_point:source1:source2:...:sourceN</code> — and run it. The interactive menu does the rest.</p>
+<p>📥 <strong><a href="cluster_mergerfs.sh">Download <code>cluster_mergerfs.sh</code></a></strong> (~700 lines, single file, no dependencies beyond <code>mergerfs</code>, <code>ssh</code>, and standard SLURM tooling).</p>
+<p>The configuration block at the top is the only thing you need to edit:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Format: local_mount:path1:path2:path3</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MERGE_SETS</span><span class="o">=(</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;/home/&lt;user&gt;/projects/projectA/logs:/cluster/node1/&lt;user&gt;/projectA_logs:/cluster/node2/&lt;user&gt;/projectA_logs:/cluster/node3/&lt;user&gt;/projectA_logs:/cluster/node4/&lt;user&gt;/projectA_logs&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;/home/&lt;user&gt;/projects/projectB/scenes:/cluster/node1/&lt;user&gt;/projectB/scenes&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;/home/&lt;user&gt;/projects/projectB/outputs:/cluster/node1/&lt;user&gt;/projectB/outputs&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">MERGERFS_OPTS</span><span class="o">=</span><span class="s2">&#34;cache.files=off,use_ino,func.getattr=newest,category.create=mfs,moveonenospc=true,minfreespace=300G,allow_other&#34;</span>
+</span></span></code></pre></div><h2 id="a-few-practical-notes">A few practical notes</h2>
+<ul>
+<li><strong>mergerfs mounts are per-machine.</strong> Each compute node sees the merged view through its own mergerfs process; there&rsquo;s no cluster-wide FS magic. The script just SSH-loops the same mount on every node so you get a consistent view wherever you land.</li>
+<li><strong>Run as your user, not root.</strong> Combined with <code>allow_other</code>, that gives you the right ownership and avoids weird <code>chown</code> aftermath.</li>
+<li><strong>Don&rsquo;t write into a branch directly while the merged view is mounted on top of it</strong> — mergerfs caches some metadata, so changes that bypass the union can confuse it briefly. If in doubt, write through the mount point.</li>
+<li><strong><code>minfreespace</code> is your friend.</strong> Without it, a single full branch can break creates pretty unintuitively. With it, mergerfs just rotates traffic onto branches that still have headroom.</li>
+<li><strong>If a mount goes hung,</strong> the &ldquo;Kill mergerfs process&rdquo; action is much safer than <code>kill -9 $(pgrep mergerfs)</code> — it specifically matches the mount point at the <em>end</em> of the cmdline so it never kills a different instance.</li>
+</ul>
+<h2 id="wrap-up">Wrap-up</h2>
+<p>mergerfs isn&rsquo;t going to replace a real distributed filesystem, and that&rsquo;s fine — it&rsquo;s not trying to. What it <em>does</em> give you is a five-minute Saturday-afternoon way to make per-node storage feel like one place, without moving any data and without admin-team meetings about provisioning. Combined with a small wrapper script, it&rsquo;s been one of the higher quality-of-life upgrades to my day-to-day workflow on the cluster.</p>
+<hr>
+<h3 id="disclaimer">Disclaimer</h3>
+<p>The script linked above is released under the MIT License and is provided <strong>&ldquo;as is&rdquo;, without warranty of any kind</strong>, express or implied. It performs operations that touch filesystems, mount points, and remote machines via SSH, and includes destructive actions (unmount, <code>kill -9</code>). You are solely responsible for understanding what it does before running it, for testing it in a safe environment first, and for any data loss, downtime, or other consequences that may result from its use. Use at your own risk.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/slurm/">Slurm</a>
+  
+  <a class="badge badge-light" href="/tag/mergerfs/">Mergerfs</a>
+  
+  <a class="badge badge-light" href="/tag/fuse/">FUSE</a>
+  
+  <a class="badge badge-light" href="/tag/storage/">Storage</a>
+  
+  <a class="badge badge-light" href="/tag/ansible/">Ansible</a>
+  
+  <a class="badge badge-light" href="/tag/bash/">Bash</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmarcb.pro%2Fpost%2Fmergerfs%2F&amp;text=Pooling&#43;per-node&#43;scratch&#43;storage&#43;with&#43;mergerfs" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmarcb.pro%2Fpost%2Fmergerfs%2F&amp;t=Pooling&#43;per-node&#43;scratch&#43;storage&#43;with&#43;mergerfs" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Pooling%20per-node%20scratch%20storage%20with%20mergerfs&amp;body=https%3A%2F%2Fmarcb.pro%2Fpost%2Fmergerfs%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fmarcb.pro%2Fpost%2Fmergerfs%2F&amp;title=Pooling&#43;per-node&#43;scratch&#43;storage&#43;with&#43;mergerfs" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_1225e79493157a79.jpg" alt="Marc Benedí San Millán"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://marcb.pro/">Marc Benedí San Millán</a></h5>
+      <h6 class="card-subtitle">PhD Candidate @ <a href="https://niessnerlab.org/" target="_blank">Visual Computing Group</a></h6>
+      <p class="card-text">My research interests include Computer Vision, Computer Graphics and Deep Learning.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/marcbenedi/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+  <script type="text/javascript">
+    var sc_project=13116832; 
+    var sc_invisible=1; 
+    var sc_security="450a86c7"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/13116832/0/450a86c7/1/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2026 marcb.pro. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> | Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
+
+    
+  </p>
+</footer>
+
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.6782e3f6a4f06ea4766df038c45ecf40.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+  <script src="/js/wowchemy-headroom.b95a7e109243f29d04930ae8cb49a756.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.69fc52a6dc16aaf1a452cfbb36466dac.js"></script>
+
+
+
+  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

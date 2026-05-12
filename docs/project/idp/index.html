@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 12, 2026 --><html lang="en-us" >
+<!-- Last Published: May 12, 2026 --><html lang="en-us" >
 
 
 <head>
@@ -283,7 +283,7 @@
 
   
 
-<meta name="description" content="In this project, we extended the work of Eisenberger, Zorah, Cremers, &ldquo;Divergence-Free Shape Interpolation and Correspondence&rdquo; 1. In their work, they present a method to calculate deformation fields between shapes embedded in $\mathbb{R}^D$. To do so, they compute a divergence-free deformation field represented in a coarse-to-fine basis using the Karhunen-Loéve expansion." />
+<meta name="description" content="Extended Eisenberger et al.&#39;s divergence-free shape interpolation by introducing time-dependent vector fields, lifting the limitation that different parts of a shape cannot move in conflicting directions through the same point in space. Correspondence and matching are jointly solved over the full sequence during optimization." />
 
 
 
@@ -296,8 +296,8 @@
 
 
 
-<link rel="icon" type="image/png" href="/media/icon_hu_b1f7b716423eaad9.png" />
-<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_36212f6a2927d0e4.png" />
+<link rel="icon" type="image/png" href="/media/icon_hu_883d34e56ca5c965.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_fa0e0b89167ef10a.png" />
 
 <meta name="theme-color" content="#1565c0" />
 
@@ -328,7 +328,7 @@
 <meta property="og:site_name" content="Marc B" />
 <meta property="og:url" content="https://marcb.pro/project/idp/" />
 <meta property="og:title" content="Divergence-Free Shape Correspondence with Time Dependent Vector Fields | Marc B" />
-<meta property="og:description" content="In this project, we extended the work of Eisenberger, Zorah, Cremers, &ldquo;Divergence-Free Shape Interpolation and Correspondence&rdquo; 1. In their work, they present a method to calculate deformation fields between shapes embedded in $\mathbb{R}^D$. To do so, they compute a divergence-free deformation field represented in a coarse-to-fine basis using the Karhunen-Loéve expansion." /><meta property="og:image" content="https://marcb.pro/project/idp/featured.jpg" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Extended Eisenberger et al.&#39;s divergence-free shape interpolation by introducing time-dependent vector fields, lifting the limitation that different parts of a shape cannot move in conflicting directions through the same point in space. Correspondence and matching are jointly solved over the full sequence during optimization." /><meta property="og:image" content="https://marcb.pro/project/idp/featured.jpg" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -382,10 +382,10 @@
     "name": "Marc B",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://marcb.pro/media/icon_hu_9112f5e276aefd0f.png"
+      "url": "https://marcb.pro/media/icon_hu_226bcf9d58080f64.png"
     }
   },
-  "description": "\u003cp\u003eIn this project, we extended the work of Eisenberger, Zorah, Cremers, \u0026ldquo;Divergence-Free Shape Interpolation and Correspondence\u0026rdquo; \u003csup id=\"fnref:1\"\u003e\u003ca href=\"#fn:1\" class=\"footnote-ref\" role=\"doc-noteref\"\u003e1\u003c/a\u003e\u003c/sup\u003e. In their work, they present a method to calculate deformation fields between shapes embedded in $\\mathbb{R}^D$. To do so, they compute a divergence-free deformation field represented in a coarse-to-fine basis using the Karhunen-Loéve expansion.\u003c/p\u003e"
+  "description": "Extended Eisenberger et al.'s divergence-free shape interpolation by introducing time-dependent vector fields, lifting the limitation that different parts of a shape cannot move in conflicting directions through the same point in space. Correspondence and matching are jointly solved over the full sequence during optimization."
 }
 </script>
 
@@ -1017,7 +1017,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 645px; max-height: 156px;">
   <div style="position: relative">
-    <img src="/project/idp/featured_hu_a090e10207071d28.webp" width="645" height="156" alt="" class="featured-image">
+    <img src="/project/idp/featured_hu_d0b636f2bb068e0.webp" width="645" height="156" alt="" class="featured-image">
     
   </div>
 </div>
@@ -1047,10 +1047,10 @@
 <figure  id="figure-example-of-parts-of-a-shape-moving-in-different-directions-in-the-same-part-of-the-space-1httpsarxivorgabs180610417">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Example of parts of the shape moving in different directions at the same point" srcset="
-               /project/idp/original_failure_hu_100b4ae4b135e5fa.webp 400w,
-               /project/idp/original_failure_hu_9de48e52b868dbd3.webp 760w,
-               /project/idp/original_failure_hu_b2ff39033d03cfae.webp 1200w"
-               src="/project/idp/original_failure_hu_100b4ae4b135e5fa.webp"
+               /project/idp/original_failure_hu_87eeff97c2a2ab1d.webp 400w,
+               /project/idp/original_failure_hu_94bf9d9eef7ba6c5.webp 760w,
+               /project/idp/original_failure_hu_98d82c050db8607f.webp 1200w"
+               src="/project/idp/original_failure_hu_87eeff97c2a2ab1d.webp"
                width="464"
                height="243"
                loading="lazy" data-zoomable /></div>
@@ -1211,7 +1211,7 @@ Their method cannot model such deformation because a vector field can only conta
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_e91ed502b1206e25.jpg" alt="Marc Benedí San Millán"></a>
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_1225e79493157a79.jpg" alt="Marc Benedí San Millán"></a>
     
 
     <div class="media-body">

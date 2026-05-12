@@ -59,3 +59,5 @@ https://bootstrap.hugoblox.com/
  hugo serve -b http:// --bind=0.0.0.0 
 
 hugo -d docs --cleanDestinationDir 
+
+hugo new --kind post post/nameofthepost

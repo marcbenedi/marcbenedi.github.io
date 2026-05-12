@@ -3,9 +3,9 @@
 draft: false
 
 title: "Learning Robust Correspondences Estimation"
-summary: ""
+summary: "An end-to-end differentiable model for relative camera pose estimation from RGB-D frame pairs. The network learns self-supervised confidence scores for predicted correspondences, which are then aligned by a differentiable weighted Procrustes solver. Evaluated on ScanNet with strong results in wide-baseline and occlusion-heavy regimes."
 authors: []
-tags: ["Optimization", "SAT", "M.Sc", "featured"]
+tags: ["Computer Vision", "Deep Learning", "3D Reconstruction", "M.Sc", "featured"]
 categories: []
 date: 2022-09-15T20:05:18+01:00
 

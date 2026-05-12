@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "SLURM Cluster - Dashboard and other tools"
-summary: ""
+summary: "Designed and deployed a SLURM cluster for the TUM Visual Computing Group, including LDAP-backed authentication, NFS storage, monitoring, and Ansible-driven node provisioning. Built a Vue.js + Flask dashboard so researchers can visualize cluster state, jobs, and resource usage, and released companion open-source tools (LDAP Triggers, LDAP Emails) used in day-to-day administration."
 authors: []
 tags: ["Back-End", "Front-end" , "Slurm", "M.Sc"]
 categories: []

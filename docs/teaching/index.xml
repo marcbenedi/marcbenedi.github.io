@@ -7,35 +7,28 @@
     <description>Teaching</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Oct 2024 15:10:29 +0200</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu_551491ca759302e6.png</url>
+      <url>https://marcb.pro/media/icon_hu_a402a3727ae24634.png</url>
       <title>Teaching</title>
       <link>https://marcb.pro/teaching/</link>
     </image>
     
     <item>
       <title>3D Scanning &amp; Motion Capture (IN2354)</title>
-      <link>https://marcb.pro/teaching/3dsmc_ws2025/</link>
+      <link>https://marcb.pro/teaching/3dsmc/</link>
       <pubDate>Mon, 07 Oct 2024 15:10:29 +0200</pubDate>
-      <guid>https://marcb.pro/teaching/3dsmc_ws2025/</guid>
-      <description>&lt;p&gt;Visit this link for more information: &lt;a href=&#34;https://niessner.github.io/3DScanning/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://niessner.github.io/3DScanning/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>3D Scanning &amp; Motion Capture (IN2354)</title>
-      <link>https://marcb.pro/teaching/3dsmc_ss2024/</link>
-      <pubDate>Sun, 07 Apr 2024 15:10:29 +0200</pubDate>
-      <guid>https://marcb.pro/teaching/3dsmc_ss2024/</guid>
-      <description>&lt;p&gt;Visit this link for more information: &lt;a href=&#34;https://niessner.github.io/3DScanning/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://niessner.github.io/3DScanning/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>3D Scanning &amp; Motion Capture (IN2354)</title>
-      <link>https://marcb.pro/teaching/3dsmc_ws2024/</link>
-      <pubDate>Sat, 07 Oct 2023 15:10:29 +0200</pubDate>
-      <guid>https://marcb.pro/teaching/3dsmc_ws2024/</guid>
-      <description>&lt;p&gt;Visit this link for more information: &lt;a href=&#34;https://niessner.github.io/3DScanning/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://niessner.github.io/3DScanning/&lt;/a&gt;&lt;/p&gt;
+      <guid>https://marcb.pro/teaching/3dsmc/</guid>
+      <description>&lt;p&gt;Teaching Assistant for &lt;strong&gt;3D Scanning &amp;amp; Motion Capture (IN2354)&lt;/strong&gt; at the Technical University of Munich, taught by Prof. Matthias Nießner.&lt;/p&gt;
+&lt;p&gt;The course covers the foundations of acquiring and reconstructing 3D geometry and motion from sensor data. Topics include depth sensing and RGB-D cameras, camera calibration, point cloud processing, rigid and non-rigid registration (ICP and variants), volumetric surface reconstruction with signed distance functions (KinectFusion-style fusion and meshing), as well as motion capture, skeletal tracking, and parametric human body models (e.g. SMPL). Lectures are paired with programming exercises in C++ where students implement the core pipeline pieces themselves.&lt;/p&gt;
+&lt;p&gt;Semesters taught:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Winter Semester 2023/24&lt;/li&gt;
+&lt;li&gt;Summer Semester 2024&lt;/li&gt;
+&lt;li&gt;Winter Semester 2024/25&lt;/li&gt;
+&lt;li&gt;Summer Semester 2025&lt;/li&gt;
+&lt;li&gt;Winter Semester 2025/26&lt;/li&gt;
+&lt;li&gt;Summer Semester 2026&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Course information: &lt;a href=&#34;https://niessner.github.io/3DScanning/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://niessner.github.io/3DScanning/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

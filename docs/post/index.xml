@@ -7,7 +7,7 @@
     <description>Posts</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 09 Feb 2026 21:54:00 +0200</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu_551491ca759302e6.png</url>
+      <url>https://marcb.pro/media/icon_hu_a402a3727ae24634.png</url>
       <title>Posts</title>
       <link>https://marcb.pro/post/</link>
     </image>
@@ -85,6 +85,137 @@
     </item>
     
     <item>
+      <title>Pooling per-node scratch storage with mergerfs</title>
+      <link>https://marcb.pro/post/mergerfs/</link>
+      <pubDate>Wed, 01 Oct 2025 11:03:24 +0200</pubDate>
+      <guid>https://marcb.pro/post/mergerfs/</guid>
+      <description>&lt;p&gt;After my &lt;a href=&#34;https://marcb.pro/post/vscode-slurm/&#34;&gt;VSCode-on-Slurm post&lt;/a&gt; seemed to land well, here&amp;rsquo;s another small tool that has saved me an embarrassing amount of &lt;code&gt;cd&lt;/code&gt;-ing around our cluster: &lt;strong&gt;&lt;a href=&#34;https://github.com/trapexit/mergerfs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mergerfs&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; mergerfs is a FUSE filesystem that lets you mount &lt;em&gt;N&lt;/em&gt; directories as if they were one. I use it to pool the per-node scratch storage on our SLURM cluster into a single tidy mount under my home directory, so I can &lt;code&gt;ls&lt;/code&gt;, &lt;code&gt;tail&lt;/code&gt;, and &lt;code&gt;rsync&lt;/code&gt; across nodes without thinking about which node a file lives on.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;📥 &lt;strong&gt;In a hurry?&lt;/strong&gt; &lt;a href=&#34;cluster_mergerfs.sh&#34;&gt;Download &lt;code&gt;cluster_mergerfs.sh&lt;/code&gt;&lt;/a&gt; — the interactive wrapper script discussed below.&lt;/p&gt;
+
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-problem&#34;&gt;The problem&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#what-mergerfs-is-mental-model&#34;&gt;What mergerfs is (mental model)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#prerequisites&#34;&gt;Prerequisites&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#ssh-from-where-you-run-the-script&#34;&gt;SSH from where you run the script&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#my-mergerfs-options&#34;&gt;My mergerfs options&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#a-script-to-manage-it-across-the-cluster&#34;&gt;A script to manage it across the cluster&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#a-few-practical-notes&#34;&gt;A few practical notes&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#wrap-up&#34;&gt;Wrap-up&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#disclaimer&#34;&gt;Disclaimer&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/details&gt;
+
+&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
+&lt;p&gt;Like a lot of academic clusters, ours doesn&amp;rsquo;t have one big shared scratch pool. Each compute node has its own local-ish fast storage:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/cluster/node1/&amp;lt;user&amp;gt;/...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/cluster/node2/&amp;lt;user&amp;gt;/...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/cluster/node3/&amp;lt;user&amp;gt;/...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/cluster/node4/&amp;lt;user&amp;gt;/...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is great for IO performance — jobs hit the storage attached to the node they ran on — but bad for the human running them. A single training run that scheduled across multiple nodes leaves logs scattered everywhere. Tailing one log means knowing which node produced it. Backing things up means looping over nodes. Pointing tools (TensorBoard, viewers, scripts) at a single root is impossible.&lt;/p&gt;
+&lt;p&gt;What I want is a &lt;em&gt;view&lt;/em&gt;: one path that looks like the union of all those per-node directories, transparently.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s exactly what mergerfs gives you.&lt;/p&gt;
+&lt;h2 id=&#34;what-mergerfs-is-mental-model&#34;&gt;What mergerfs is (mental model)&lt;/h2&gt;
+&lt;p&gt;mergerfs is a userspace, &lt;strong&gt;policy-driven&lt;/strong&gt; union filesystem. You hand it a list of &lt;em&gt;branches&lt;/em&gt; (existing directories) and a mount point, and it presents the union of those branches at the mount point. Reads transparently fall through to whichever branch has the file; writes get routed to a branch according to a &lt;strong&gt;create policy&lt;/strong&gt; you configure.&lt;/p&gt;
+&lt;p&gt;Crucially, &lt;strong&gt;mergerfs doesn&amp;rsquo;t move data&lt;/strong&gt;. Each file still lives on exactly one branch on disk — mergerfs just makes the namespace look unified. If you bypass the mount and look at a branch directly, you still see the real underlying files. That&amp;rsquo;s what makes it safe to bolt on top of an existing setup without migrations.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Before any of this works, two things need to be true on &lt;strong&gt;every node&lt;/strong&gt; you want to mount on:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;mergerfs&lt;/code&gt; is installed.&lt;/strong&gt; It&amp;rsquo;s packaged for most distributions (&lt;code&gt;apt install mergerfs&lt;/code&gt;, &lt;code&gt;dnf install mergerfs&lt;/code&gt;, etc.); otherwise grab a release from &lt;a href=&#34;https://github.com/trapexit/mergerfs/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the project&amp;rsquo;s GitHub&lt;/a&gt;. How you push that out is up to you (Ansible, Salt, your distro&amp;rsquo;s image, or just SSH-ing it in) — the important thing is that the binary is there and on &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;FUSE allows &lt;code&gt;user_allow_other&lt;/code&gt;.&lt;/strong&gt; mergerfs is intended to run as a normal user (don&amp;rsquo;t run it as root), and you&amp;rsquo;ll almost certainly want the merged view to be readable by other tools/users on the box — daemons, jobs running as a different user, root doing backups. That requires &lt;code&gt;user_allow_other&lt;/code&gt; in &lt;code&gt;/etc/fuse.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# /etc/fuse.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;user_allow_other
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a one-time, root-level change per node.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ssh-from-where-you-run-the-script&#34;&gt;SSH from where you run the script&lt;/h3&gt;
+&lt;p&gt;The script orchestrates every node by SSHing into it (&lt;code&gt;ssh -o ConnectTimeout=5 &amp;lt;node&amp;gt; bash &amp;lt;&amp;lt;EOF ... EOF&lt;/code&gt;), so the host you launch it from needs to be able to SSH into every cluster node &lt;strong&gt;without a password prompt&lt;/strong&gt;. In practice that means:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Key-based auth&lt;/strong&gt; set up to all nodes (an &lt;code&gt;ssh-agent&lt;/code&gt; with your key loaded, or a key without a passphrase). The script doesn&amp;rsquo;t handle interactive password entry — it&amp;rsquo;ll just hang.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Hostnames resolvable&lt;/strong&gt; by the names that come back from &lt;code&gt;sinfo&lt;/code&gt; / &lt;code&gt;scontrol show hostnames&lt;/code&gt;. If your SLURM short hostnames aren&amp;rsquo;t directly DNS-resolvable, add an entry per node in &lt;code&gt;~/.ssh/config&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Host node1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    HostName node1.cluster.example.org
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    User &amp;lt;your-user&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;bash&lt;/code&gt; available on the remote side&lt;/strong&gt; (the script runs heredoc&amp;rsquo;d bash on each node).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No host-key prompts on first contact&lt;/strong&gt;. Either pre-populate &lt;code&gt;~/.ssh/known_hosts&lt;/code&gt;, or add &lt;code&gt;StrictHostKeyChecking=accept-new&lt;/code&gt; in &lt;code&gt;~/.ssh/config&lt;/code&gt; for your cluster hosts so the first SSH doesn&amp;rsquo;t block waiting for a y/n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you can run &lt;code&gt;ssh &amp;lt;node&amp;gt; hostname&lt;/code&gt; against every node and it just prints the hostname with no prompts, you&amp;rsquo;re set.&lt;/p&gt;
+&lt;h2 id=&#34;my-mergerfs-options&#34;&gt;My mergerfs options&lt;/h2&gt;
+&lt;p&gt;Here are the options I mount with, and why each one:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cache.files=off,use_ino,func.getattr=newest,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;category.create=mfs,moveonenospc=true,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;minfreespace=300G,allow_other
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;cache.files=off&lt;/code&gt;&lt;/strong&gt; — disable kernel page caching of file content. With networked-ish per-node storage this avoids stale-cache surprises; performance is rarely the bottleneck for what I use the merged view for (browsing logs, rsync).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;use_ino&lt;/code&gt;&lt;/strong&gt; — preserve the underlying filesystem&amp;rsquo;s inode numbers in the merged view. Tools that compare files by &lt;code&gt;(dev, ino)&lt;/code&gt; (rsync, tar) behave correctly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;func.getattr=newest&lt;/code&gt;&lt;/strong&gt; — if the same path exists on several branches, &lt;code&gt;stat()&lt;/code&gt; returns the version with the most recent mtime. Handy when a job&amp;rsquo;s log file ends up on multiple nodes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;category.create=mfs&lt;/code&gt;&lt;/strong&gt; — &lt;em&gt;most-free-space&lt;/em&gt; create policy. New files go to whichever branch currently has the most free space. Keeps things naturally balanced.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;moveonenospc=true&lt;/code&gt;&lt;/strong&gt; — if a write fails with &lt;code&gt;ENOSPC&lt;/code&gt;, mergerfs will transparently move the file to another branch and retry. Saves a job from dying because the branch it landed on filled up.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;minfreespace=300G&lt;/code&gt;&lt;/strong&gt; — branches with less than 300 GB free are excluded from new file creation. With ML workloads writing big checkpoints this prevents pathological &amp;ldquo;write 200 GB onto a branch that had 250 GB and lock everything up&amp;rdquo; cases.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;allow_other&lt;/code&gt;&lt;/strong&gt; — combined with &lt;code&gt;user_allow_other&lt;/code&gt; in &lt;code&gt;fuse.conf&lt;/code&gt; (above), allows other users on the box to read the mount.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;a-script-to-manage-it-across-the-cluster&#34;&gt;A script to manage it across the cluster&lt;/h2&gt;
+&lt;p&gt;Mounting one merged view by hand is &lt;code&gt;mergerfs &amp;lt;opts&amp;gt; /a:/b:/c /mnt&lt;/code&gt;. Doing that interactively across N nodes for M merge sets, and remembering to clean up, gets old fast. So I wrote a small interactive bash tool. It can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mount&lt;/strong&gt; any subset of merge sets on any subset of nodes (creates source dirs if missing, refuses to mount if a source is unreachable, replaces stale mounts).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check mounts&lt;/strong&gt; — for each (set, node), show whether it&amp;rsquo;s active, the merged-view &lt;code&gt;df&lt;/code&gt;, the active mount options, per-source disk usage, and flag any branch that has dropped below &lt;code&gt;minfreespace&lt;/code&gt; (so you know mergerfs has stopped writing to it). Optional file-count and &lt;code&gt;du -sh&lt;/code&gt; (gated, because they&amp;rsquo;re slow on big trees).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unmount&lt;/strong&gt; safely (&lt;code&gt;fusermount -uz&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kill mergerfs process&lt;/strong&gt; — for the case where a mount has gone unresponsive: it locates the right &lt;code&gt;mergerfs&lt;/code&gt; PID by matching the mount point at the &lt;em&gt;end&lt;/em&gt; of &lt;code&gt;/proc/&amp;lt;pid&amp;gt;/cmdline&lt;/code&gt; (so a path that appears as a &lt;em&gt;source&lt;/em&gt; in another mergerfs instance doesn&amp;rsquo;t false-match), &lt;code&gt;kill -9&lt;/code&gt;s it, then attempts &lt;code&gt;fusermount -uz&lt;/code&gt;, falling back to &lt;code&gt;umount -l&lt;/code&gt; if needed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Show rsync commands&lt;/strong&gt; — emit ready-to-paste &lt;code&gt;rsync&lt;/code&gt; lines for migrating each merge set into a single consolidated directory, for the day you outgrow the union view and want to physically merge.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Node discovery uses &lt;code&gt;sinfo&lt;/code&gt; + &lt;code&gt;scontrol show hostnames&lt;/code&gt; so it always picks up what SLURM currently knows about, plus the head node.&lt;/p&gt;
+&lt;p&gt;The whole thing is one self-contained file. Configure your merge sets at the top — each entry is &lt;code&gt;mount_point:source1:source2:...:sourceN&lt;/code&gt; — and run it. The interactive menu does the rest.&lt;/p&gt;
+&lt;p&gt;📥 &lt;strong&gt;&lt;a href=&#34;cluster_mergerfs.sh&#34;&gt;Download &lt;code&gt;cluster_mergerfs.sh&lt;/code&gt;&lt;/a&gt;&lt;/strong&gt; (~700 lines, single file, no dependencies beyond &lt;code&gt;mergerfs&lt;/code&gt;, &lt;code&gt;ssh&lt;/code&gt;, and standard SLURM tooling).&lt;/p&gt;
+&lt;p&gt;The configuration block at the top is the only thing you need to edit:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Format: local_mount:path1:path2:path3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MERGE_SETS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;/home/&amp;lt;user&amp;gt;/projects/projectA/logs:/cluster/node1/&amp;lt;user&amp;gt;/projectA_logs:/cluster/node2/&amp;lt;user&amp;gt;/projectA_logs:/cluster/node3/&amp;lt;user&amp;gt;/projectA_logs:/cluster/node4/&amp;lt;user&amp;gt;/projectA_logs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;/home/&amp;lt;user&amp;gt;/projects/projectB/scenes:/cluster/node1/&amp;lt;user&amp;gt;/projectB/scenes&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;/home/&amp;lt;user&amp;gt;/projects/projectB/outputs:/cluster/node1/&amp;lt;user&amp;gt;/projectB/outputs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MERGERFS_OPTS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cache.files=off,use_ino,func.getattr=newest,category.create=mfs,moveonenospc=true,minfreespace=300G,allow_other&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;a-few-practical-notes&#34;&gt;A few practical notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mergerfs mounts are per-machine.&lt;/strong&gt; Each compute node sees the merged view through its own mergerfs process; there&amp;rsquo;s no cluster-wide FS magic. The script just SSH-loops the same mount on every node so you get a consistent view wherever you land.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run as your user, not root.&lt;/strong&gt; Combined with &lt;code&gt;allow_other&lt;/code&gt;, that gives you the right ownership and avoids weird &lt;code&gt;chown&lt;/code&gt; aftermath.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&amp;rsquo;t write into a branch directly while the merged view is mounted on top of it&lt;/strong&gt; — mergerfs caches some metadata, so changes that bypass the union can confuse it briefly. If in doubt, write through the mount point.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;minfreespace&lt;/code&gt; is your friend.&lt;/strong&gt; Without it, a single full branch can break creates pretty unintuitively. With it, mergerfs just rotates traffic onto branches that still have headroom.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;If a mount goes hung,&lt;/strong&gt; the &amp;ldquo;Kill mergerfs process&amp;rdquo; action is much safer than &lt;code&gt;kill -9 $(pgrep mergerfs)&lt;/code&gt; — it specifically matches the mount point at the &lt;em&gt;end&lt;/em&gt; of the cmdline so it never kills a different instance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;wrap-up&#34;&gt;Wrap-up&lt;/h2&gt;
+&lt;p&gt;mergerfs isn&amp;rsquo;t going to replace a real distributed filesystem, and that&amp;rsquo;s fine — it&amp;rsquo;s not trying to. What it &lt;em&gt;does&lt;/em&gt; give you is a five-minute Saturday-afternoon way to make per-node storage feel like one place, without moving any data and without admin-team meetings about provisioning. Combined with a small wrapper script, it&amp;rsquo;s been one of the higher quality-of-life upgrades to my day-to-day workflow on the cluster.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;disclaimer&#34;&gt;Disclaimer&lt;/h3&gt;
+&lt;p&gt;The script linked above is released under the MIT License and is provided &lt;strong&gt;&amp;ldquo;as is&amp;rdquo;, without warranty of any kind&lt;/strong&gt;, express or implied. It performs operations that touch filesystems, mount points, and remote machines via SSH, and includes destructive actions (unmount, &lt;code&gt;kill -9&lt;/code&gt;). You are solely responsible for understanding what it does before running it, for testing it in a safe environment first, and for any data loss, downtime, or other consequences that may result from its use. Use at your own risk.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Using VSCode in Slurm</title>
       <link>https://marcb.pro/post/vscode-slurm/</link>
       <pubDate>Mon, 07 Aug 2023 15:10:29 +0200</pubDate>
@@ -140,10 +271,10 @@
 &lt;figure  id=&#34;figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;htop&#34; srcset=&#34;
-               /post/vscode-slurm/htop_hu_9822c6603cd0ea76.webp 400w,
-               /post/vscode-slurm/htop_hu_6cf9c2465ff25681.webp 760w,
-               /post/vscode-slurm/htop_hu_65945f145afe6932.webp 1200w&#34;
-               src=&#34;https://marcb.pro/post/vscode-slurm/htop_hu_9822c6603cd0ea76.webp&#34;
+               /post/vscode-slurm/htop_hu_54731c610c5a7b98.webp 400w,
+               /post/vscode-slurm/htop_hu_f7a80cc7fe64010b.webp 760w,
+               /post/vscode-slurm/htop_hu_a60850ab4da36ed0.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/vscode-slurm/htop_hu_54731c610c5a7b98.webp&#34;
                width=&#34;760&#34;
                height=&#34;492&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;

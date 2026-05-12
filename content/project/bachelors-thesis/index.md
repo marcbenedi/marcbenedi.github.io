@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Design of an Environment for Solving pseudo-Boolean Optimization Problems"
-summary: ""
+summary: "Built a C++ library and an efficient CNF encoding for solving Pseudo-Boolean Optimization problems via off-the-shelf SAT solvers, with linear and binary minimization strategies and configurable timeout policies for time-bounded solving."
 authors: []
 tags: ["Optimization", "SAT", "B.Sc", "featured"]
 categories: []

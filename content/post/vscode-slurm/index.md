@@ -3,7 +3,7 @@
 
 title: "Using VSCode in Slurm"
 subtitle: ""
-summary: ""
+summary: "Two recipes for moving VSCode (and PyCharm) off the Slurm login node and into actual compute jobs: a quick `code-server` web setup, and a per-job `sshd` workflow for full IDE remote-development. Stops resource-hungry editor processes from piling up on shared login nodes and lets you debug on the GPU you actually allocated."
 authors: []
 tags: ["Slurm", "VSCode", "PyCharm"]
 categories: []
