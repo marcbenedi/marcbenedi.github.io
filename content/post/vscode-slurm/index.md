@@ -28,7 +28,11 @@ image:
 projects: []
 ---
 
-> ⭐ **Check out my latest Python library: [autocast](https://github.com/marcbenedi/autocast)!** A smart library that automates **type conversion** between PyTorch, NumPy, Open3D (and many others!) so you can **stop writing boilerplate**. ⭐
+{{% callout note %}}
+⭐ **Check out my Python library [autocast](https://github.com/marcbenedi/autocast)!** A small library that automates **type conversion** between PyTorch, NumPy, Open3D (and many others!), so you can **stop writing boilerplate**. ⭐
+{{% /callout %}}
+
+> **TL;DR:** Stop running VSCode's `vscode-server` on the Slurm login node. Two recipes here move it into a real Slurm job so the editor lives on the compute node you actually allocated — meaning you can debug and run code on the GPU it gave you, and the login node stays free. Pick the **easy** one (`code-server` in a browser) or the **flexible** one (per-job `sshd` you connect any IDE to, including PyCharm).
 
 {{< toc >}}
 
@@ -39,9 +43,9 @@ Although I don't use Visual Studio Code[[1]] as a code editor (I use Neovim[[2]]
 
 ## The problem
 
-To develop in our Slurm[[3]] cluster, the users connect the VSCode to the "Login node" which starts the `vscode-server` process. 
+To develop in our Slurm[[3]] cluster, users connect VSCode to the "login node", which starts the `vscode-server` process there.
 
-This is not a problem by itself, but when many users do it simultaneouslly, it starts to consume many resources in a machine that should only be used to manage Slurm jobs.
+This is not a problem by itself, but when many users do it simultaneously, it starts to consume a lot of resources on a machine that should only be used to manage Slurm jobs.
 
 Additionally, this setup only allows for editing the code, not for executing (or at least I hope they are not running code in the "Login node" 🤞) or even debugging. 
 
@@ -59,105 +63,68 @@ This solution is super simple to set up! It consists of running `code-server`[[5
 
 First, we need to install the binary in our system. There are many options for that, so just pick up the most convenient for you. See the list of options [here](https://coder.com/docs/code-server/latest/install). In my case, I choose the `Standalone release` and put the binary in my path.
 
-Second, we will create a job file, for example `code-server.job`, with the following content:
+Second, grab the Slurm job file:
 
-```bash
-#!/bin/bash 
- 
-#SBATCH --job-name=code-server
-#SBATCH --time=04:00:00
-#SBATCH --output=%x_%j_%N.log 
+📥 **[Download `code-server.job`](code-server.job)** — adjust the `#SBATCH` lines (partition, time, GPUs, memory) to your cluster, then submit it with `sbatch code-server.job`.
 
-#SBATCH --mem=8gb 
-#SBATCH --gpus=1 
-#SBATCH --cpus-per-task=4 
+The script picks a random free port, generates a strong password (`openssl rand -base64 24`), and starts `code-server` listening on that port with password auth.
 
-#SBATCH -p submit
- 
-PASSWORD=1234 # TODO: Change to secure password
-PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
-
-echo "********************************************************************" 
-echo "Starting code-server in Slurm"
-echo "Environment information:" 
-echo "Date:" $(date)
-echo "Allocated node:" $(hostname)
-echo "Node IP:" $(ip a | grep 131.159)
-echo "Path:" $(pwd)
-echo "Password to access VSCode:" $PASSWORD
-echo "Listening on:" $PORT
-echo "********************************************************************" 
-
-PASSWORD=$PASSWORD code-server --bind-addr 0.0.0.0:$PORT --auth password --disable-telemetry
-```
-
-❗ Remember to change the password! ❗
+> ⚠️ **Security note.** The job binds `code-server` to `0.0.0.0`, which means **anyone on the cluster's internal network** can reach the port. The bundled password is randomly generated — don't replace it with something weak like `1234` for real use, or someone who can probe ports on your node has an interactive shell as your user. If you can, bind to a specific internal interface instead of `0.0.0.0`, or front the service with [SSH port-forwarding](https://coder.com/docs/code-server/latest/guide#port-forwarding-via-ssh) and bind to `127.0.0.1:$PORT`. Treat the password printed to the job log as a secret.
 
 Finally, once the job has started, we can open the editor using any web browser and navigating to the `IP` of the node and the `PORT`.
 
 That's it!
 
- If the node is not accessible from the Internet, use port-forwarding https://coder.com/docs/code-server/latest/guide#port-forwarding-via-ssh.
+If the node is not accessible from the Internet, use [port-forwarding via SSH](https://coder.com/docs/code-server/latest/guide#port-forwarding-via-ssh).
 
 ## 👷 The complex solution: Start your own `sshd` process
 
-If you are up for a more complex solution or use other IDEs like PyCharm, you can use the next configuration. It involves starting `sshd` in a Slurm  job and then connecting our IDEs to the new process (instead of the global `sshd` process).
+If you are up for a more complex solution or use other IDEs like PyCharm, you can use the next configuration. It involves starting `sshd` in a Slurm job and then connecting our IDEs to the new process (instead of the global `sshd` process).
 
 ### Step 1: Create the SSH keys
 
-```bash
-ssh-keygen -t rsa -f .ssh/vcg_cluster_user_sshd
-```
-
-Then, copy the generated keys to the login node. (We assume here that the user's home directories are accessible on all nodes).
-
-### Step 2: `sshd` Slurm job
-
-Copy the following content to a new file such as `sshd.job`.
+Generate a dedicated key pair for this workflow (run this on the login node, or anywhere your `$HOME` is shared with the compute nodes):
 
 ```bash
-#!/bin/bash 
- 
-#SBATCH --job-name=sshd
-#SBATCH --time=04:00:00
-#SBATCH --output=%x_%j_%N.log 
-
-#SBATCH --mem=8gb 
-#SBATCH --gpus=1 
-#SBATCH --cpus-per-task=4 
-
-#SBATCH -p submit
- 
-PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
-
-echo "********************************************************************" 
-echo "Starting sshd in Slurm as user"
-echo "Environment information:" 
-echo "Date:" $(date)
-echo "Allocated node:" $(hostname)
-echo "Node IP:" $(ip a | grep 131.159)
-echo "Path:" $(pwd)
-echo "Listening on:" $PORT
-echo "********************************************************************" 
-
-/usr/sbin/sshd -D -p ${PORT} -f /dev/null -h ${HOME}/.ssh/vcg_cluster_user_sshd
+ssh-keygen -t ed25519 -N "" -f ~/.ssh/slurm_sshd_key
 ```
 
-### Step 3: Test the connection
+This creates two files: `~/.ssh/slurm_sshd_key` (private) and `~/.ssh/slurm_sshd_key.pub` (public). The `-N ""` keeps the key passphrase-less so you can connect without an `ssh-agent`; if you'd rather have a passphrase, drop `-N ""` and have an agent loaded.
+
+### Step 2: Authorize the key
+
+The `sshd` we'll start in the Slurm job will check `~/.ssh/authorized_keys` on the compute node. Add the public key there:
+
+```bash
+cat ~/.ssh/slurm_sshd_key.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+```
+
+> This step assumes your home directory is shared across the login node and all compute nodes (NFS or similar). If it isn't, you'll need to repeat it on each compute node — or, better, fix the home-directory setup first.
+
+### Step 3: `sshd` Slurm job
+
+Grab the Slurm job file:
+
+📥 **[Download `sshd.job`](sshd.job)** — adjust the `#SBATCH` lines for your cluster and submit it with `sbatch sshd.job`.
+
+The script picks a random free port and starts `sshd -D` in the foreground using the host key you generated in Step 1. Note the `-f /dev/null` (no config file): on some modern OpenSSH builds you may need to point `-f` at a minimal `sshd_config` instead if it refuses to start with no defaults loaded.
+
+### Step 4: Test the connection
 
 At this point, you should be able to connect using ssh to the Slurm job.
 
 ```bash
-ssh user@node -p <PORT where the server started> -i ~/.ssh/vcg_cluster_user_sshd
+ssh user@node -p <PORT where the server started> -i ~/.ssh/slurm_sshd_key
 ```
 
 Notice that the ssh session can only see the resources allocated to the job (for example the gpus).
 
-### Step 4: Connect your IDE
+### Step 5: Connect your IDE
 
 Finally, use your IDEs "Remote Connection" feature to connect to the job.
 
-### Step 5: Remember to end the `sshd` process
+### Step 6: Remember to end the `sshd` process
 
 It is important to cancel the Slurm job when we don't need the `sshd` listening anymore.
 

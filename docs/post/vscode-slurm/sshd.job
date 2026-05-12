@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# sshd.job — start a per-job sshd inside a Slurm allocation so an external IDE
+# (VSCode, PyCharm, ...) can attach to the compute node and "see" only the
+# resources allocated to this job.
+#
+# MIT License
+#
+# Copyright (c) 2023-2026 Marc Benedí San Millán
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+#SBATCH --job-name=sshd
+#SBATCH --time=04:00:00
+#SBATCH --output=%x_%j_%N.log
+
+#SBATCH --mem=8gb
+#SBATCH --gpus=1
+#SBATCH --cpus-per-task=4
+
+#SBATCH -p submit
+
+PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
+
+echo "********************************************************************"
+echo "Starting sshd in Slurm as user"
+echo "Environment information:"
+echo "Date:" $(date)
+echo "Allocated node:" $(hostname)
+echo "Node IP:" $(hostname -I | awk '{print $1}')
+echo "Path:" $(pwd)
+echo "Listening on:" $PORT
+echo "********************************************************************"
+
+/usr/sbin/sshd -D -p ${PORT} -f /dev/null -h ${HOME}/.ssh/slurm_sshd_key
