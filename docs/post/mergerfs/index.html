@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: May 12, 2026 --><html lang="en-us" >
+<!-- Last Published: May 21, 2026 --><html lang="en-us" >
 
 
 <head>
@@ -963,7 +963,15 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>After my <a href="/post/vscode-slurm/">VSCode-on-Slurm post</a> seemed to land well, here&rsquo;s another small tool that has saved me an embarrassing amount of <code>cd</code>-ing around our cluster: <strong><a href="https://github.com/trapexit/mergerfs" target="_blank" rel="noopener">mergerfs</a></strong>.</p>
+      <div class="alert alert-note">
+  <div>
+    <p><strong>Update — 2026-05-21:</strong> After upgrading one of our nodes to <strong>Ubuntu 24.04</strong> (which packages <strong>mergerfs 2.33</strong>), mounts started failing with <code>Operation not permitted</code>. The cause is a packaging bug: the Ubuntu 24.04 <code>mergerfs</code> package ships its mount helper <code>/usr/bin/mergerfs-fusermount</code> <strong>without the setuid bit</strong>, so when invoked by a normal user it can&rsquo;t ask the kernel to create the FUSE mount.</p>
+<p><strong>⚒️Fix</strong> (as root, once per affected node):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chmod u+s /usr/bin/mergerfs-fusermount
+</span></span></code></pre></div><p>Older Ubuntu 20.04 nodes (mergerfs 2.28) are not affected because that version uses the system&rsquo;s <code>fusermount3</code> directly, which already has setuid set. If your nodes boot from a read-only <code>squashfs</code> image with an overlay (common for netbooted/live setups), the <code>chmod</code> will live in the writable upper layer and survive normal operation, but a reboot from a fresh image will wipe it — bake the setuid bit into the image, or re-apply the <code>chmod</code> after each reboot.</p>
+  </div>
+</div>
+<p>After my <a href="/post/vscode-slurm/">VSCode-on-Slurm post</a> seemed to land well, here&rsquo;s another small tool that has saved me an embarrassing amount of <code>cd</code>-ing around our cluster: <strong><a href="https://github.com/trapexit/mergerfs" target="_blank" rel="noopener">mergerfs</a></strong>.</p>
 <blockquote>
 <p><strong>TL;DR:</strong> mergerfs is a FUSE filesystem that lets you mount <em>N</em> directories as if they were one. I use it to pool the per-node scratch storage on our SLURM cluster into a single tidy mount under my home directory, so I can <code>ls</code>, <code>tail</code>, and <code>rsync</code> across nodes without thinking about which node a file lives on.</p>
 </blockquote>

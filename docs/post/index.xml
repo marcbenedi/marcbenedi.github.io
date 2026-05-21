@@ -89,7 +89,15 @@
       <link>https://marcb.pro/post/mergerfs/</link>
       <pubDate>Wed, 01 Oct 2025 11:03:24 +0200</pubDate>
       <guid>https://marcb.pro/post/mergerfs/</guid>
-      <description>&lt;p&gt;After my &lt;a href=&#34;https://marcb.pro/post/vscode-slurm/&#34;&gt;VSCode-on-Slurm post&lt;/a&gt; seemed to land well, here&amp;rsquo;s another small tool that has saved me an embarrassing amount of &lt;code&gt;cd&lt;/code&gt;-ing around our cluster: &lt;strong&gt;&lt;a href=&#34;https://github.com/trapexit/mergerfs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mergerfs&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;&lt;strong&gt;Update — 2026-05-21:&lt;/strong&gt; After upgrading one of our nodes to &lt;strong&gt;Ubuntu 24.04&lt;/strong&gt; (which packages &lt;strong&gt;mergerfs 2.33&lt;/strong&gt;), mounts started failing with &lt;code&gt;Operation not permitted&lt;/code&gt;. The cause is a packaging bug: the Ubuntu 24.04 &lt;code&gt;mergerfs&lt;/code&gt; package ships its mount helper &lt;code&gt;/usr/bin/mergerfs-fusermount&lt;/code&gt; &lt;strong&gt;without the setuid bit&lt;/strong&gt;, so when invoked by a normal user it can&amp;rsquo;t ask the kernel to create the FUSE mount.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;⚒️Fix&lt;/strong&gt; (as root, once per affected node):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod u+s /usr/bin/mergerfs-fusermount
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Older Ubuntu 20.04 nodes (mergerfs 2.28) are not affected because that version uses the system&amp;rsquo;s &lt;code&gt;fusermount3&lt;/code&gt; directly, which already has setuid set. If your nodes boot from a read-only &lt;code&gt;squashfs&lt;/code&gt; image with an overlay (common for netbooted/live setups), the &lt;code&gt;chmod&lt;/code&gt; will live in the writable upper layer and survive normal operation, but a reboot from a fresh image will wipe it — bake the setuid bit into the image, or re-apply the &lt;code&gt;chmod&lt;/code&gt; after each reboot.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;After my &lt;a href=&#34;https://marcb.pro/post/vscode-slurm/&#34;&gt;VSCode-on-Slurm post&lt;/a&gt; seemed to land well, here&amp;rsquo;s another small tool that has saved me an embarrassing amount of &lt;code&gt;cd&lt;/code&gt;-ing around our cluster: &lt;strong&gt;&lt;a href=&#34;https://github.com/trapexit/mergerfs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mergerfs&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; mergerfs is a FUSE filesystem that lets you mount &lt;em&gt;N&lt;/em&gt; directories as if they were one. I use it to pool the per-node scratch storage on our SLURM cluster into a single tidy mount under my home directory, so I can &lt;code&gt;ls&lt;/code&gt;, &lt;code&gt;tail&lt;/code&gt;, and &lt;code&gt;rsync&lt;/code&gt; across nodes without thinking about which node a file lives on.&lt;/p&gt;
 &lt;/blockquote&gt;

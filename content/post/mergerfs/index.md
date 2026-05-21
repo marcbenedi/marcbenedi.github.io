@@ -28,6 +28,18 @@ image:
 projects: []
 ---
 
+{{% callout note %}}
+**Update — 2026-05-21:** After upgrading one of our nodes to **Ubuntu 24.04** (which packages **mergerfs 2.33**), mounts started failing with `Operation not permitted`. The cause is a packaging bug: the Ubuntu 24.04 `mergerfs` package ships its mount helper `/usr/bin/mergerfs-fusermount` **without the setuid bit**, so when invoked by a normal user it can't ask the kernel to create the FUSE mount.
+
+**⚒️Fix** (as root, once per affected node):
+
+```bash
+sudo chmod u+s /usr/bin/mergerfs-fusermount
+```
+
+Older Ubuntu 20.04 nodes (mergerfs 2.28) are not affected because that version uses the system's `fusermount3` directly, which already has setuid set. If your nodes boot from a read-only `squashfs` image with an overlay (common for netbooted/live setups), the `chmod` will live in the writable upper layer and survive normal operation, but a reboot from a fresh image will wipe it — bake the setuid bit into the image, or re-apply the `chmod` after each reboot.
+{{% /callout %}}
+
 After my [VSCode-on-Slurm post](/post/vscode-slurm/) seemed to land well, here's another small tool that has saved me an embarrassing amount of `cd`-ing around our cluster: **[mergerfs](https://github.com/trapexit/mergerfs)**.
 
 > **TL;DR:** mergerfs is a FUSE filesystem that lets you mount *N* directories as if they were one. I use it to pool the per-node scratch storage on our SLURM cluster into a single tidy mount under my home directory, so I can `ls`, `tail`, and `rsync` across nodes without thinking about which node a file lives on.
