@@ -1,6 +1,9 @@
 ---
 # Leave the homepage title empty to use the site title
 title: ''
+# SEO: explicit <title> / og:title for the homepage (the bare site title "Marc B" is too thin).
+seo:
+  title: 'Marc Benedí San Millán | Computer Vision & 3D Reconstruction PhD @ TUM'
 date: 2022-10-24
 type: landing
 

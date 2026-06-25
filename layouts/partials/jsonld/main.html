@@ -1,0 +1,31 @@
+{{/*
+  Override of blox-seo's `jsonld/main.html`.
+  Difference vs. upstream: on a `Person`-type homepage the theme emits NO author
+  structured data (it only adds schema when site_type != "Person"). We add a
+  `Person` JSON-LD block so search engines can build a proper author entity.
+*/}}
+{{ $page := .page }}
+{{ $summary := .summary }}
+{{ $site_type := site.Params.marketing.seo.site_type | default "Person" }}
+
+{{- if $page.IsHome -}}
+
+  {{ partialCached "jsonld/website.html" $page }}
+
+  {{ if ne $site_type "Person" }}
+    {{ partial "jsonld/business.html" $page }}
+  {{ else }}
+    {{ partial "jsonld/person.html" $page }}
+  {{ end }}
+
+{{- else if $page.IsPage -}}
+
+  {{ if (eq $page.Type "post") | or (eq $page.Type "publication") | or (eq $page.Type "project") }}
+    {{ partial "jsonld/article.html" (dict "page" $page "summary" $summary) }}
+  {{ end }}
+
+  {{ if eq $page.Type "event" }}
+    {{ partial "jsonld/event.html" (dict "page" $page "summary" $summary) }}
+  {{ end }}
+
+{{- end }}

@@ -1,0 +1,60 @@
+{{/*
+  Person JSON-LD for the site owner (superuser author).
+  Built from `content/authors/<superuser>/_index.md` so it stays in sync with the
+  About widget. `sameAs` is derived from the author's absolute social links.
+*/}}
+{{ $superuser := index (first 1 (where (where site.Pages "Section" "authors") "Params.superuser" true)) 0 }}
+{{ with $superuser }}
+  {{ $person := dict
+      "@context" "https://schema.org"
+      "@type" "Person"
+      "name" .Title
+      "url" site.BaseURL
+  }}
+
+  {{/* Job title (strip any HTML in the `role` field). */}}
+  {{ with .Params.role }}
+    {{ $person = merge $person (dict "jobTitle" (. | plainify | strings.TrimSpace)) }}
+  {{ end }}
+
+  {{/* Avatar image. */}}
+  {{ with (.Resources.ByType "image").GetMatch "avatar*" }}
+    {{ $person = merge $person (dict "image" .Permalink) }}
+  {{ end }}
+
+  {{/* Primary affiliation. */}}
+  {{ with index .Params.organizations 0 }}
+    {{ $org := dict "@type" "Organization" "name" .name }}
+    {{ with .url }}{{ $org = merge $org (dict "url" .) }}{{ end }}
+    {{ $person = merge $person (dict "worksFor" $org) }}
+  {{ end }}
+
+  {{/* Research interests -> knowsAbout. */}}
+  {{ with .Params.interests }}
+    {{ $person = merge $person (dict "knowsAbout" .) }}
+  {{ end }}
+
+  {{/* Education -> alumniOf (deduplicated by institution name). */}}
+  {{ with .Params.education.courses }}
+    {{ $names := slice }}
+    {{ range . }}{{ with .institution }}{{ $names = $names | append . }}{{ end }}{{ end }}
+    {{ $alumni := slice }}
+    {{ range (uniq $names) }}
+      {{ $alumni = $alumni | append (dict "@type" "CollegeOrUniversity" "name" .) }}
+    {{ end }}
+    {{ if $alumni }}{{ $person = merge $person (dict "alumniOf" $alumni) }}{{ end }}
+  {{ end }}
+
+  {{/* Social/profile links -> sameAs (absolute URLs only). */}}
+  {{ $sameas := slice }}
+  {{ range .Params.social }}
+    {{ if and .link (hasPrefix .link "http") }}
+      {{ $sameas = $sameas | append .link }}
+    {{ end }}
+  {{ end }}
+  {{ if $sameas }}{{ $person = merge $person (dict "sameAs" $sameas) }}{{ end }}
+
+  <script type="application/ld+json">
+{{ jsonify (dict "indent" "  ") $person | safeJS }}
+  </script>
+{{ end }}
