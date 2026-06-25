@@ -7,7 +7,7 @@
     <description>Slurm</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2025 11:03:24 +0200</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu_a402a3727ae24634.png</url>
+      <url>https://marcb.pro/media/icon_hu_ddad19c2aca5426f.png</url>
       <title>Slurm</title>
       <link>https://marcb.pro/tag/slurm/</link>
     </image>
@@ -213,10 +213,10 @@
 &lt;figure  id=&#34;figure-the-login-node-is-full-of-vscode-server-processes-from-many-users-taking-30gb-of-memory&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;htop&#34; srcset=&#34;
-               /post/vscode-slurm/htop_hu_54731c610c5a7b98.webp 400w,
-               /post/vscode-slurm/htop_hu_f7a80cc7fe64010b.webp 760w,
-               /post/vscode-slurm/htop_hu_a60850ab4da36ed0.webp 1200w&#34;
-               src=&#34;https://marcb.pro/post/vscode-slurm/htop_hu_54731c610c5a7b98.webp&#34;
+               /post/vscode-slurm/htop_hu_857d879c8284faaf.webp 400w,
+               /post/vscode-slurm/htop_hu_7a76434191bf675d.webp 760w,
+               /post/vscode-slurm/htop_hu_3352d359b4e524a4.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/vscode-slurm/htop_hu_857d879c8284faaf.webp&#34;
                width=&#34;760&#34;
                height=&#34;492&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -380,7 +380,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/00_home.png&#34; data-caption=&#34;HOME&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/00_home_hu_fef3771423892e6d.webp&#34; loading=&#34;lazy&#34; alt=&#34;HOME&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/00_home_hu_34c8b21cb5bdcbdf.webp&#34; loading=&#34;lazy&#34; alt=&#34;HOME&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -397,7 +397,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/01_jobs.png&#34; data-caption=&#34;JOBS - Overview of job status and requested resources&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/01_jobs_hu_9905b3bb1eea7fdd.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOBS - Overview of job status and requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/01_jobs_hu_7cbb22cf35c9013b.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOBS - Overview of job status and requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -414,7 +414,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1.png&#34; data-caption=&#34;JOB - User, job id, time information and all requested resources&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1_hu_3295b2af31745fb5.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOB - User, job id, time information and all requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1_hu_3cdb9c8da2395df3.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOB - User, job id, time information and all requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -431,7 +431,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/02_nodes.png&#34; data-caption=&#34;NODES - Available resources per node and their usage over time&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/02_nodes_hu_2172f820b0773213.webp&#34; loading=&#34;lazy&#34; alt=&#34;NODES - Available resources per node and their usage over time&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/02_nodes_hu_f9c9223a68ab5ba2.webp&#34; loading=&#34;lazy&#34; alt=&#34;NODES - Available resources per node and their usage over time&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -448,7 +448,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user.png&#34; data-caption=&#34;RESOURCES - List and chart of the resources being used per user&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user_hu_216746617144b598.webp&#34; loading=&#34;lazy&#34; alt=&#34;RESOURCES - List and chart of the resources being used per user&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user_hu_3bad2c2c1bf0de14.webp&#34; loading=&#34;lazy&#34; alt=&#34;RESOURCES - List and chart of the resources being used per user&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -465,7 +465,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/04_storage.png&#34; data-caption=&#34;STORAGE - A list of the storage used per user on each node&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/04_storage_hu_4b6fc59fc7ea417b.webp&#34; loading=&#34;lazy&#34; alt=&#34;STORAGE - A list of the storage used per user on each node&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/04_storage_hu_2e9f6fcad1831251.webp&#34; loading=&#34;lazy&#34; alt=&#34;STORAGE - A list of the storage used per user on each node&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -482,7 +482,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode.png&#34; data-caption=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode_hu_1be57a285abf18f3.webp&#34; loading=&#34;lazy&#34; alt=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode_hu_e75fcb9ee4247728.webp&#34; loading=&#34;lazy&#34; alt=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -497,7 +497,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/06_conferences.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/06_conferences_hu_133fc368f1a99c0e.webp&#34; loading=&#34;lazy&#34; alt=&#34;06_conferences.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/06_conferences_hu_48b05a3d7a129e38.webp&#34; loading=&#34;lazy&#34; alt=&#34;06_conferences.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -512,7 +512,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/07_health.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/07_health_hu_cae43a37e1222955.webp&#34; loading=&#34;lazy&#34; alt=&#34;07_health.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/07_health_hu_844fa42f2679bea3.webp&#34; loading=&#34;lazy&#34; alt=&#34;07_health.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -527,7 +527,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/08_docs.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/08_docs_hu_cfa00ff7d4af05c5.webp&#34; loading=&#34;lazy&#34; alt=&#34;08_docs.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/08_docs_hu_6e0af56a8b3f3533.webp&#34; loading=&#34;lazy&#34; alt=&#34;08_docs.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -542,7 +542,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/09_news.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/09_news_hu_b70df568291dd7b7.webp&#34; loading=&#34;lazy&#34; alt=&#34;09_news.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/09_news_hu_943c0f816db5810.webp&#34; loading=&#34;lazy&#34; alt=&#34;09_news.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -557,7 +557,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/10_profile.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/10_profile_hu_99a9544d7c376ad1.webp&#34; loading=&#34;lazy&#34; alt=&#34;10_profile.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/10_profile_hu_97935e1af0b6fbd7.webp&#34; loading=&#34;lazy&#34; alt=&#34;10_profile.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -572,7 +572,7 @@
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/11_profile2.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/11_profile2_hu_c7f4ff50d5a6b992.webp&#34; loading=&#34;lazy&#34; alt=&#34;11_profile2.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/11_profile2_hu_691218f0886c6d01.webp&#34; loading=&#34;lazy&#34; alt=&#34;11_profile2.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   

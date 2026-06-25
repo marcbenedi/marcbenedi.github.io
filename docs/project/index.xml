@@ -7,7 +7,7 @@
     <description>Projects</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 30 Oct 2024 08:11:42 +0100</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu_a402a3727ae24634.png</url>
+      <url>https://marcb.pro/media/icon_hu_ddad19c2aca5426f.png</url>
       <title>Projects</title>
       <link>https://marcb.pro/project/</link>
     </image>
@@ -180,10 +180,10 @@
 &lt;figure  id=&#34;figure-pipeline-of-our-method-given-a-pair-of-rgb-d-images-i1-d1-i2-d2-we-estimate-the-relative-pose-between-these-frames-as-r-in-so3-and-t-in-r3--first-i1-i2-are-fed-into-the-correspondence-and-visibility-prediction-component-the-visible-predicted-correspondences-are-weighted-in-the-correspondence-weighting-component-finally-they-are-back-projected-into-3d-and-feed-into-the-weighted-procrustes-aligner-which-estimates-the-relative-pose&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Components of the network&#34; srcset=&#34;
-               /project/gr/components_hu_e43b1d4f5462a716.webp 400w,
-               /project/gr/components_hu_d73c80ea48e8b569.webp 760w,
-               /project/gr/components_hu_bb0c06b3238aff6a.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/gr/components_hu_e43b1d4f5462a716.webp&#34;
+               /project/gr/components_hu_b4d6545f78e605e9.webp 400w,
+               /project/gr/components_hu_5698ba88ebece759.webp 760w,
+               /project/gr/components_hu_3179ba927a35e01e.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/gr/components_hu_b4d6545f78e605e9.webp&#34;
                width=&#34;581&#34;
                height=&#34;372&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -201,8 +201,8 @@
       <guid>https://marcb.pro/project/kinect-fusion/</guid>
       <description>&lt;p&gt;Implementation of the paper &amp;ldquo;Kinect Fusion&amp;rdquo; by Newcombe et al. &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;  They presented a method for accurate real-time mapping of indoor scenes, using only a low-cost depth camera and graphics hardware.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/3YIve6ju6qg?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
+			&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/3YIve6ju6qg?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+		&lt;/div&gt;
 
 &lt;p&gt;This project is part of the lecture 3D Scanning and Motion Capture (&lt;a href=&#34;https://www.in.tum.de/cg/teaching/winter-term-2021/3d-scanning-motion-capture/%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.in.tum.de/cg/teaching/winter-term-2021/3d-scanning-motion-capture/)&lt;/a&gt;. We implemented this project using C++ and CUDA.&lt;/p&gt;
 &lt;h1 id=&#34;results&#34;&gt;Results&lt;/h1&gt;
@@ -231,10 +231,10 @@
 &lt;figure  id=&#34;figure-a-caption&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;A caption&#34; srcset=&#34;
-               /project/kinect-fusion/sidebyside_hu_bde96508abc7e642.webp 400w,
-               /project/kinect-fusion/sidebyside_hu_17915aedfd74a4c8.webp 760w,
-               /project/kinect-fusion/sidebyside_hu_d4f2fd08b51ade01.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/kinect-fusion/sidebyside_hu_bde96508abc7e642.webp&#34;
+               /project/kinect-fusion/sidebyside_hu_75ced59983fbca7b.webp 400w,
+               /project/kinect-fusion/sidebyside_hu_eb64ab03beef29e7.webp 760w,
+               /project/kinect-fusion/sidebyside_hu_6f25f5757bfd2fac.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/kinect-fusion/sidebyside_hu_75ced59983fbca7b.webp&#34;
                width=&#34;760&#34;
                height=&#34;414&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -263,10 +263,10 @@
 &lt;figure  id=&#34;figure-a-caption&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;A caption&#34; srcset=&#34;
-               /project/kinect-fusion/snap_hu_aaabb8990954fc82.webp 400w,
-               /project/kinect-fusion/snap_hu_51ac1ac0fdac8e02.webp 760w,
-               /project/kinect-fusion/snap_hu_c6f152491c8d742a.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/kinect-fusion/snap_hu_aaabb8990954fc82.webp&#34;
+               /project/kinect-fusion/snap_hu_eb218d05bb195a1b.webp 400w,
+               /project/kinect-fusion/snap_hu_aa510522423c5bb4.webp 760w,
+               /project/kinect-fusion/snap_hu_5733450a86115dcf.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/kinect-fusion/snap_hu_eb218d05bb195a1b.webp&#34;
                width=&#34;760&#34;
                height=&#34;320&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -340,10 +340,10 @@ The cost value is also used to express &amp;ldquo;preferred&amp;rdquo; surfaces:
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Cost map&#34; srcset=&#34;
-               /project/warp/costmap_hu_19167f1506fe7af3.webp 400w,
-               /project/warp/costmap_hu_9cc045c82466330c.webp 760w,
-               /project/warp/costmap_hu_52c4d9adfeb716ed.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/warp/costmap_hu_19167f1506fe7af3.webp&#34;
+               /project/warp/costmap_hu_ab6634d350d61b29.webp 400w,
+               /project/warp/costmap_hu_fdbe020d72420032.webp 760w,
+               /project/warp/costmap_hu_3cec51fa15499ae6.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/warp/costmap_hu_ab6634d350d61b29.webp&#34;
                width=&#34;760&#34;
                height=&#34;218&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -379,10 +379,10 @@ The cost value is also used to express &amp;ldquo;preferred&amp;rdquo; surfaces:
 &lt;figure  id=&#34;figure-example-of-parts-of-a-shape-moving-in-different-directions-in-the-same-part-of-the-space-1httpsarxivorgabs180610417&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Example of parts of the shape moving in different directions at the same point&#34; srcset=&#34;
-               /project/idp/original_failure_hu_87eeff97c2a2ab1d.webp 400w,
-               /project/idp/original_failure_hu_94bf9d9eef7ba6c5.webp 760w,
-               /project/idp/original_failure_hu_98d82c050db8607f.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/idp/original_failure_hu_87eeff97c2a2ab1d.webp&#34;
+               /project/idp/original_failure_hu_3b0cd46ea64832c8.webp 400w,
+               /project/idp/original_failure_hu_9df2403c81b7f31e.webp 760w,
+               /project/idp/original_failure_hu_ecc1e22d61d0d521.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/idp/original_failure_hu_3b0cd46ea64832c8.webp&#34;
                width=&#34;464&#34;
                height=&#34;243&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -397,16 +397,16 @@ Their method cannot model such deformation because a vector field can only conta
 &lt;p&gt;To overcome this limitation, Eisenberger suggested using time-dependent vector fields, such that a vector at a given point in space can change over time. For that, we solve correspondence and matching problems for the whole sequence during optimization.&lt;/p&gt;
 &lt;h1 id=&#34;results&#34;&gt;Results&lt;/h1&gt;
 &lt;p&gt;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/3cAmUDDTHYs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
+			&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/3cAmUDDTHYs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+		&lt;/div&gt;
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/gUWHj9HRdkA?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
+			&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/gUWHj9HRdkA?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+		&lt;/div&gt;
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/VISp8TJIm5g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
+			&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/VISp8TJIm5g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+		&lt;/div&gt;
 &lt;/p&gt;
 &lt;h1 id=&#34;notes&#34;&gt;Notes&lt;/h1&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
@@ -527,7 +527,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/00_home.png&#34; data-caption=&#34;HOME&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/00_home_hu_fef3771423892e6d.webp&#34; loading=&#34;lazy&#34; alt=&#34;HOME&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/00_home_hu_34c8b21cb5bdcbdf.webp&#34; loading=&#34;lazy&#34; alt=&#34;HOME&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -544,7 +544,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/01_jobs.png&#34; data-caption=&#34;JOBS - Overview of job status and requested resources&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/01_jobs_hu_9905b3bb1eea7fdd.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOBS - Overview of job status and requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/01_jobs_hu_7cbb22cf35c9013b.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOBS - Overview of job status and requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -561,7 +561,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1.png&#34; data-caption=&#34;JOB - User, job id, time information and all requested resources&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1_hu_3295b2af31745fb5.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOB - User, job id, time information and all requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/011_jobs_detailed1_hu_3cdb9c8da2395df3.webp&#34; loading=&#34;lazy&#34; alt=&#34;JOB - User, job id, time information and all requested resources&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -578,7 +578,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/02_nodes.png&#34; data-caption=&#34;NODES - Available resources per node and their usage over time&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/02_nodes_hu_2172f820b0773213.webp&#34; loading=&#34;lazy&#34; alt=&#34;NODES - Available resources per node and their usage over time&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/02_nodes_hu_f9c9223a68ab5ba2.webp&#34; loading=&#34;lazy&#34; alt=&#34;NODES - Available resources per node and their usage over time&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -595,7 +595,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user.png&#34; data-caption=&#34;RESOURCES - List and chart of the resources being used per user&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user_hu_216746617144b598.webp&#34; loading=&#34;lazy&#34; alt=&#34;RESOURCES - List and chart of the resources being used per user&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/03_resources_per_user_hu_3bad2c2c1bf0de14.webp&#34; loading=&#34;lazy&#34; alt=&#34;RESOURCES - List and chart of the resources being used per user&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -612,7 +612,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/04_storage.png&#34; data-caption=&#34;STORAGE - A list of the storage used per user on each node&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/04_storage_hu_4b6fc59fc7ea417b.webp&#34; loading=&#34;lazy&#34; alt=&#34;STORAGE - A list of the storage used per user on each node&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/04_storage_hu_2e9f6fcad1831251.webp&#34; loading=&#34;lazy&#34; alt=&#34;STORAGE - A list of the storage used per user on each node&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -629,7 +629,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode.png&#34; data-caption=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34;&gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode_hu_1be57a285abf18f3.webp&#34; loading=&#34;lazy&#34; alt=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/05_dark_mode_hu_e75fcb9ee4247728.webp&#34; loading=&#34;lazy&#34; alt=&#34;Dark Mode 🌛 - Because no one should use light mode!&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -644,7 +644,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/06_conferences.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/06_conferences_hu_133fc368f1a99c0e.webp&#34; loading=&#34;lazy&#34; alt=&#34;06_conferences.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/06_conferences_hu_48b05a3d7a129e38.webp&#34; loading=&#34;lazy&#34; alt=&#34;06_conferences.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -659,7 +659,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/07_health.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/07_health_hu_cae43a37e1222955.webp&#34; loading=&#34;lazy&#34; alt=&#34;07_health.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/07_health_hu_844fa42f2679bea3.webp&#34; loading=&#34;lazy&#34; alt=&#34;07_health.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -674,7 +674,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/08_docs.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/08_docs_hu_cfa00ff7d4af05c5.webp&#34; loading=&#34;lazy&#34; alt=&#34;08_docs.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/08_docs_hu_6e0af56a8b3f3533.webp&#34; loading=&#34;lazy&#34; alt=&#34;08_docs.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -689,7 +689,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/09_news.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/09_news_hu_b70df568291dd7b7.webp&#34; loading=&#34;lazy&#34; alt=&#34;09_news.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/09_news_hu_943c0f816db5810.webp&#34; loading=&#34;lazy&#34; alt=&#34;09_news.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -704,7 +704,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/10_profile.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/10_profile_hu_99a9544d7c376ad1.webp&#34; loading=&#34;lazy&#34; alt=&#34;10_profile.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/10_profile_hu_97935e1af0b6fbd7.webp&#34; loading=&#34;lazy&#34; alt=&#34;10_profile.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -719,7 +719,7 @@ Their method cannot model such deformation because a vector field can only conta
   
   &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
     &lt;a data-fancybox=&#34;gallery-hiwi&#34; href=&#34;https://marcb.pro/media/albums/hiwi/11_profile2.png&#34; &gt;
-      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/11_profile2_hu_c7f4ff50d5a6b992.webp&#34; loading=&#34;lazy&#34; alt=&#34;11_profile2.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
+      &lt;img src=&#34;https://marcb.pro/media/albums/hiwi/11_profile2_hu_691218f0886c6d01.webp&#34; loading=&#34;lazy&#34; alt=&#34;11_profile2.png&#34; width=&#34;750&#34; height=&#34;577&#34;&gt;
     &lt;/a&gt;
   &lt;/div&gt;
   
@@ -756,10 +756,10 @@ Their method cannot model such deformation because a vector field can only conta
 &lt;figure  id=&#34;figure-pseudo-boolean-optimization-formulation-figure-source-mpbo-a-distributed-pseudo-boolean-optimization-solver-1httpswwwsemanticscholarorgpapermpbo-a-distributed-pseudo-boolean-optimization-santos-godinho52ee5d8996c6f6d5caa43ad35155f404ddc584e3&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;TODO&#34; srcset=&#34;
-               /project/bachelors-thesis/pb_formula_hu_e0376072711640bb.webp 400w,
-               /project/bachelors-thesis/pb_formula_hu_d401b0a4a0a3f230.webp 760w,
-               /project/bachelors-thesis/pb_formula_hu_7e742bc739d017d0.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/bachelors-thesis/pb_formula_hu_e0376072711640bb.webp&#34;
+               /project/bachelors-thesis/pb_formula_hu_888cad9955382c37.webp 400w,
+               /project/bachelors-thesis/pb_formula_hu_bb551f805b4d3c57.webp 760w,
+               /project/bachelors-thesis/pb_formula_hu_3a46a2ca78a64ba.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/bachelors-thesis/pb_formula_hu_888cad9955382c37.webp&#34;
                width=&#34;400&#34;
                height=&#34;272&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -787,10 +787,10 @@ Their method cannot model such deformation because a vector field can only conta
 &lt;figure  id=&#34;figure-source-2httpsenwikipediaorgwikiknapsack_problem&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;TODO&#34; srcset=&#34;
-               /project/bachelors-thesis/250px-Knapsack.svg_hu_864fa95c3dffee80.webp 400w,
-               /project/bachelors-thesis/250px-Knapsack.svg_hu_8ab837dea6e4eade.webp 760w,
-               /project/bachelors-thesis/250px-Knapsack.svg_hu_1d29801ce92d22f7.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/bachelors-thesis/250px-Knapsack.svg_hu_864fa95c3dffee80.webp&#34;
+               /project/bachelors-thesis/250px-Knapsack.svg_hu_ff425aa41e861374.webp 400w,
+               /project/bachelors-thesis/250px-Knapsack.svg_hu_1d4d79638c6fdde9.webp 760w,
+               /project/bachelors-thesis/250px-Knapsack.svg_hu_9169087428f136cf.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/bachelors-thesis/250px-Knapsack.svg_hu_ff425aa41e861374.webp&#34;
                width=&#34;250&#34;
                height=&#34;217&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -878,10 +878,10 @@ For more details see the &lt;a href=&#34;https://marcb.pro/project/tfg/slides.pd
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
-               /project/hackathon-stirhack-2016/tweet_hu_37fe6b6be2cfcec3.webp 400w,
-               /project/hackathon-stirhack-2016/tweet_hu_ad6a146b94d0c293.webp 760w,
-               /project/hackathon-stirhack-2016/tweet_hu_25c784c362d4adf6.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/hackathon-stirhack-2016/tweet_hu_37fe6b6be2cfcec3.webp&#34;
+               /project/hackathon-stirhack-2016/tweet_hu_e04a6606a5f09dd4.webp 400w,
+               /project/hackathon-stirhack-2016/tweet_hu_eb528610a3fa9202.webp 760w,
+               /project/hackathon-stirhack-2016/tweet_hu_637ba80d8e0e0bfb.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/hackathon-stirhack-2016/tweet_hu_e04a6606a5f09dd4.webp&#34;
                width=&#34;356&#34;
                height=&#34;508&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
