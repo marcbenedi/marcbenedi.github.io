@@ -161,7 +161,7 @@ $$v_0 o_0 + v_1 o_1+  \ldots v_n o_n $$&lt;/p&gt;
 In this project, we propose an efficient encoding for converting Pseudo-Boolean minimisation problems into CNF constraints. If this encoding is not efficient, the size and difficulty of the problem can increase exponentially.&lt;/p&gt;
 &lt;h1 id=&#34;proposed-encoding&#34;&gt;Proposed encoding&lt;/h1&gt;
 &lt;p&gt;The proposed encoding is based on the idea that if a function&amp;rsquo;s primes cover a small space then a lot of clauses will be required when encoding it into a CNF.
-For more details see the &lt;a href=&#34;https://marcb.pro/project/tfg/slides.pdf&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
+For more details see the &lt;a href=&#34;https://marcb.pro/project/bachelors-thesis/slides.pdf&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;notes&#34;&gt;Notes&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;
