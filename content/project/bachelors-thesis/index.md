@@ -72,7 +72,7 @@ In this project, we propose an efficient encoding for converting Pseudo-Boolean 
 # Proposed encoding
 
 The proposed encoding is based on the idea that if a function's primes cover a small space then a lot of clauses will be required when encoding it into a CNF. 
-For more details see the [slides](/project/tfg/slides.pdf). 
+For more details see the [slides](/project/bachelors-thesis/slides.pdf). 
 
 # Notes
 
