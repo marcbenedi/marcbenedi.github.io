@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: July 6, 2026 --><html lang="en-us" >
+<!-- Last Published: August 14, 2026 --><html lang="en-us" >
 
 
 <head>
@@ -939,7 +939,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    8 min read
+    10 min read
   </span>
   
 
@@ -979,7 +979,7 @@
 <blockquote>
 <p><strong>TL;DR:</strong> mergerfs is a FUSE filesystem that lets you mount <em>N</em> directories as if they were one. I use it to pool the per-node scratch storage on our SLURM cluster into a single tidy mount under my home directory, so I can <code>ls</code>, <code>tail</code>, and <code>rsync</code> across nodes without thinking about which node a file lives on.</p>
 </blockquote>
-<p>📥 <strong>In a hurry?</strong> <a href="cluster_mergerfs.sh">Download <code>cluster_mergerfs.sh</code></a> — the interactive wrapper script discussed below.</p>
+<p>📥 <strong>In a hurry?</strong> <a href="cluster_mergerfs.sh">Download <code>cluster_mergerfs.sh</code></a> — the wrapper script discussed below.</p>
 
 
 <details class="toc-inpage d-print-none  " open>
@@ -1031,7 +1031,7 @@
 </li>
 </ol>
 <h3 id="ssh-from-where-you-run-the-script">SSH from where you run the script</h3>
-<p>The script orchestrates every node by SSHing into it (<code>ssh -o ConnectTimeout=5 &lt;node&gt; bash &lt;&lt;EOF ... EOF</code>), so the host you launch it from needs to be able to SSH into every cluster node <strong>without a password prompt</strong>. In practice that means:</p>
+<p>The script orchestrates every node by SSHing into it and running a small bash payload on the remote side, so the host you launch it from needs to be able to SSH into every cluster node <strong>without a password prompt</strong>. (When it works on several nodes in parallel it reuses a single shared SSH connection per node via <code>ControlMaster</code>/<code>ControlPersist</code>, and runs in <code>BatchMode</code> so a stalled auth prompt fails fast instead of hanging invisibly.) In practice that means:</p>
 <ul>
 <li>
 <p><strong>Key-based auth</strong> set up to all nodes (an <code>ssh-agent</code> with your key loaded, or a key without a passphrase). The script doesn&rsquo;t handle interactive password entry — it&rsquo;ll just hang.</p>
@@ -1065,27 +1065,35 @@
 <li><strong><code>allow_other</code></strong> — combined with <code>user_allow_other</code> in <code>fuse.conf</code> (above), allows other users on the box to read the mount.</li>
 </ul>
 <h2 id="a-script-to-manage-it-across-the-cluster">A script to manage it across the cluster</h2>
-<p>Mounting one merged view by hand is <code>mergerfs &lt;opts&gt; /a:/b:/c /mnt</code>. Doing that interactively across N nodes for M merge sets, and remembering to clean up, gets old fast. So I wrote a small interactive bash tool. It can:</p>
+<p>Mounting one merged view by hand is <code>mergerfs &lt;opts&gt; /a:/b:/c /mnt</code>. Doing that across N nodes for M merge sets, and remembering to clean up, gets old fast. So I wrote a small bash tool. It runs as an interactive menu by default, and every action is also available non-interactively through a flag-driven CLI (<code>mount</code>, <code>status</code>, <code>unmount</code>, <code>kill</code>, <code>rsync</code>, <code>list</code>). It can:</p>
 <ul>
 <li><strong>Mount</strong> any subset of merge sets on any subset of nodes (creates source dirs if missing, refuses to mount if a source is unreachable, replaces stale mounts).</li>
-<li><strong>Check mounts</strong> — for each (set, node), show whether it&rsquo;s active, the merged-view <code>df</code>, the active mount options, per-source disk usage, and flag any branch that has dropped below <code>minfreespace</code> (so you know mergerfs has stopped writing to it). Optional file-count and <code>du -sh</code> (gated, because they&rsquo;re slow on big trees).</li>
+<li><strong>Check status</strong> — for each (set, node), show whether it&rsquo;s active, the merged-view <code>df</code>, the active mount options, per-source disk usage, and flag any branch below <code>minfreespace</code> (so you know mergerfs has stopped writing to it). It also catches <strong>drift</strong> (a live mount whose branches or options no longer match the config), <strong>stale or wedged</strong> mounts, and <strong>stray data</strong> written under a mount point while it was unmounted. Slow probes — file counts and <code>du -sh</code> — are gated behind <code>--counts</code>/<code>--sizes</code>, and <code>--table</code> prints a compact one-row-per-node view. Every run ends with a de-duplicated summary and, when relevant, <code>FAILED</code>/<code>WARNINGS</code> blocks so a problem on one node can&rsquo;t get lost in the scrollback.</li>
 <li><strong>Unmount</strong> safely (<code>fusermount -uz</code>).</li>
-<li><strong>Kill mergerfs process</strong> — for the case where a mount has gone unresponsive: it locates the right <code>mergerfs</code> PID by matching the mount point at the <em>end</em> of <code>/proc/&lt;pid&gt;/cmdline</code> (so a path that appears as a <em>source</em> in another mergerfs instance doesn&rsquo;t false-match), <code>kill -9</code>s it, then attempts <code>fusermount -uz</code>, falling back to <code>umount -l</code> if needed.</li>
+<li><strong>Kill a wedged mergerfs process</strong> (<code>kill</code>) — for when a mount has gone unresponsive: it locates the right <code>mergerfs</code> PID by matching the mount point at the <em>end</em> of <code>/proc/&lt;pid&gt;/cmdline</code> (so a path that appears as a <em>source</em> in another mergerfs instance doesn&rsquo;t false-match), <code>kill -9</code>s it, then attempts <code>fusermount -uz</code>, falling back to <code>umount -l</code> if needed.</li>
 <li><strong>Show rsync commands</strong> — emit ready-to-paste <code>rsync</code> lines for migrating each merge set into a single consolidated directory, for the day you outgrow the union view and want to physically merge.</li>
+<li><strong>Work in parallel</strong> — <code>-j N</code> fans the per-node work out concurrently (default is serial); each node&rsquo;s output is buffered and replayed in selection order so it stays readable.</li>
 </ul>
 <p>Node discovery uses <code>sinfo</code> + <code>scontrol show hostnames</code> so it always picks up what SLURM currently knows about, plus the head node.</p>
-<p>The whole thing is one self-contained file. Configure your merge sets at the top — each entry is <code>mount_point:source1:source2:...:sourceN</code> — and run it. The interactive menu does the rest.</p>
-<p>📥 <strong><a href="cluster_mergerfs.sh">Download <code>cluster_mergerfs.sh</code></a></strong> (~700 lines, single file, no dependencies beyond <code>mergerfs</code>, <code>ssh</code>, and standard SLURM tooling).</p>
-<p>The configuration block at the top is the only thing you need to edit:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Format: local_mount:path1:path2:path3</span>
-</span></span><span class="line"><span class="cl"><span class="nv">MERGE_SETS</span><span class="o">=(</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;/home/&lt;user&gt;/projects/projectA/logs:/cluster/node1/&lt;user&gt;/projectA_logs:/cluster/node2/&lt;user&gt;/projectA_logs:/cluster/node3/&lt;user&gt;/projectA_logs:/cluster/node4/&lt;user&gt;/projectA_logs&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;/home/&lt;user&gt;/projects/projectB/scenes:/cluster/node1/&lt;user&gt;/projectB/scenes&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;/home/&lt;user&gt;/projects/projectB/outputs:/cluster/node1/&lt;user&gt;/projectB/outputs&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="o">)</span>
+<p>The whole thing is one self-contained file. You declare your merge sets at the top and run it — the interactive menu does the rest, or you can drive it straight from the command line:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cluster_mergerfs                                   <span class="c1"># interactive menu</span>
+</span></span><span class="line"><span class="cl">cluster_mergerfs status -s all -n all -j <span class="m">8</span>         <span class="c1"># fast parallel sweep of everything</span>
+</span></span><span class="line"><span class="cl">cluster_mergerfs mount  -s projectA-logs -n current -y
+</span></span><span class="line"><span class="cl">cluster_mergerfs unmount -s projectB-scenes -n node1 --dry-run
+</span></span></code></pre></div><p>📥 <strong><a href="cluster_mergerfs.sh">Download <code>cluster_mergerfs.sh</code></a></strong> (single file, ~1,900 lines, no dependencies beyond <code>mergerfs</code>, <code>ssh</code>, and standard SLURM tooling).</p>
+<p>Each merge set is declared with a <code>merge_set</code> helper, in either of two forms — a <strong>pattern</strong> form where <code>{node}</code> expands across a node list, or an <strong>explicit</strong> form listing each branch directly. Every set gets a short <em>tag</em> (e.g. <code>projectA-logs</code>) that you then pass to <code>--set</code> on the CLI:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Pattern form: one branch per node, sharing a template.</span>
+</span></span><span class="line"><span class="cl">merge_set projectA-logs /home/&lt;user&gt;/projects/projectA/logs <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --nodes node1,node2,node3,node4 <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --template <span class="s1">&#39;/cluster/{node}/&lt;user&gt;/projectA_logs&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Explicit form: list each branch directly.</span>
+</span></span><span class="line"><span class="cl">merge_set projectB-scenes /home/&lt;user&gt;/projects/projectB/scenes <span class="se">\
+</span></span></span><span class="line"><span class="cl">  /cluster/node1/&lt;user&gt;/projectB/scenes
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">MERGERFS_OPTS</span><span class="o">=</span><span class="s2">&#34;cache.files=off,use_ino,func.getattr=newest,category.create=mfs,moveonenospc=true,minfreespace=300G,allow_other&#34;</span>
-</span></span></code></pre></div><h2 id="a-few-practical-notes">A few practical notes</h2>
+</span></span></code></pre></div><p>If you&rsquo;d rather not edit the script itself, the same settings can live in <code>~/.config/cluster_mergerfs.conf</code> (or a file pointed to by <code>$CLUSTER_MERGERFS_CONFIG</code>), which is sourced as bash — so it can call <code>merge_set</code> and override <code>MERGERFS_OPTS</code>, <code>HEAD_NODE</code>, and friends.</p>
+<h2 id="a-few-practical-notes">A few practical notes</h2>
 <ul>
 <li><strong>mergerfs mounts are per-machine.</strong> Each compute node sees the merged view through its own mergerfs process; there&rsquo;s no cluster-wide FS magic. The script just SSH-loops the same mount on every node so you get a consistent view wherever you land.</li>
 <li><strong>Run as your user, not root.</strong> Combined with <code>allow_other</code>, that gives you the right ownership and avoids weird <code>chown</code> aftermath.</li>

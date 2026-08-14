@@ -44,7 +44,7 @@ After my [VSCode-on-Slurm post](/post/vscode-slurm/) seemed to land well, here's
 
 > **TL;DR:** mergerfs is a FUSE filesystem that lets you mount *N* directories as if they were one. I use it to pool the per-node scratch storage on our SLURM cluster into a single tidy mount under my home directory, so I can `ls`, `tail`, and `rsync` across nodes without thinking about which node a file lives on.
 
-📥 **In a hurry?** [Download `cluster_mergerfs.sh`](cluster_mergerfs.sh) — the interactive wrapper script discussed below.
+📥 **In a hurry?** [Download `cluster_mergerfs.sh`](cluster_mergerfs.sh) — the wrapper script discussed below.
 
 {{< toc >}}
 
@@ -87,7 +87,7 @@ Before any of this works, two things need to be true on **every node** you want 
 
 ### SSH from where you run the script
 
-The script orchestrates every node by SSHing into it (`ssh -o ConnectTimeout=5 <node> bash <<EOF ... EOF`), so the host you launch it from needs to be able to SSH into every cluster node **without a password prompt**. In practice that means:
+The script orchestrates every node by SSHing into it and running a small bash payload on the remote side, so the host you launch it from needs to be able to SSH into every cluster node **without a password prompt**. (When it works on several nodes in parallel it reuses a single shared SSH connection per node via `ControlMaster`/`ControlPersist`, and runs in `BatchMode` so a stalled auth prompt fails fast instead of hanging invisibly.) In practice that means:
 
 - **Key-based auth** set up to all nodes (an `ssh-agent` with your key loaded, or a key without a passphrase). The script doesn't handle interactive password entry — it'll just hang.
 - **Hostnames resolvable** by the names that come back from `sinfo` / `scontrol show hostnames`. If your SLURM short hostnames aren't directly DNS-resolvable, add an entry per node in `~/.ssh/config`:
@@ -123,32 +123,44 @@ minfreespace=300G,allow_other
 
 ## A script to manage it across the cluster
 
-Mounting one merged view by hand is `mergerfs <opts> /a:/b:/c /mnt`. Doing that interactively across N nodes for M merge sets, and remembering to clean up, gets old fast. So I wrote a small interactive bash tool. It can:
+Mounting one merged view by hand is `mergerfs <opts> /a:/b:/c /mnt`. Doing that across N nodes for M merge sets, and remembering to clean up, gets old fast. So I wrote a small bash tool. It runs as an interactive menu by default, and every action is also available non-interactively through a flag-driven CLI (`mount`, `status`, `unmount`, `kill`, `rsync`, `list`). It can:
 
 - **Mount** any subset of merge sets on any subset of nodes (creates source dirs if missing, refuses to mount if a source is unreachable, replaces stale mounts).
-- **Check mounts** — for each (set, node), show whether it's active, the merged-view `df`, the active mount options, per-source disk usage, and flag any branch that has dropped below `minfreespace` (so you know mergerfs has stopped writing to it). Optional file-count and `du -sh` (gated, because they're slow on big trees).
+- **Check status** — for each (set, node), show whether it's active, the merged-view `df`, the active mount options, per-source disk usage, and flag any branch below `minfreespace` (so you know mergerfs has stopped writing to it). It also catches **drift** (a live mount whose branches or options no longer match the config), **stale or wedged** mounts, and **stray data** written under a mount point while it was unmounted. Slow probes — file counts and `du -sh` — are gated behind `--counts`/`--sizes`, and `--table` prints a compact one-row-per-node view. Every run ends with a de-duplicated summary and, when relevant, `FAILED`/`WARNINGS` blocks so a problem on one node can't get lost in the scrollback.
 - **Unmount** safely (`fusermount -uz`).
-- **Kill mergerfs process** — for the case where a mount has gone unresponsive: it locates the right `mergerfs` PID by matching the mount point at the *end* of `/proc/<pid>/cmdline` (so a path that appears as a *source* in another mergerfs instance doesn't false-match), `kill -9`s it, then attempts `fusermount -uz`, falling back to `umount -l` if needed.
+- **Kill a wedged mergerfs process** (`kill`) — for when a mount has gone unresponsive: it locates the right `mergerfs` PID by matching the mount point at the *end* of `/proc/<pid>/cmdline` (so a path that appears as a *source* in another mergerfs instance doesn't false-match), `kill -9`s it, then attempts `fusermount -uz`, falling back to `umount -l` if needed.
 - **Show rsync commands** — emit ready-to-paste `rsync` lines for migrating each merge set into a single consolidated directory, for the day you outgrow the union view and want to physically merge.
+- **Work in parallel** — `-j N` fans the per-node work out concurrently (default is serial); each node's output is buffered and replayed in selection order so it stays readable.
 
 Node discovery uses `sinfo` + `scontrol show hostnames` so it always picks up what SLURM currently knows about, plus the head node.
 
-The whole thing is one self-contained file. Configure your merge sets at the top — each entry is `mount_point:source1:source2:...:sourceN` — and run it. The interactive menu does the rest.
-
-📥 **[Download `cluster_mergerfs.sh`](cluster_mergerfs.sh)** (~700 lines, single file, no dependencies beyond `mergerfs`, `ssh`, and standard SLURM tooling).
-
-The configuration block at the top is the only thing you need to edit:
+The whole thing is one self-contained file. You declare your merge sets at the top and run it — the interactive menu does the rest, or you can drive it straight from the command line:
 
 ```bash
-# Format: local_mount:path1:path2:path3
-MERGE_SETS=(
-  "/home/<user>/projects/projectA/logs:/cluster/node1/<user>/projectA_logs:/cluster/node2/<user>/projectA_logs:/cluster/node3/<user>/projectA_logs:/cluster/node4/<user>/projectA_logs"
-  "/home/<user>/projects/projectB/scenes:/cluster/node1/<user>/projectB/scenes"
-  "/home/<user>/projects/projectB/outputs:/cluster/node1/<user>/projectB/outputs"
-)
+cluster_mergerfs                                   # interactive menu
+cluster_mergerfs status -s all -n all -j 8         # fast parallel sweep of everything
+cluster_mergerfs mount  -s projectA-logs -n current -y
+cluster_mergerfs unmount -s projectB-scenes -n node1 --dry-run
+```
+
+📥 **[Download `cluster_mergerfs.sh`](cluster_mergerfs.sh)** (single file, ~1,900 lines, no dependencies beyond `mergerfs`, `ssh`, and standard SLURM tooling).
+
+Each merge set is declared with a `merge_set` helper, in either of two forms — a **pattern** form where `{node}` expands across a node list, or an **explicit** form listing each branch directly. Every set gets a short *tag* (e.g. `projectA-logs`) that you then pass to `--set` on the CLI:
+
+```bash
+# Pattern form: one branch per node, sharing a template.
+merge_set projectA-logs /home/<user>/projects/projectA/logs \
+  --nodes node1,node2,node3,node4 \
+  --template '/cluster/{node}/<user>/projectA_logs'
+
+# Explicit form: list each branch directly.
+merge_set projectB-scenes /home/<user>/projects/projectB/scenes \
+  /cluster/node1/<user>/projectB/scenes
 
 MERGERFS_OPTS="cache.files=off,use_ino,func.getattr=newest,category.create=mfs,moveonenospc=true,minfreespace=300G,allow_other"
 ```
+
+If you'd rather not edit the script itself, the same settings can live in `~/.config/cluster_mergerfs.conf` (or a file pointed to by `$CLUSTER_MERGERFS_CONFIG`), which is sourced as bash — so it can call `merge_set` and override `MERGERFS_OPTS`, `HEAD_NODE`, and friends.
 
 ## A few practical notes
 
