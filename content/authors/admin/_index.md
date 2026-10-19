@@ -135,5 +135,5 @@ I am a PhD candidate at [Matthias Nießner](http://niessnerlab.org/members/matth
 I'm interested in computer vision, deep learning and optimization. My current research interests are focused on virtual avatars, generative models and 3D scene representations. 
 {style="text-align: justify;"}
 
-Before joining the group, I received a Master's Degree in Computer Science from the [Technical University of Munich](https://www.tum.de/) and a Bachelor's Degree in Computer Science from the [Polytechnic University of Catalonia](https://www.tum.de/).
+Before joining the group, I received a Master's Degree in Computer Science from the [Technical University of Munich](https://www.tum.de/) and a Bachelor's Degree in Computer Science from the [Polytechnic University of Catalonia](https://www.upc.edu/en).
 {style="text-align: justify;"}
