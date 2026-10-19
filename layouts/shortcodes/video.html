@@ -49,6 +49,6 @@
   {{ $poster = $asset_preview.RelPermalink }}
 {{ end }}
 
-<video {{if (.Get "controls")}}controls muted playsinline preload="metadata"{{else}}autoplay loop muted playsinline{{end}} style="display:block;width:auto;max-width:100%;max-height:80vh;margin:0 auto" {{with $poster}}poster="{{.}}"{{end}} {{ with (.Get "id") }}id="video-{{.|anchorize}}"{{end}}>
+<video {{if (.Get "controls")}}controls playsinline preload="metadata"{{else}}autoplay loop muted playsinline{{end}} style="display:block;width:auto;max-width:100%;max-height:80vh;margin:0 auto" {{with $poster}}poster="{{.}}"{{end}} {{ with (.Get "id") }}id="video-{{.|anchorize}}"{{end}}>
   <source src="{{$destination}}" type="video/{{$video_type}}">
 </video>

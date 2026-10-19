@@ -44,6 +44,8 @@ It works with **any bike**. All you need is your phone. And if your e-bike has t
 
 {{< video src="radl-tour.mp4" controls="yes" >}}
 
+*🔊 Sound on: narrated, with original background music. Narration voice by [ElevenLabs](https://elevenlabs.io).*
+
 ## Plan a ride
 
 Pick where you want to go and Radl gives you a few routes to choose from, with the distance, the time and how much climbing there is. You can leave now, or tell it when you need to arrive and it tells you when to leave.
