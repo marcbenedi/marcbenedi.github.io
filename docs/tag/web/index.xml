@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web | Marc B</title>
+    <link>https://marcb.pro/tag/web/</link>
+      <atom:link href="https://marcb.pro/tag/web/index.xml" rel="self" type="application/rss+xml" />
+    <description>Web</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 19 Oct 2026 09:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://marcb.pro/media/icon_hu_176475005d3e3a1b.png</url>
+      <title>Web</title>
+      <link>https://marcb.pro/tag/web/</link>
+    </image>
+    
+    <item>
+      <title>Radl - Your bike commuting companion</title>
+      <link>https://marcb.pro/post/radl/</link>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0200</pubDate>
+      <guid>https://marcb.pro/post/radl/</guid>
+      <description>
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-two-minute-tour&#34;&gt;The two-minute tour&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#plan-a-ride&#34;&gt;Plan a ride&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#dress-for-the-weather&#34;&gt;Dress for the weather&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#ride&#34;&gt;Ride&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#your-rides&#34;&gt;Your rides&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#keep-the-bike-happy&#34;&gt;Keep the bike happy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#works-with-any-bike&#34;&gt;Works with any bike&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#bonus-directions-on-my-e-bike-display&#34;&gt;Bonus: directions on my e-bike display&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#make-it-yours&#34;&gt;Make it yours&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-it-is-built&#34;&gt;How it is built&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#try-it&#34;&gt;Try it&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/details&gt;
+
+&lt;p&gt;I ride my bike almost every day in Munich, and I kept juggling apps: one for directions, one to record the ride, a note on my phone to remember when I last oiled the chain, and a weather app to decide which jacket to take.&lt;/p&gt;
+&lt;p&gt;So I built &lt;strong&gt;Radl&lt;/strong&gt; (Bavarian for &amp;ldquo;bike&amp;rdquo;): one companion app for the daily commute by bike.&lt;/p&gt;
+&lt;p&gt;It works with &lt;strong&gt;any bike&lt;/strong&gt;. All you need is your phone. And if your e-bike has the right display, Radl can show the directions right there on the handlebars too.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;strong&gt;Radl is live!&lt;/strong&gt; It is free, and you can try it right now at &lt;strong&gt;&lt;a href=&#34;https://radl.marcb.pro&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;radl.marcb.pro&lt;/a&gt;&lt;/strong&gt;. Open it on your phone and add it to your home screen. &lt;a href=&#34;#try-it&#34;&gt;How to get started ↓&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;the-two-minute-tour&#34;&gt;The two-minute tour&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+&lt;video controls muted playsinline preload=&#34;metadata&#34; style=&#34;display:block;width:auto;max-width:100%;max-height:80vh;margin:0 auto&#34; poster=&#34;/post/radl/radl-tour.jpg&#34; &gt;
+  &lt;source src=&#34;https://marcb.pro/post/radl/radl-tour.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+
+&lt;h2 id=&#34;plan-a-ride&#34;&gt;Plan a ride&lt;/h2&gt;
+&lt;p&gt;Pick where you want to go and Radl gives you a few routes to choose from, with the distance, the time and how much climbing there is. You can leave now, or tell it when you need to arrive and it tells you when to leave.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Planning a ride&#34; srcset=&#34;
+               /post/radl/plan_hu_6b0545cfa8465f78.webp 400w,
+               /post/radl/plan_hu_c49d704fbd3ac3c.webp 760w,
+               /post/radl/plan_hu_b776fd281e78e6ca.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/plan_hu_6b0545cfa8465f78.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;557&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;dress-for-the-weather&#34;&gt;Dress for the weather&lt;/h2&gt;
+&lt;p&gt;This is the feature I use the most. Radl looks at the weather along your route and works out how cold it really feels &lt;strong&gt;on the bike&lt;/strong&gt;, with the wind of riding included, and then tells you what to wear.&lt;/p&gt;
+&lt;p&gt;It also remembers how past rides felt, so it can say things like &amp;ldquo;last time it felt like this: chilly, wearing a jacket&amp;rdquo;. You keep your own list of clothes.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;The weather and your clothes&#34; srcset=&#34;
+               /post/radl/weather_hu_5326a476f5a0828b.webp 400w,
+               /post/radl/weather_hu_94e5ffa6f93923af.webp 760w,
+               /post/radl/weather_hu_4f8678fb5574f456.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/weather_hu_5326a476f5a0828b.webp&#34;
+               width=&#34;690&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;ride&#34;&gt;Ride&lt;/h2&gt;
+&lt;p&gt;Once you are riding, you get turn-by-turn directions with the street names, and the map turns with you, just like Google Maps.&lt;/p&gt;
+&lt;p&gt;When you arrive, Radl asks how it felt (cold, chilly, good, warm or hot) and what you wore. That is what makes the clothing advice better over time.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Riding, and the end of a ride&#34; srcset=&#34;
+               /post/radl/ride_hu_c0de2e278a07322d.webp 400w,
+               /post/radl/ride_hu_478ed25b334065c1.webp 760w,
+               /post/radl/ride_hu_441b9d573da0ca54.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/ride_hu_c0de2e278a07322d.webp&#34;
+               width=&#34;690&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;your-rides&#34;&gt;Your rides&lt;/h2&gt;
+&lt;p&gt;Every ride is saved: where you went, how fast, the hills and the weather. The stats show how much you ride each day, week or month. On an e-bike, rides are also grouped into trips, from one charge to the next, so you learn how far you really get on a battery.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Ride stats, a single ride and trips&#34; srcset=&#34;
+               /post/radl/history_hu_a9505850bdb26347.webp 400w,
+               /post/radl/history_hu_b495ced26ba113c.webp 760w,
+               /post/radl/history_hu_52df5e55c87de362.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/history_hu_a9505850bdb26347.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;557&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;keep-the-bike-happy&#34;&gt;Keep the bike happy&lt;/h2&gt;
+&lt;p&gt;Radl counts the kilometres on every part of the bike (chain, brake pads, tyres…) and reminds you when something is due, either after so many kilometres or after so much time. Logging an oiled chain takes two taps.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;The service log&#34; srcset=&#34;
+               /post/radl/service_hu_37956149066d9487.webp 400w,
+               /post/radl/service_hu_3f629a4eddbd11c0.webp 760w,
+               /post/radl/service_hu_e218042161101a5f.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/service_hu_37956149066d9487.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;557&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;works-with-any-bike&#34;&gt;Works with any bike&lt;/h2&gt;
+&lt;p&gt;You can add as many bikes as you like. A normal bike just uses your phone: GPS for the speed and distance, and Radl keeps count of the kilometres. No extra hardware needed.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Adding a normal bike and switching bikes&#34; srcset=&#34;
+               /post/radl/bikes_hu_9d59e813099c00a.webp 400w,
+               /post/radl/bikes_hu_ca9bc084fbdf686d.webp 760w,
+               /post/radl/bikes_hu_e42bfb7ad8186720.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/bikes_hu_9d59e813099c00a.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;557&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;bonus-directions-on-my-e-bike-display&#34;&gt;Bonus: directions on my e-bike display&lt;/h2&gt;
+&lt;p&gt;My own bike is an e-bike, and its little handlebar display can show directions: an arrow and how far away the next turn is. The official app only does this if you pay for it.&lt;/p&gt;
+&lt;p&gt;When I looked into it, it turned out the display does not do any of the work. It has no GPS and no map. It just shows whatever the phone sends it over Bluetooth. So once I figured out how to talk to it, Radl could send it the next turn every second, for free.&lt;/p&gt;
+&lt;p&gt;And since Radl was already talking to the display, it now also shows the battery and how far it will still take you, and lets me change the assist level and the lights from my phone.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Radl connected to the e-bike display&#34; srcset=&#34;
+               /post/radl/ebike_hu_d13c0b272a771add.webp 400w,
+               /post/radl/ebike_hu_e5d2e251a62f7eb4.webp 760w,
+               /post/radl/ebike_hu_10a787dbfbcaf670.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/ebike_hu_d13c0b272a771add.webp&#34;
+               width=&#34;710&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;(For the curious: it is the EKD01 display that comes with Bafang motors.)&lt;/p&gt;
+&lt;h2 id=&#34;make-it-yours&#34;&gt;Make it yours&lt;/h2&gt;
+&lt;p&gt;There are a few themes to pick from, light and dark.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Themes&#34; srcset=&#34;
+               /post/radl/theme_hu_5f38d7cc32133264.webp 400w,
+               /post/radl/theme_hu_b4f6d89c4c7668ad.webp 760w,
+               /post/radl/theme_hu_9e4d845b0087cbbc.webp 1200w&#34;
+               src=&#34;https://marcb.pro/post/radl/theme_hu_5f38d7cc32133264.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;557&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;how-it-is-built&#34;&gt;How it is built&lt;/h2&gt;
+&lt;p&gt;Radl is a web app that you install on your phone like a normal app. It works offline once installed. The maps come from &lt;a href=&#34;https://www.openstreetmap.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenStreetMap&lt;/a&gt;, the routes from &lt;a href=&#34;https://openrouteservice.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenRouteService&lt;/a&gt; and the weather from &lt;a href=&#34;https://open-meteo.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Open-Meteo&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;try-it&#34;&gt;Try it&lt;/h2&gt;
+&lt;p&gt;Radl is live and free at &lt;strong&gt;&lt;a href=&#34;https://radl.marcb.pro&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;radl.marcb.pro&lt;/a&gt;&lt;/strong&gt;. To get started:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Open &lt;a href=&#34;https://radl.marcb.pro&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;radl.marcb.pro&lt;/a&gt; on your phone&lt;/strong&gt; and add it to your home screen (in your browser&amp;rsquo;s menu: &lt;em&gt;Add to Home screen&lt;/em&gt; or &lt;em&gt;Install app&lt;/em&gt;). From then on it opens like any other app, even offline.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Follow the short tour.&lt;/strong&gt; It shows you around the app in a minute.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Get your free routing key.&lt;/strong&gt; Routes and address search use &lt;a href=&#34;https://openrouteservice.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenRouteService&lt;/a&gt;, so the tour asks you to make a free account at &lt;a href=&#34;https://account.heigit.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;account.heigit.org&lt;/a&gt; and paste your key. It takes two minutes, and it means the app stays free for everyone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Go for a ride!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Have an e-bike with the EKD01 display? Connect it from the Bike tab. This part needs Chrome on Android, because iPhones do not let web apps use Bluetooth yet.&lt;/p&gt;
+&lt;p&gt;It is a side project, so if something breaks or you have an idea, &lt;a href=&#34;https://marcb.pro/#contact&#34;&gt;let me know&lt;/a&gt;. I would love to hear how you use it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Radl is not affiliated with, or endorsed by, the display manufacturer or its official app.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,7 +7,7 @@
     <description>3D Reconstruction</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 15 Sep 2022 20:05:18 +0100</lastBuildDate>
     <image>
-      <url>https://marcb.pro/media/icon_hu_ddad19c2aca5426f.png</url>
+      <url>https://marcb.pro/media/icon_hu_176475005d3e3a1b.png</url>
       <title>3D Reconstruction</title>
       <link>https://marcb.pro/tag/3d-reconstruction/</link>
     </image>
@@ -74,10 +74,10 @@
 &lt;figure  id=&#34;figure-a-caption&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;A caption&#34; srcset=&#34;
-               /project/kinect-fusion/sidebyside_hu_75ced59983fbca7b.webp 400w,
-               /project/kinect-fusion/sidebyside_hu_eb64ab03beef29e7.webp 760w,
-               /project/kinect-fusion/sidebyside_hu_6f25f5757bfd2fac.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/kinect-fusion/sidebyside_hu_75ced59983fbca7b.webp&#34;
+               /project/kinect-fusion/sidebyside_hu_7851670e6b593028.webp 400w,
+               /project/kinect-fusion/sidebyside_hu_3f4f51380eaa145b.webp 760w,
+               /project/kinect-fusion/sidebyside_hu_bfff699d57bdc1c6.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/kinect-fusion/sidebyside_hu_7851670e6b593028.webp&#34;
                width=&#34;760&#34;
                height=&#34;414&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -106,10 +106,10 @@
 &lt;figure  id=&#34;figure-a-caption&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;A caption&#34; srcset=&#34;
-               /project/kinect-fusion/snap_hu_eb218d05bb195a1b.webp 400w,
-               /project/kinect-fusion/snap_hu_aa510522423c5bb4.webp 760w,
-               /project/kinect-fusion/snap_hu_5733450a86115dcf.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/kinect-fusion/snap_hu_eb218d05bb195a1b.webp&#34;
+               /project/kinect-fusion/snap_hu_448eef28053d0790.webp 400w,
+               /project/kinect-fusion/snap_hu_dc90738f2ae6cfd1.webp 760w,
+               /project/kinect-fusion/snap_hu_872d361ae08ba50c.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/kinect-fusion/snap_hu_448eef28053d0790.webp&#34;
                width=&#34;760&#34;
                height=&#34;320&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -183,10 +183,10 @@ The cost value is also used to express &amp;ldquo;preferred&amp;rdquo; surfaces:
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Cost map&#34; srcset=&#34;
-               /project/warp/costmap_hu_ab6634d350d61b29.webp 400w,
-               /project/warp/costmap_hu_fdbe020d72420032.webp 760w,
-               /project/warp/costmap_hu_3cec51fa15499ae6.webp 1200w&#34;
-               src=&#34;https://marcb.pro/project/warp/costmap_hu_ab6634d350d61b29.webp&#34;
+               /project/warp/costmap_hu_7376b95b6489ad54.webp 400w,
+               /project/warp/costmap_hu_ef9ef8ab14d3bb3f.webp 760w,
+               /project/warp/costmap_hu_b1e4d5a566e79b3c.webp 1200w&#34;
+               src=&#34;https://marcb.pro/project/warp/costmap_hu_7376b95b6489ad54.webp&#34;
                width=&#34;760&#34;
                height=&#34;218&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;

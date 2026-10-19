@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: October 19, 2026 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Hugo Blox Builder 5.9.7" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.26c458e6907dc03073573976b7f4044e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.f7c29a89473d29965d79daf64c321e6c.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Marc Benedí San Millán" />
+
+
+
+
+
+  
+
+<meta name="description" content="I wanted one app for my daily bike rides: directions, what to wear, a log of every ride, and a reminder when the chain needs some love. So I built Radl, and it is now live and free at radl.marcb.pro. It works with any bike, and it even puts the directions on my e-bike&#39;s display." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://marcb.pro/post/radl/" />
+<link rel="canonical" href="https://marcb.pro/post/radl/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu_b38fb2c57160c404.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_5d15b15e11d48f1e.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary_large_image" />
+
+  <meta property="twitter:site" content="@marcbenedi" />
+  <meta property="twitter:creator" content="@marcbenedi" />
+<meta property="twitter:image" content="https://marcb.pro/post/radl/featured.jpg" />
+
+
+
+  
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marc B" />
+<meta property="og:url" content="https://marcb.pro/post/radl/" />
+<meta property="og:title" content="Radl - Your bike commuting companion | Marc B" />
+<meta property="og:description" content="I wanted one app for my daily bike rides: directions, what to wear, a log of every ride, and a reminder when the chain needs some love. So I built Radl, and it is now live and free at radl.marcb.pro. It works with any bike, and it even puts the directions on my e-bike&#39;s display." /><meta property="og:image" content="https://marcb.pro/post/radl/featured.jpg" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2026-10-19T09:00:00&#43;02:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2026-10-19T09:00:00&#43;02:00">
+  
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcb.pro/post/radl/"
+  },
+  "headline": "Radl - Your bike commuting companion",
+  
+  "image": [
+    "https://marcb.pro/post/radl/featured.jpg"
+  ],
+  
+  "datePublished": "2026-10-19T09:00:00+02:00",
+  "dateModified": "2026-10-19T09:00:00+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Marc Benedí San Millán"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marc B",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcb.pro/media/icon_hu_a51ab9a26325b75.png"
+    }
+  },
+  "description": "I wanted one app for my daily bike rides: directions, what to wear, a log of every ride, and a reminder when the chain needs some love. So I built Radl, and it is now live and free at radl.marcb.pro. It works with any bike, and it even puts the directions on my e-bike's display."
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Radl - Your bike commuting companion | Marc B</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="ae12d19c363cf04bd47f0c71ec90c46a" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9e4214442a7711d35691acd58f6f6361.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Marc B</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>About</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publication"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#experience"><span>Experience</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#teaching"><span>Teaching</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/marcbenedi" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Radl - Your bike commuting companion</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 19, 2026
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/side-project/">Side Project</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+<details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">Table of Contents</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-two-minute-tour">The two-minute tour</a></li>
+    <li><a href="#plan-a-ride">Plan a ride</a></li>
+    <li><a href="#dress-for-the-weather">Dress for the weather</a></li>
+    <li><a href="#ride">Ride</a></li>
+    <li><a href="#your-rides">Your rides</a></li>
+    <li><a href="#keep-the-bike-happy">Keep the bike happy</a></li>
+    <li><a href="#works-with-any-bike">Works with any bike</a></li>
+    <li><a href="#bonus-directions-on-my-e-bike-display">Bonus: directions on my e-bike display</a></li>
+    <li><a href="#make-it-yours">Make it yours</a></li>
+    <li><a href="#how-it-is-built">How it is built</a></li>
+    <li><a href="#try-it">Try it</a></li>
+  </ul>
+</nav>
+</details>
+
+<p>I ride my bike almost every day in Munich, and I kept juggling apps: one for directions, one to record the ride, a note on my phone to remember when I last oiled the chain, and a weather app to decide which jacket to take.</p>
+<p>So I built <strong>Radl</strong> (Bavarian for &ldquo;bike&rdquo;): one companion app for the daily commute by bike.</p>
+<p>It works with <strong>any bike</strong>. All you need is your phone. And if your e-bike has the right display, Radl can show the directions right there on the handlebars too.</p>
+<div class="alert alert-note">
+  <div>
+    <strong>Radl is live!</strong> It is free, and you can try it right now at <strong><a href="https://radl.marcb.pro" target="_blank" rel="noopener">radl.marcb.pro</a></strong>. Open it on your phone and add it to your home screen. <a href="#try-it">How to get started ↓</a>
+  </div>
+</div>
+<h2 id="the-two-minute-tour">The two-minute tour</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+<video controls muted playsinline preload="metadata" style="display:block;width:auto;max-width:100%;max-height:80vh;margin:0 auto" poster="/post/radl/radl-tour.jpg" >
+  <source src="/post/radl/radl-tour.mp4" type="video/mp4">
+</video>
+
+<h2 id="plan-a-ride">Plan a ride</h2>
+<p>Pick where you want to go and Radl gives you a few routes to choose from, with the distance, the time and how much climbing there is. You can leave now, or tell it when you need to arrive and it tells you when to leave.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Planning a ride" srcset="
+               /post/radl/plan_hu_6b0545cfa8465f78.webp 400w,
+               /post/radl/plan_hu_c49d704fbd3ac3c.webp 760w,
+               /post/radl/plan_hu_b776fd281e78e6ca.webp 1200w"
+               src="/post/radl/plan_hu_6b0545cfa8465f78.webp"
+               width="760"
+               height="557"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="dress-for-the-weather">Dress for the weather</h2>
+<p>This is the feature I use the most. Radl looks at the weather along your route and works out how cold it really feels <strong>on the bike</strong>, with the wind of riding included, and then tells you what to wear.</p>
+<p>It also remembers how past rides felt, so it can say things like &ldquo;last time it felt like this: chilly, wearing a jacket&rdquo;. You keep your own list of clothes.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="The weather and your clothes" srcset="
+               /post/radl/weather_hu_5326a476f5a0828b.webp 400w,
+               /post/radl/weather_hu_94e5ffa6f93923af.webp 760w,
+               /post/radl/weather_hu_4f8678fb5574f456.webp 1200w"
+               src="/post/radl/weather_hu_5326a476f5a0828b.webp"
+               width="690"
+               height="760"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="ride">Ride</h2>
+<p>Once you are riding, you get turn-by-turn directions with the street names, and the map turns with you, just like Google Maps.</p>
+<p>When you arrive, Radl asks how it felt (cold, chilly, good, warm or hot) and what you wore. That is what makes the clothing advice better over time.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Riding, and the end of a ride" srcset="
+               /post/radl/ride_hu_c0de2e278a07322d.webp 400w,
+               /post/radl/ride_hu_478ed25b334065c1.webp 760w,
+               /post/radl/ride_hu_441b9d573da0ca54.webp 1200w"
+               src="/post/radl/ride_hu_c0de2e278a07322d.webp"
+               width="690"
+               height="760"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="your-rides">Your rides</h2>
+<p>Every ride is saved: where you went, how fast, the hills and the weather. The stats show how much you ride each day, week or month. On an e-bike, rides are also grouped into trips, from one charge to the next, so you learn how far you really get on a battery.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Ride stats, a single ride and trips" srcset="
+               /post/radl/history_hu_a9505850bdb26347.webp 400w,
+               /post/radl/history_hu_b495ced26ba113c.webp 760w,
+               /post/radl/history_hu_52df5e55c87de362.webp 1200w"
+               src="/post/radl/history_hu_a9505850bdb26347.webp"
+               width="760"
+               height="557"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="keep-the-bike-happy">Keep the bike happy</h2>
+<p>Radl counts the kilometres on every part of the bike (chain, brake pads, tyres…) and reminds you when something is due, either after so many kilometres or after so much time. Logging an oiled chain takes two taps.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="The service log" srcset="
+               /post/radl/service_hu_37956149066d9487.webp 400w,
+               /post/radl/service_hu_3f629a4eddbd11c0.webp 760w,
+               /post/radl/service_hu_e218042161101a5f.webp 1200w"
+               src="/post/radl/service_hu_37956149066d9487.webp"
+               width="760"
+               height="557"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="works-with-any-bike">Works with any bike</h2>
+<p>You can add as many bikes as you like. A normal bike just uses your phone: GPS for the speed and distance, and Radl keeps count of the kilometres. No extra hardware needed.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Adding a normal bike and switching bikes" srcset="
+               /post/radl/bikes_hu_9d59e813099c00a.webp 400w,
+               /post/radl/bikes_hu_ca9bc084fbdf686d.webp 760w,
+               /post/radl/bikes_hu_e42bfb7ad8186720.webp 1200w"
+               src="/post/radl/bikes_hu_9d59e813099c00a.webp"
+               width="760"
+               height="557"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="bonus-directions-on-my-e-bike-display">Bonus: directions on my e-bike display</h2>
+<p>My own bike is an e-bike, and its little handlebar display can show directions: an arrow and how far away the next turn is. The official app only does this if you pay for it.</p>
+<p>When I looked into it, it turned out the display does not do any of the work. It has no GPS and no map. It just shows whatever the phone sends it over Bluetooth. So once I figured out how to talk to it, Radl could send it the next turn every second, for free.</p>
+<p>And since Radl was already talking to the display, it now also shows the battery and how far it will still take you, and lets me change the assist level and the lights from my phone.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Radl connected to the e-bike display" srcset="
+               /post/radl/ebike_hu_d13c0b272a771add.webp 400w,
+               /post/radl/ebike_hu_e5d2e251a62f7eb4.webp 760w,
+               /post/radl/ebike_hu_10a787dbfbcaf670.webp 1200w"
+               src="/post/radl/ebike_hu_d13c0b272a771add.webp"
+               width="710"
+               height="760"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>(For the curious: it is the EKD01 display that comes with Bafang motors.)</p>
+<h2 id="make-it-yours">Make it yours</h2>
+<p>There are a few themes to pick from, light and dark.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Themes" srcset="
+               /post/radl/theme_hu_5f38d7cc32133264.webp 400w,
+               /post/radl/theme_hu_b4f6d89c4c7668ad.webp 760w,
+               /post/radl/theme_hu_9e4d845b0087cbbc.webp 1200w"
+               src="/post/radl/theme_hu_5f38d7cc32133264.webp"
+               width="760"
+               height="557"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="how-it-is-built">How it is built</h2>
+<p>Radl is a web app that you install on your phone like a normal app. It works offline once installed. The maps come from <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a>, the routes from <a href="https://openrouteservice.org/" target="_blank" rel="noopener">OpenRouteService</a> and the weather from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</p>
+<h2 id="try-it">Try it</h2>
+<p>Radl is live and free at <strong><a href="https://radl.marcb.pro" target="_blank" rel="noopener">radl.marcb.pro</a></strong>. To get started:</p>
+<ol>
+<li><strong>Open <a href="https://radl.marcb.pro" target="_blank" rel="noopener">radl.marcb.pro</a> on your phone</strong> and add it to your home screen (in your browser&rsquo;s menu: <em>Add to Home screen</em> or <em>Install app</em>). From then on it opens like any other app, even offline.</li>
+<li><strong>Follow the short tour.</strong> It shows you around the app in a minute.</li>
+<li><strong>Get your free routing key.</strong> Routes and address search use <a href="https://openrouteservice.org/" target="_blank" rel="noopener">OpenRouteService</a>, so the tour asks you to make a free account at <a href="https://account.heigit.org/" target="_blank" rel="noopener">account.heigit.org</a> and paste your key. It takes two minutes, and it means the app stays free for everyone.</li>
+<li><strong>Go for a ride!</strong></li>
+</ol>
+<p>Have an e-bike with the EKD01 display? Connect it from the Bike tab. This part needs Chrome on Android, because iPhones do not let web apps use Bluetooth yet.</p>
+<p>It is a side project, so if something breaks or you have an idea, <a href="/#contact">let me know</a>. I would love to hear how you use it.</p>
+<blockquote>
+<p>Radl is not affiliated with, or endorsed by, the display manufacturer or its official app.</p>
+</blockquote>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/side-project/">Side Project</a>
+  
+  <a class="badge badge-light" href="/tag/cycling/">Cycling</a>
+  
+  <a class="badge badge-light" href="/tag/maps/">Maps</a>
+  
+  <a class="badge badge-light" href="/tag/web/">Web</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmarcb.pro%2Fpost%2Fradl%2F&amp;text=Radl&#43;-&#43;Your&#43;bike&#43;commuting&#43;companion" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmarcb.pro%2Fpost%2Fradl%2F&amp;t=Radl&#43;-&#43;Your&#43;bike&#43;commuting&#43;companion" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Radl%20-%20Your%20bike%20commuting%20companion&amp;body=https%3A%2F%2Fmarcb.pro%2Fpost%2Fradl%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fmarcb.pro%2Fpost%2Fradl%2F&amp;title=Radl&#43;-&#43;Your&#43;bike&#43;commuting&#43;companion" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://marcb.pro/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_ad780bc7d1b9c86c.jpg" alt="Marc Benedí San Millán"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://marcb.pro/">Marc Benedí San Millán</a></h5>
+      <h6 class="card-subtitle">PhD Candidate @ <a href="https://niessnerlab.org/" target="_blank">Visual Computing Group</a></h6>
+      <p class="card-text">My research interests include Computer Vision, Computer Graphics and Deep Learning.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=bajzHI0AAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/marcbenedi" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/marcbenedi/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+  <script type="text/javascript">
+    var sc_project=13116832; 
+    var sc_invisible=1; 
+    var sc_security="450a86c7"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/13116832/0/450a86c7/1/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2026 marcb.pro. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    Site hosted in <a href="https://pages.github.com/">GitHub Pages</a> | Credit to the <a href="https://github.com/wowchemy/starter-hugo-academic">Academic template</a> by <a href="https://wowchemy.com/">Wowchemy</a> | Powered by <a href="https://gohugo.io/">Hugo</a>
+
+    
+  </p>
+</footer>
+
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.6782e3f6a4f06ea4766df038c45ecf40.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+  <script src="/js/wowchemy-headroom.3327b8718b669591c4c4bdf85bc066d3.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.69fc52a6dc16aaf1a452cfbb36466dac.js"></script>
+
+
+
+  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
