@@ -44,7 +44,7 @@ It works with **any bike**. All you need is your phone. And if your e-bike has t
 
 {{< video src="radl-tour.mp4" controls="yes" >}}
 
-*🔊 Sound on: narrated, with original background music. Narration voice by [ElevenLabs](https://elevenlabs.io).*
+*🔊 Sound on! Narration voice by [ElevenLabs](https://elevenlabs.io). Music: "[Chill Wave](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600048)" by Kevin MacLeod ([incompetech.com](https://incompetech.com)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
 
 ## Plan a ride
 
