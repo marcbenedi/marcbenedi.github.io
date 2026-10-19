@@ -67,10 +67,11 @@
   
 
 
-&lt;video controls muted playsinline preload=&#34;metadata&#34; style=&#34;display:block;width:auto;max-width:100%;max-height:80vh;margin:0 auto&#34; poster=&#34;/post/radl/radl-tour.jpg&#34; &gt;
+&lt;video controls playsinline preload=&#34;metadata&#34; style=&#34;display:block;width:auto;max-width:100%;max-height:80vh;margin:0 auto&#34; poster=&#34;/post/radl/radl-tour.jpg&#34; &gt;
   &lt;source src=&#34;https://marcb.pro/post/radl/radl-tour.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
 
+&lt;p&gt;&lt;em&gt;🔊 Sound on: narrated, with original background music. Narration voice by &lt;a href=&#34;https://elevenlabs.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ElevenLabs&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;plan-a-ride&#34;&gt;Plan a ride&lt;/h2&gt;
 &lt;p&gt;Pick where you want to go and Radl gives you a few routes to choose from, with the distance, the time and how much climbing there is. You can leave now, or tell it when you need to arrive and it tells you when to leave.&lt;/p&gt;
 &lt;p&gt;
